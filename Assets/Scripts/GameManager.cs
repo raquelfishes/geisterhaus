@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 
 	void nextSelectedHuman(){
 		humans [human_selected].GetComponent<HumanPlayer>().deselect ();
-		human_selected = (human_selected+1)%humans.Length();
+		human_selected = (human_selected+1)%humans.Length;
 		humans [human_selected].GetComponent<HumanPlayer>().select ();
 	}
 
