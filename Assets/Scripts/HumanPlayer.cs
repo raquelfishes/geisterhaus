@@ -11,7 +11,6 @@ public class HumanPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		direction = new Vector3 (1.0f, 0.0f, 0.0f);
-	
 	}
 	
 	// Update is called once per frame
