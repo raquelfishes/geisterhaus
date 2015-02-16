@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		ghost_objects = GameObject.FindGameObjectsWithTag("GhostObject");
 		humans = GameObject.FindGameObjectsWithTag("Human");
-		//humans [human_selected].GetComponent<HumanPlayer>().select();
+		humans [human_selected].GetComponent<HumanPlayer>().select();
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
 		initializeGhostsId ();
 		initializeGhostsPositions ();
@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour {
 		ghosts [ghost_selected].GetComponent<GhostPlayer> ().setObjPosition (obj_position);
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
+	}
+
+	public void KillPlayer(GameObject object_aux)
+	{
+		Destroy (object_aux);
 	}
 
 

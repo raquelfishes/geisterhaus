@@ -36,4 +36,14 @@ public class ObjectController : MonoBehaviour {
 	public Vector3 getPosition(){
 		return transform.position;
 	}
+
+	void OnTriggerEnter (Collider other) {
+		Debug.Log ("trigger enter " + idGhost);
+		if (idGhost != -1) {
+			if (other.gameObject.tag == "Human") {
+				gameManager.GetComponent<GameManager> ().KillPlayer (other.gameObject);
+				//Destroy (other.gameObject);
+			}
+		}
+	}
 }

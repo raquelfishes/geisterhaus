@@ -26,6 +26,11 @@ public class HumanPlayer : MonoBehaviour {
 		transform.Translate (direction * Time.deltaTime);
 	}
 
+	void OnCollisionEnter(Collision collision){
+		Debug.Log ("Cambio direccion");
+		direction = (-1.0f) * direction;
+	}
+
 	private void turnHorizontal(float axis){
 		if (axis > 0.0f)
 			//Turn right
