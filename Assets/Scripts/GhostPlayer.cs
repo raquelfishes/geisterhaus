@@ -3,16 +3,14 @@ using System.Collections;
 
 public class GhostPlayer : MonoBehaviour {
 
-	public GameObject gameManager = null;
+	GameObject _gameManager = null;
 	public Vector3 obj_position;
 	private bool selected=false;
 	int id;
 
 	// Use this for initialization
 	void Start () {
-		if (selected) {
-
-		}	
+		_gameManager = GameObject.Find ("GameManager");
 	}
 	
 	// Update is called once per frame
@@ -23,7 +21,7 @@ public class GhostPlayer : MonoBehaviour {
 	void OnMouseDown(){
 		if (!selected) {
 			select ();
-			gameManager.GetComponent<GameManager>().changeGhostSelected(id);
+			_gameManager.GetComponent<GameManager>().changeGhostSelected(id);
 		}
 	}
 

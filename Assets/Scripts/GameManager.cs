@@ -8,16 +8,22 @@ public class GameManager : MonoBehaviour {
 	public GameObject[] ghost_objects;
 	private int human_selected = 0;
 	private int ghost_selected = 0;
+	private int humansPassDoor = 0;
+	private int humansAlive;
+
+	public GUIText finishMsg;
 
 	// Use this for initialization
 	void Start () {
 		ghost_objects = GameObject.FindGameObjectsWithTag("GhostObject");
 		humans = GameObject.FindGameObjectsWithTag("Human");
+		humansAlive = humans.Length;
 		humans [human_selected].GetComponent<HumanPlayer>().select();
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
 		initializeGhostsId ();
 		initializeGhostsPositions ();
 		ghosts [ghost_selected].GetComponent<GhostPlayer>().select();
+		humansPassDoor = 0;
 	}
 	
 	// Update is called once per frame
@@ -59,11 +65,31 @@ public class GameManager : MonoBehaviour {
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
 	}
 
-	public void KillPlayer(GameObject object_aux)
+	public void killHuman(GameObject object_aux)
 	{
+		for (int i=0; i<humans.Length; i++)
+			if (humans [i] == object_aux) 
+				for (int j=i+1; j<humans.Length; j++)
+					humans [i] = humans [j];
+
+		humans [humans.Length - 1] = null;
 		Destroy (object_aux);
+		--humansAlive;
+		Debug.Log ("humanos vivos: " + humansAlive);
+		if (humansAlive == 0) {
+			Debug.Log ("Todos muertos!!!!");
+			finishMsg.gameObject.SetActive (true);
+			finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
+		}
 	}
 
+	public void addHumanCount(){
+		++humansPassDoor;
+		if (humansPassDoor >= humans.Length) {
+			finishMsg.gameObject.SetActive (true);
+			finishMsg.gameObject.guiText.text = "HUMANS WINS!";
+		}
+	}
 
 
 }
