@@ -3,12 +3,12 @@ using System.Collections;
 
 public class ObjectController : MonoBehaviour {
 
-	public GameObject gameManager = null;
+	GameObject _gameManager = null;
 	int idGhost = -1;
 
 	// Use this for initialization
 	void Start () {
-	
+		_gameManager = GameObject.Find ("GameManager");
 	}
 	
 	// Update is called once per frame
@@ -18,8 +18,8 @@ public class ObjectController : MonoBehaviour {
 
 	void OnMouseDown(){
 		if (idGhost == -1) {
-			gameManager.GetComponent<GameManager>().moveGhostHere(transform.position);
-			ghostIn (gameManager.GetComponent<GameManager>().getGhostSelected());
+			_gameManager.GetComponent<GameManager>().moveGhostHere(transform.position);
+			ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
 		}
 	}
 
@@ -41,7 +41,7 @@ public class ObjectController : MonoBehaviour {
 		Debug.Log ("trigger enter " + idGhost);
 		if (idGhost != -1) {
 			if (other.gameObject.tag == "Human") {
-				gameManager.GetComponent<GameManager> ().KillPlayer (other.gameObject);
+				_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
 				//Destroy (other.gameObject);
 			}
 		}

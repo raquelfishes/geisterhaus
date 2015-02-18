@@ -6,11 +6,14 @@ public class HumanPlayer : MonoBehaviour {
 	private int life;
 	public Vector3 direction;
 	private bool selected=false;
+	GameObject _gameManager = null;
+	float speed = 1.0f;
 
 
 	// Use this for initialization
 	void Start () {
-		direction = new Vector3 (1.0f, 0.0f, 0.0f);
+		_gameManager = GameObject.Find ("GameManager");
+		direction = new Vector3 (0.0f, 0.0f, -1.0f);
 	}
 	
 	// Update is called once per frame
@@ -23,7 +26,7 @@ public class HumanPlayer : MonoBehaviour {
 			if (vertAxis != 0.0f)
 				turnVertical(vertAxis);
 		}
-		transform.Translate (direction * Time.deltaTime);
+		transform.Translate (direction * speed *Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision){
