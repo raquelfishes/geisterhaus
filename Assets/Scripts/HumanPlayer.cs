@@ -27,8 +27,9 @@ public class HumanPlayer : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision){
-		Debug.Log ("Cambio direccion");
+		Debug.Log ("Cambio direccion"+ direction);
 		direction = (-1.0f) * direction;
+		Debug.Log (" a "+ direction);
 	}
 
 	private void turnHorizontal(float axis){
