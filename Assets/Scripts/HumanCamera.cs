@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GhostCamera : MonoBehaviour {
+public class HumanCamera : MonoBehaviour {
 
 	Camera _humanCamera;
 

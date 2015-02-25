@@ -22,9 +22,11 @@ public class ObjectController : MonoBehaviour {
 		Ray ray = _ghostCamera.ScreenPointToRay(Input.mousePosition);
 		if (idGhost == -1 && Physics.Raycast(ray)) {
 			_gameManager.GetComponent<GameManager>().moveGhostHere(transform.position);
-			ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
+			//ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
 		}
 	}
+
+
 
 	public void ghostOut(int id){
 		Debug.Log ("Ghost out " + id + "    " + idGhost);
@@ -34,18 +36,28 @@ public class ObjectController : MonoBehaviour {
 
 	public void ghostIn(int id){
 		idGhost = id;
+		Debug.Log ("ghost in: " + idGhost);
 	}
 
 	public Vector3 getPosition(){
 		return transform.position;
 	}
+	/*
+	void OnTriggerStay(Collider other){
+		if (other.gameObject.tag == "Ghost") {
+			Debug.Log ("Trigger Stay ghost");
+			ghostIn (other.gameObject.GetComponent<GhostPlayer> ().getId ());
+		}
+	}
+	*/
 
 	void OnTriggerEnter (Collider other) {
-		Debug.Log ("trigger enter " + idGhost);
-		if (idGhost != -1) {
-			if (other.gameObject.tag == "Human") {
+		if (other.gameObject.tag == "Ghost") {
+			ghostIn (other.gameObject.GetComponent<GhostPlayer> ().getId ());
+		}
+		if (other.gameObject.tag == "Human") {
+			if (idGhost != -1){
 				_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
-				//Destroy (other.gameObject);
 			}
 		}
 	}

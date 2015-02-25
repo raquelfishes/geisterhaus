@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject[] humans;
+	public List<GameObject> humans;
 	public GameObject[] ghosts;
 	public GameObject[] ghost_objects;
 	private int human_selected = 0;
@@ -16,8 +17,10 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ghost_objects = GameObject.FindGameObjectsWithTag("GhostObject");
-		humans = GameObject.FindGameObjectsWithTag("Human");
-		humansAlive = humans.Length;
+		GameObject[] humans_aux = GameObject.FindGameObjectsWithTag("Human");
+		foreach (GameObject human_aux in humans_aux)
+			humans.Add (human_aux);
+		humansAlive = humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select();
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
 		initializeGhostsId ();
@@ -34,7 +37,7 @@ public class GameManager : MonoBehaviour {
 
 	void nextSelectedHuman(){
 		humans [human_selected].GetComponent<HumanPlayer>().deselect ();
-		human_selected = (human_selected+1)%humans.Length;
+		human_selected = (human_selected+1)%humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select ();
 	}
 
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour {
 
 	void initializeGhostsPositions(){
 		for (int i=0; i<ghosts.Length; i++) {
-			ghost_objects [i].GetComponent<ObjectController>().ghostIn (ghosts [i].GetComponent<GhostPlayer> ().getId ());
+			//ghost_objects [i].GetComponent<ObjectController>().ghostIn (ghosts [i].GetComponent<GhostPlayer> ().getId ());
 			ghosts [i].GetComponent<GhostPlayer> ().setObjPosition (ghost_objects [i].GetComponent<ObjectController>().getPosition ());
 		}
 	}
@@ -67,15 +70,11 @@ public class GameManager : MonoBehaviour {
 
 	public void killHuman(GameObject object_aux)
 	{
-		for (int i=0; i<humans.Length; i++)
-			if (humans [i] == object_aux) 
-				for (int j=i+1; j<humans.Length; j++)
-					humans [i] = humans [j];
-
-		humans [humans.Length - 1] = null;
+		Debug.Log ("humanos vivos antes: " + humans.Count);
+		humans.RemoveAt(humans.IndexOf (object_aux));
 		Destroy (object_aux);
 		--humansAlive;
-		Debug.Log ("humanos vivos: " + humansAlive);
+		Debug.Log ("humanos vivos despues: " + humans.Count);
 		if (humansAlive == 0) {
 			Debug.Log ("Todos muertos!!!!");
 			finishMsg.gameObject.SetActive (true);
@@ -85,7 +84,7 @@ public class GameManager : MonoBehaviour {
 
 	public void addHumanCount(){
 		++humansPassDoor;
-		if (humansPassDoor >= humans.Length) {
+		if (humansPassDoor >= humans.Count) {
 			finishMsg.gameObject.SetActive (true);
 			finishMsg.gameObject.guiText.text = "HUMANS WINS!";
 		}
