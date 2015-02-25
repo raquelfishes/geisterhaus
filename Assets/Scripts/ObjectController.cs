@@ -5,10 +5,12 @@ public class ObjectController : MonoBehaviour {
 
 	GameObject _gameManager = null;
 	int idGhost = -1;
+	Camera _ghostCamera;
 
 	// Use this for initialization
 	void Start () {
 		_gameManager = GameObject.Find ("GameManager");
+		_ghostCamera = GameObject.Find ("GhostCamera").camera;
 	}
 	
 	// Update is called once per frame
@@ -17,7 +19,8 @@ public class ObjectController : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if (idGhost == -1) {
+		Ray ray = _ghostCamera.ScreenPointToRay(Input.mousePosition);
+		if (idGhost == -1 && Physics.Raycast(ray)) {
 			_gameManager.GetComponent<GameManager>().moveGhostHere(transform.position);
 			ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
 		}
