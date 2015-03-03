@@ -6,7 +6,7 @@ public class GhostController : MonoBehaviour {
     protected GameObject _gameManager = null;
     protected Vector3 _objPosition;
     protected int _id;
-    private bool _isInteligent;
+    public bool _isInteligent;
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +16,11 @@ public class GhostController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!_isInteligent)
-            gameObject.GetComponent<GhostPlayer>().update();
+            gameObject.GetComponent<GhostPlayer>().updateGhost();
         else
-            gameObject.GetComponent<GhostInteligence>().update();
+			gameObject.GetComponent<GhostInteligence>().updateGhost();
 
-        //transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
+        transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
     public void setId(int i)
@@ -43,13 +43,12 @@ public class GhostController : MonoBehaviour {
         _isInteligent = b;
         if (_isInteligent)
         {
-            gameObject.GetComponent<GhostPlayer>().enabled = false;
-            gameObject.GetComponent<GhostInteligence>().enabled = true;
+			gameObject.AddComponent<GhostInteligence>();
         }
         else
         {
-            gameObject.GetComponent<GhostPlayer>().enabled = true;
-            gameObject.GetComponent<GhostInteligence>().enabled = false;
+			
+			gameObject.AddComponent<GhostController>();
         }
     }
 }

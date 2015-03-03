@@ -11,12 +11,12 @@ public class GhostInteligence : GhostController {
 	public Estado estado;
 	//public GameObject gameManager = null;
 	//public Vector3 obj_position;
-	double actionRadius;
-	double nearHuman, nearObject;
-	GameObject[] humans;
-	GameObject[] ghost_objects;
-	int idHuman = -1;
-	int idObject= -1;
+	public double actionRadius;
+	public double nearHuman, nearObject;
+	public GameObject[] humans;
+	public GameObject[] ghost_objects;
+	public int idHuman = -1;
+	public int idObject= -1;
 
 	// Use this for initialization
 	void Start () {
@@ -24,17 +24,19 @@ public class GhostInteligence : GhostController {
 		humans= GameObject.FindGameObjectsWithTag("Human");
 		ghost_objects= GameObject.FindGameObjectsWithTag("GhostObject");
         //_gameManager = GameObject.FindGameObjectWithTag("GameManager");
+		_isInteligent = true;
 	}
 	
 	// Update is called once per frame
-	public void update () {
+	public void updateGhost () {
 		//Thread.Sleep(1500); // Comprobamos cada 1.5 segundos
-
+		_isInteligent = true;
 		switch (estado) {
 			case Estado.ESPERANDO:
 				int i=0;
 				actionRadius= modulo(transform.position-humans[0].transform.position);
 				nearHuman=actionRadius;
+				idHuman=0;
 				while((i<humans.Length)&&(estado==Estado.ESPERANDO)){
 					actionRadius= modulo(transform.position-humans[i].transform.position);
 					if(actionRadius<MINRADIUS){
@@ -52,20 +54,24 @@ public class GhostInteligence : GhostController {
 			break;
 
 			case Estado.CAMBIO:
-				nearObject= modulo(ghost_objects[0].transform.position-humans[idHuman].transform.position);
-				idObject=0;
+				double nearObjectAux = modulo(ghost_objects[0].transform.position-humans[idHuman].transform.position);
+				int idObjectAux=0;
 				for(int j=1;j<ghost_objects.Length;j++){
 					actionRadius=modulo(ghost_objects[j].transform.position-humans[idHuman].transform.position);
-					if(actionRadius<nearObject){
-						nearObject=actionRadius;
-						idObject=j;
+                    if (actionRadius < nearObjectAux) {
+                        nearObjectAux = actionRadius;
+                        idObjectAux = j;
 					}	
 				}
-				if(nearObject<MINRADIUS){
+                if (idObjectAux == idObject && nearObjectAux < MINRADIUS)
+                {
 					estado=Estado.ASUSTANDO;
-				}else{
+				}
+                else if (idObjectAux != idObject){
 					//transform.position = Vector3.MoveTowards (transform.position, ghost_objects[idObject].transform.position, 0.05f);
-                    _objPosition = ghost_objects[idObject].transform.position;
+                    _objPosition = ghost_objects[idObjectAux].transform.position;
+                    idObject = idObjectAux;
+                    nearObject = nearObjectAux;
 				}
 				
 			break;
@@ -78,7 +84,7 @@ public class GhostInteligence : GhostController {
 				}
 			break;
 		}
-		transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
+		//transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
 	double modulo(Vector3 vector){

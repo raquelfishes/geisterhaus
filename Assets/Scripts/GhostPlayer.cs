@@ -14,9 +14,8 @@ public class GhostPlayer : GhostController {
 	}
 	
 	// Update is called once per frame
-	public void update () {
+	public void updateGhost () {
         //transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
-		transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
 	void OnMouseDown(){

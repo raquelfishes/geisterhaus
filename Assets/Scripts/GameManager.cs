@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour {
 			Debug.Log ("Todos muertos!!!!");
 			finishMsg.gameObject.SetActive (true);
 			finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
+			Application.Quit();
 		}
 	}
 
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour {
 		if (humansPassDoor >= humans.Count) {
 			finishMsg.gameObject.SetActive (true);
 			finishMsg.gameObject.guiText.text = "HUMANS WINS!";
+			exitGame();
 		}
 	}
 
@@ -102,6 +104,11 @@ public class GameManager : MonoBehaviour {
         if (!b) //Not single human, so ghosts are controlled by the player
             ghosts[ghost_selected].GetComponent<GhostPlayer>().select();
     }
+
+	private void exitGame(){
+		for (int i=0; i<ghost_objects.Length; i++)
+			ghost_objects [i].GetComponent<GhostController> ().enabled = false;
+	}
 
 
 }

@@ -43,11 +43,7 @@ public class CreateScene : MonoBehaviour {
 		Vector3 pos= new Vector3(0.0f,0.0f,0.0f);
 		for (int i=0; i<num; i++) {
 			var aux_ghost = Instantiate (ghost, pos, Quaternion.identity) as GameObject;
-			aux_ghost.AddComponent<GhostPlayer>();
-            aux_ghost.GetComponent<GhostPlayer>().enabled = false;
-            aux_ghost.AddComponent<GhostInteligence>();
-            aux_ghost.GetComponent<GhostInteligence>().enabled = false;
-            aux_ghost.AddComponent<GhostController>();
+			aux_ghost.AddComponent<GhostController>();
 		}
 	}
 }
