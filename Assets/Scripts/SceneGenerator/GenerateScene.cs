@@ -191,7 +191,8 @@ public class GenerateScene : MonoBehaviour {
 						go=Instantiate(tileGroundEmpty,posicion,Quaternion.identity) as GameObject;
 						break;
 					case Tile.typeEmpty.WALL:
-						go=Instantiate(tileWallEmpty,posicion,Quaternion.identity) as GameObject;
+						go=Instantiate(tileGroundEmpty,posicion,Quaternion.identity) as GameObject;
+						go=Instantiate(tileWallEmpty,posicion,q) as GameObject;
 						break;
 					}
 					break;
