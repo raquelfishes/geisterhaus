@@ -90,4 +90,11 @@ public class GhostInteligence : GhostController {
 	double modulo(Vector3 vector){
 		return Math.Abs(Math.Sqrt (Math.Pow(vector.x,2)+Math.Pow(vector.y,2)+Math.Pow(vector.z,2)));;
 	}
+
+	void humanDie(int indexHuman){
+		if (idHuman == indexHuman)
+			estado = Estado.ESPERANDO;
+		else if (idHuman > indexHuman)
+			--idHuman;
+	}
 }

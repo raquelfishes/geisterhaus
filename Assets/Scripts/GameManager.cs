@@ -73,9 +73,16 @@ public class GameManager : MonoBehaviour {
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
 	}
 
+	public void humanDietoGhosts(int indexHuman){
+		for (int i=0; i<ghosts.Length; i++)
+			ghosts[i].SendMessage ("humanDie",indexHuman);
+	}
+
 	public void killHuman(GameObject object_aux)
 	{
 		Debug.Log ("humanos vivos antes: " + humans.Count);
+		int index = humans.IndexOf (object_aux);
+		humanDietoGhosts (index);
 		humans.RemoveAt(humans.IndexOf (object_aux));
 		Destroy (object_aux);
 		--humansAlive;
