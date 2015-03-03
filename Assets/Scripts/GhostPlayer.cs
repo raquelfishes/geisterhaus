@@ -1,47 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GhostPlayer : MonoBehaviour {
+public class GhostPlayer : GhostController {
 
-	GameObject _gameManager = null;
-	public Vector3 obj_position;
-	private bool selected=false;
-	int id;
+	//GameObject _gameManager = null;
+	//public Vector3 obj_position;
+    private bool _isSelected = false;
+    int id;
 
 	// Use this for initialization
 	void Start () {
-		_gameManager = GameObject.Find ("GameManager");
+		//_gameManager = GameObject.Find ("GameManager");
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		transform.position = Vector3.MoveTowards (transform.position, obj_position, 0.05f);
+	public void update () {
+        //transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
+		transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
 	void OnMouseDown(){
-		if (!selected) {
+        if (!_isSelected)
+        {
 			select ();
 			_gameManager.GetComponent<GameManager>().changeGhostSelected(id);
 		}
 	}
 
 	public void deselect(){
-		selected = false;
+        _isSelected = false;
 	}
 	
 	public void select(){
-		selected = true;
-	}
-
-	public void setId(int i){
-		id = i;
-	}
-
-	public int getId(){
-		return id;
-	}
-
-	public void setObjPosition(Vector3 position){
-		obj_position = position;
+        _isSelected = true;
 	}
 }

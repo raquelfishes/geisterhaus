@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour {
 	private int humansPassDoor = 0;
 	private int humansAlive;
 
+    public bool singleGhost = false;
+    public bool singleHuman = false;
+
 	public GUIText finishMsg;
 
 	// Use this for initialization
@@ -25,7 +28,9 @@ public class GameManager : MonoBehaviour {
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
 		initializeGhostsId ();
 		initializeGhostsPositions ();
-		ghosts [ghost_selected].GetComponent<GhostPlayer>().select();
+        //ghosts[ghost_selected].GetComponent<GhostController>().select();
+        initializeGhostModus(singleHuman);
+        //initializeHumanModus(singleGhost);
 		humansPassDoor = 0;
 	}
 	
@@ -48,13 +53,13 @@ public class GameManager : MonoBehaviour {
 
 	void initializeGhostsId(){
 		for (int i=0; i<ghosts.Length; i++)
-			ghosts [i].GetComponent<GhostPlayer> ().setId (i);
+            ghosts[i].GetComponent<GhostController>().setId(i);
 	}
 
 	void initializeGhostsPositions(){
 		for (int i=0; i<ghosts.Length; i++) {
 			//ghost_objects [i].GetComponent<ObjectController>().ghostIn (ghosts [i].GetComponent<GhostPlayer> ().getId ());
-			ghosts [i].GetComponent<GhostPlayer> ().setObjPosition (ghost_objects [i].GetComponent<ObjectController>().getPosition ());
+            ghosts[i].GetComponent<GhostController>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
 		}
 	}
 
@@ -63,7 +68,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void moveGhostHere(Vector3 obj_position){
-		ghosts [ghost_selected].GetComponent<GhostPlayer> ().setObjPosition (obj_position);
+        ghosts[ghost_selected].GetComponent<GhostController>().setObjPosition(obj_position);
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
 	}
@@ -89,6 +94,14 @@ public class GameManager : MonoBehaviour {
 			finishMsg.gameObject.guiText.text = "HUMANS WINS!";
 		}
 	}
+
+    private void initializeGhostModus(bool b)
+    {
+        for (int i = 0; i < ghosts.Length; i++)
+            ghosts[i].GetComponent<GhostController>().setInteligence(b);
+        if (!b) //Not single human, so ghosts are controlled by the player
+            ghosts[ghost_selected].GetComponent<GhostPlayer>().select();
+    }
 
 
 }

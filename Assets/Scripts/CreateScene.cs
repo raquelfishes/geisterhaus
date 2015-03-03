@@ -44,6 +44,10 @@ public class CreateScene : MonoBehaviour {
 		for (int i=0; i<num; i++) {
 			var aux_ghost = Instantiate (ghost, pos, Quaternion.identity) as GameObject;
 			aux_ghost.AddComponent<GhostPlayer>();
+            aux_ghost.GetComponent<GhostPlayer>().enabled = false;
+            aux_ghost.AddComponent<GhostInteligence>();
+            aux_ghost.GetComponent<GhostInteligence>().enabled = false;
+            aux_ghost.AddComponent<GhostController>();
 		}
 	}
 }

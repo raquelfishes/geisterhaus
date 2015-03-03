@@ -3,14 +3,14 @@ using System.Collections;
 using System;
 using System.Threading;
 
-public class GhostInteligence : MonoBehaviour {
+public class GhostInteligence : GhostController {
 
-	const float MINRADIUS=10;
+	const float MINRADIUS=3;
 
 	public enum Estado{ESPERANDO, CAMBIO, ASUSTANDO};
 	public Estado estado;
-	public GameObject gameManager = null;
-	public Vector3 obj_position;
+	//public GameObject gameManager = null;
+	//public Vector3 obj_position;
 	double actionRadius;
 	double nearHuman, nearObject;
 	GameObject[] humans;
@@ -23,10 +23,11 @@ public class GhostInteligence : MonoBehaviour {
 		estado= Estado.ESPERANDO;
 		humans= GameObject.FindGameObjectsWithTag("Human");
 		ghost_objects= GameObject.FindGameObjectsWithTag("GhostObject");
+        //_gameManager = GameObject.FindGameObjectWithTag("GameManager");
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void update () {
 		//Thread.Sleep(1500); // Comprobamos cada 1.5 segundos
 
 		switch (estado) {
@@ -63,7 +64,8 @@ public class GhostInteligence : MonoBehaviour {
 				if(nearObject<MINRADIUS){
 					estado=Estado.ASUSTANDO;
 				}else{
-					transform.position = Vector3.MoveTowards (transform.position, ghost_objects[idObject].transform.position, 0.05f);
+					//transform.position = Vector3.MoveTowards (transform.position, ghost_objects[idObject].transform.position, 0.05f);
+                    _objPosition = ghost_objects[idObject].transform.position;
 				}
 				
 			break;
@@ -76,6 +78,7 @@ public class GhostInteligence : MonoBehaviour {
 				}
 			break;
 		}
+		transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
 	double modulo(Vector3 vector){
