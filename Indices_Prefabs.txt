@@ -5,7 +5,8 @@
 121 => baldosa con mesa horizontal inicio
 122 => baldosa con mesa vertical inicio
 123 => baldosa con mesa final o intermedia (no tengo que instanciar nada)
-20 => pared vacia
+202 => pared vacia medio
+201 => pared vacia esquina
 211 => pared con cuadro1
 212 => pared con cuadro2
 50 => puerta inicio
@@ -23,7 +24,8 @@ g_23 => mesa fin (no instancia nada)
 
 //Indicadores para la pared
 //pared frontal
-w_0 => pared vacia
+w_01 => pared vacia medio
+w_02 => pared vacia esquina
 w_11 => pared cuadro1
 w_12 => pared cuadro2
 

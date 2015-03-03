@@ -13,6 +13,7 @@ public class Tile {
 	public typeEmpty _myTyleEmpty;
 	public typePossessed _myTylePossessed;
 	public bool horizontal;
+	public bool esquina;
 
 	public Tile(){
 		_myTypeTile = typeTile.NOT;
@@ -20,6 +21,7 @@ public class Tile {
 		_myTyleEmpty = typeEmpty.NOT;
 		_myTylePossessed = typePossessed.NOT;
 		horizontal = true;
+		esquina = false;
 	}
 
 	void instantiate(float x, float y, float z){

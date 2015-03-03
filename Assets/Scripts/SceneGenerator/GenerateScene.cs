@@ -84,9 +84,14 @@ public class GenerateScene : MonoBehaviour {
 			//We don't have to instantiate a tyle here, but we need info of typeObstacle
 			_myRoom [row] [col]._myTypeObstacle = Tile.typeObstacle.TABLE;
 			break;
-		case 20:
+		case 201:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTyleEmpty = Tile.typeEmpty.WALL;
+			break;
+		case 202:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
+			_myRoom [row] [col]._myTyleEmpty = Tile.typeEmpty.WALL;
+			_myRoom [row] [col].esquina = true;
 			break;
 		case 211:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
@@ -109,28 +114,26 @@ public class GenerateScene : MonoBehaviour {
 		}
 	}
 	
-	private void instantiateObstacle(Tile t, float x, float z){
-		Vector3 posicion= new Vector3(x,0,z);
+	private void instantiateObstacle(Tile t, Vector3 position){
 		GameObject go;
 		switch (t._myTypeObstacle) {
 		case Tile.typeObstacle.TABLE:
-			go=Instantiate(tilesGroundObstacles[0],posicion,Quaternion.identity) as GameObject;
+			go=Instantiate(tilesGroundObstacles[0],position,Quaternion.identity) as GameObject;
 			break;
 		}
 	}
 	
-	private void instantiatePossessed(Tile.typePossessed t, float x, float z, Quaternion q){
-		Vector3 posicion= new Vector3(x,0,z);
+	private void instantiatePossessed(Tile.typePossessed t, Vector3 position, Quaternion q){
 		GameObject go;
 		switch (t) {
 		case Tile.typePossessed.VASE:
-			go=Instantiate(tilesGroundPossesseds[0],posicion,Quaternion.identity) as GameObject;
+			go=Instantiate(tilesGroundPossesseds[0],position,Quaternion.identity) as GameObject;
 			break;
 		case Tile.typePossessed.CANVAS1:
-			go=Instantiate(tilesWallPossesseds[0],posicion,q) as GameObject;
+			go=Instantiate(tilesWallPossesseds[0],position,q) as GameObject;
 			break;
 		case Tile.typePossessed.CANVAS2:
-			go=Instantiate(tilesWallPossesseds[1],posicion,q) as GameObject;
+			go=Instantiate(tilesWallPossesseds[1],position,q) as GameObject;
 			break;
 		}
 	}
@@ -141,58 +144,84 @@ public class GenerateScene : MonoBehaviour {
 		float aumentoZ = m_renderer.bounds.size.z;
 		
 		//creamos los nuevos tiles
-		float posicionZ = aumentoZ / 2;
-		float posicionX = ultimaPosicionX;
+		float posicionZ = 0;
+		float posicionX = 0;
 		
 		for (int i=0; i<_nRows; i++) {
 			for (int j=0; j<_nColumns; j++){
-				Vector3 posicion= new Vector3(posicionX+i,0,posicionZ+j);
+				Vector3 positionG= new Vector3(posicionX+(j*aumentoX),0,posicionZ-(i*aumentoZ));
+				//If we are instantiating a wall prefab, it can't be put at the same point as a ground prefab
+				//It has to be instantiate at the border of the ground prefab, and it depends at the position of this wall
+				// i=0; j=0; Front wall; x=x z=z+aumentoz/2
+				// i!=0; j=0; left wall; x=x-aumentox/2 z=z	
+				// i!=0; j=max; right wall; x=x+aumentox/2 z=z	
+				// i=max; j=max; back wall; x=x z=z-aumentoz/2
+				Vector3 positionW= new Vector3(posicionX+(j*aumentoX),-0.2f,posicionZ-(i*aumentoZ)+aumentoZ/2);
+				if (i>0 && j==0) positionW= new Vector3(posicionX+(j*aumentoX)-aumentoX/2,-0.2f,posicionZ-(i*aumentoZ));
+				else if (i>0 && j==_nColumns-1) positionW= new Vector3(posicionX+(j*aumentoX)+aumentoX/2,-0.2f,posicionZ-(i*aumentoZ));
+				else if (i==_nRows-1) positionW= new Vector3(posicionX+(j*aumentoX),-0.2f,posicionZ-(i*aumentoZ)-aumentoZ/2);
+
+				//To draw the corners correctly
+				Vector3 positionW2= new Vector3(posicionX+(j*aumentoX)-aumentoX/2,-0.2f,posicionZ-(i*aumentoZ));
+				if (j==_nColumns-1)  positionW2= new Vector3(posicionX+(j*aumentoX)+aumentoX/2,-0.2f,posicionZ-(i*aumentoZ));
+
 				GameObject go;
 				
 				//Calculate angle rotation with i,j
 				// i=0; j=0; Front wall; angle=0
-				// i!=0; j=0; left wall; angle=90	
-				// i!=0; j=max; right wall; angle=-90
+				// i!=0; j=0; left wall; angle=-90	
+				// i!=0; j=max; right wall; angle=90
 				// i=max; j=max; back wall; angle=180
+				//We have to rotate in z, because the prefab is created with a rotation, and their axis have changed
 				Quaternion q=Quaternion.identity;
-				if (i>0 && j==0) q=Quaternion.Euler (new Vector3(0,90,0));
-				else if (i>0 && j==_nColumns-1) q=Quaternion.Euler (new Vector3(0,-90,0));
-				else if (i==_nRows-1 && j==_nColumns-1) q=Quaternion.Euler (new Vector3(0,180,0));
-				
+				if (i>0 && j==0) q=Quaternion.Euler (new Vector3(0,-90,0));
+				else if (i>0 && j==_nColumns-1) q=Quaternion.Euler (new Vector3(0,90,0));
+				else if (i==_nRows-1) q=Quaternion.Euler (new Vector3(0,180,0));
+
+				Quaternion q2=Quaternion.Euler (new Vector3(0,-90,0));
+				if (j==_nColumns-1)  q=Quaternion.Euler (new Vector3(0,90,0));
+
 				switch(_myRoom[i][j]._myTypeTile)
 				{
 				case Tile.typeTile.OBSTACLE:
 					switch(_myRoom[i][j]._myTypeObstacle){
 					case Tile.typeObstacle.TABLE:
-						go=Instantiate(tileGroundEmpty,posicion,Quaternion.identity) as GameObject;
-						instantiateObstacle(_myRoom[i][j],posicionX,posicionZ);
+						go=Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+						instantiateObstacle(_myRoom[i][j],positionG);
 						break;
 					}
 					break;
 				case Tile.typeTile.POSSESSED:
 					switch(_myRoom[i][j]._myTylePossessed){
 					case Tile.typePossessed.VASE:
-						go=Instantiate(tileGroundEmpty,posicion,Quaternion.identity) as GameObject;
-						instantiatePossessed(_myRoom[i][j]._myTylePossessed,posicionX,posicionZ,Quaternion.identity);
+						go=Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+						instantiatePossessed(_myRoom[i][j]._myTylePossessed,positionG,Quaternion.identity);
 						break;
 					case Tile.typePossessed.CANVAS1:
-						go=Instantiate(tileWallEmpty,posicion,Quaternion.identity) as GameObject;
-						instantiatePossessed(_myRoom[i][j]._myTylePossessed,posicionX,posicionZ,q);
+						go=Instantiate(tileWallEmpty,positionW,Quaternion.identity) as GameObject;
+						instantiatePossessed(_myRoom[i][j]._myTylePossessed,positionW,q);
 						break;
 					case Tile.typePossessed.CANVAS2:
-						go=Instantiate(tileWallEmpty,posicion,Quaternion.identity) as GameObject;
-						instantiatePossessed(_myRoom[i][j]._myTylePossessed,posicionX,posicionZ,q);
+						go=Instantiate(tileWallEmpty,positionW,Quaternion.identity) as GameObject;
+						instantiatePossessed(_myRoom[i][j]._myTylePossessed,positionW,q);
 						break;
 					}
 					break;
 				case Tile.typeTile.EMPTY:
 					switch(_myRoom[i][j]._myTyleEmpty){
 					case Tile.typeEmpty.GROUND:
-						go=Instantiate(tileGroundEmpty,posicion,Quaternion.identity) as GameObject;
+						go=Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 						break;
 					case Tile.typeEmpty.WALL:
-						go=Instantiate(tileGroundEmpty,posicion,Quaternion.identity) as GameObject;
-						go=Instantiate(tileWallEmpty,posicion,q) as GameObject;
+						if (_myRoom[i][j].esquina){
+							go=Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+							go=Instantiate(tileWallEmpty,positionW,q) as GameObject;
+							go=Instantiate(tileWallEmpty,positionW2,q2) as GameObject;
+						}
+						else{
+							go=Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+							go=Instantiate(tileWallEmpty,positionW,q) as GameObject;
+						}
 						break;
 					}
 					break;
