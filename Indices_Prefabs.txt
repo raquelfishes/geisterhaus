@@ -1,0 +1,32 @@
+//IndicePrefab
+0 => nada/vacio (para el caso de querer hacer habitaciones no cuadradas)
+10 => baldosa vacia
+11 => baldosa jarron
+121 => baldosa con mesa horizontal inicio
+122 => baldosa con mesa vertical inicio
+123 => baldosa con mesa final o intermedia (no tengo que instanciar nada)
+20 => pared vacia
+211 => pared con cuadro1
+212 => pared con cuadro2
+50 => puerta inicio
+51 => puerta fin
+
+
+//TextoArchivo
+null => nada/vacio (para el caso de querer hacer habitaciones no cuadradas)
+//Indicadores para el suelo
+g_0 => baldosa vacia
+g_1 => obstaculo jarron
+g_21 => mesa horizontal inicio
+g_22 => mesa vertical inicio
+g_23 => mesa fin (no instancia nada)
+
+//Indicadores para la pared
+//pared frontal
+w_0 => pared vacia
+w_11 => pared cuadro1
+w_12 => pared cuadro2
+
+//Indicadores para la puerta
+d_0 => puerta de entrada
+d_1 => puerta de salida
