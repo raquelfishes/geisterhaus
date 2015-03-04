@@ -17,12 +17,16 @@ public class GameManager : MonoBehaviour {
 
 	public GUIText finishMsg;
 
+	private int globalEnergy;
+
 	// Use this for initialization
 	void Start () {
 		ghost_objects = GameObject.FindGameObjectsWithTag("GhostObject");
 		GameObject[] humans_aux = GameObject.FindGameObjectsWithTag("Human");
-		foreach (GameObject human_aux in humans_aux)
+		foreach (GameObject human_aux in humans_aux) {
 			humans.Add (human_aux);
+			globalEnergy += human_aux.GetComponent<HumanPlayer>().getLife();
+		}
 		humansAlive = humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select();
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
@@ -32,6 +36,7 @@ public class GameManager : MonoBehaviour {
         initializeGhostModus(singleHuman);
         //initializeHumanModus(singleGhost);
 		humansPassDoor = 0;
+		SendMessage ("createBar", globalEnergy);
 	}
 	
 	// Update is called once per frame
@@ -93,6 +98,14 @@ public class GameManager : MonoBehaviour {
 			finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
 			Application.Quit();
 		}
+	}
+
+	public void hurtHuman(GameObject object_aux){
+		SendMessage ("reducirVida");
+		int index = humans.IndexOf (object_aux);
+		humans [index].GetComponent<HumanPlayer> ().hurt ();
+		if (humans [index].GetComponent<HumanPlayer> ().getLife () <= 0)
+			killHuman (object_aux);
 	}
 
 	public void addHumanCount(){

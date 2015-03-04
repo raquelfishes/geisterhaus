@@ -14,6 +14,7 @@ public class HumanPlayer : MonoBehaviour {
 	void Start () {
 		_gameManager = GameObject.Find ("GameManager");
 		direction = new Vector3 (0.0f, 0.0f, -1.0f);
+		life = 10;
 	}
 	
 	// Update is called once per frame
@@ -79,6 +80,10 @@ public class HumanPlayer : MonoBehaviour {
 
 	public void select(){
 		selected = true;
+	}
+
+	public void hurt(){
+		life -= 2;
 	}
 
 }

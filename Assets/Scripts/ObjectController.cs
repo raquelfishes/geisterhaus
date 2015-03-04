@@ -52,12 +52,14 @@ public class ObjectController : MonoBehaviour {
 	*/
 
 	void OnTriggerEnter (Collider other) {
+		GameObject vida = GameObject.Find ("HealthBar");
 		if (other.gameObject.tag == "Ghost") {
 			ghostIn (other.gameObject.GetComponent<GhostController> ().getId ());
 		}
 		if (other.gameObject.tag == "Human") {
 			if (idGhost != -1){
-				_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
+				//_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
+				_gameManager.GetComponent<GameManager>().hurtHuman(other.gameObject);
 			}
 		}
 	}
