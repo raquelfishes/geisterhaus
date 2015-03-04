@@ -53,6 +53,7 @@ public class ObjectController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		GameObject vida = GameObject.Find ("HealthBar");
+		Debug.Log ("entra algo!!!!!"+other.gameObject.tag);
 		if (other.gameObject.tag == "Ghost") {
 			ghostIn (other.gameObject.GetComponent<GhostController> ().getId ());
 		}
