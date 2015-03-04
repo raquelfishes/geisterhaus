@@ -11,11 +11,12 @@ public class GhostPlayer : GhostController {
 	// Use this for initialization
 	void Start () {
 		//_gameManager = GameObject.Find ("GameManager");
+		_objPosition = _objPosition;
 	}
 	
 	// Update is called once per frame
-	public void updateGhost () {
-        //transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
+	void Update () {
+        transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
 	void OnMouseDown(){

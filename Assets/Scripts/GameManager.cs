@@ -30,10 +30,10 @@ public class GameManager : MonoBehaviour {
 		humansAlive = humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select();
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
+		initializeGhostModus(singleHuman);
 		initializeGhostsId ();
 		initializeGhostsPositions ();
         //ghosts[ghost_selected].GetComponent<GhostController>().select();
-        initializeGhostModus(singleHuman);
         //initializeHumanModus(singleGhost);
 		humansPassDoor = 0;
 		SendMessage ("createBar", globalEnergy);
@@ -58,13 +58,20 @@ public class GameManager : MonoBehaviour {
 
 	void initializeGhostsId(){
 		for (int i=0; i<ghosts.Length; i++)
-            ghosts[i].GetComponent<GhostController>().setId(i);
+			if (singleHuman)
+				ghosts[i].GetComponent<GhostInteligence>().setId(i);
+			else
+				ghosts[i].GetComponent<GhostPlayer>().setId(i);
+		//ghosts[i].GetComponent<GhostController>().setId(i);
 	}
 
 	void initializeGhostsPositions(){
 		for (int i=0; i<ghosts.Length; i++) {
 			//ghost_objects [i].GetComponent<ObjectController>().ghostIn (ghosts [i].GetComponent<GhostPlayer> ().getId ());
-            ghosts[i].GetComponent<GhostController>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
+            if (singleHuman)
+				ghosts[i].GetComponent<GhostInteligence>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
+			else
+				ghosts[i].GetComponent<GhostPlayer>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
 		}
 	}
 
@@ -73,7 +80,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void moveGhostHere(Vector3 obj_position){
-        ghosts[ghost_selected].GetComponent<GhostController>().setObjPosition(obj_position);
+		if (singleHuman)
+        	ghosts[ghost_selected].GetComponent<GhostInteligence>().setObjPosition(obj_position);
+		else
+			ghosts[ghost_selected].GetComponent<GhostPlayer>().setObjPosition(obj_position);
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
 	}

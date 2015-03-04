@@ -28,7 +28,7 @@ public class GhostInteligence : GhostController {
 	}
 	
 	// Update is called once per frame
-	public void updateGhost () {
+	void Update () {
 		//Thread.Sleep(1500); // Comprobamos cada 1.5 segundos
 		_isInteligent = true;
 		switch (estado) {
@@ -84,7 +84,7 @@ public class GhostInteligence : GhostController {
 				}
 			break;
 		}
-		//transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
+		transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
 	double modulo(Vector3 vector){

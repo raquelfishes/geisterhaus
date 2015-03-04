@@ -60,6 +60,7 @@ public class ObjectController : MonoBehaviour {
 			if (idGhost != -1){
 				//_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
 				_gameManager.GetComponent<GameManager>().hurtHuman(other.gameObject);
+				Debug.Log ("humano que se choca!!!!");
 			}
 		}
 	}
