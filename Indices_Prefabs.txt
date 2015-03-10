@@ -5,8 +5,14 @@
 121 => baldosa con mesa horizontal inicio
 122 => baldosa con mesa vertical inicio
 123 => baldosa con mesa final o intermedia (no tengo que instanciar nada)
-202 => pared vacia medio
-201 => pared vacia esquina
+2011 => pared vacia medio frente
+2012 => pared vacia medio iquierda
+2013 => pared vacia medio derecha
+2014 => pared vacia medio trasera
+2021 => pared vacia esquina frente/izquierda  |-
+2022 => pared vacia esquina frente/derecha    -|
+2023 => pared vacia esquina trasera/izquierda |_
+2024 => pared vacia esquina trasera/derecha    _|
 211 => pared con cuadro1
 212 => pared con cuadro2
 50 => puerta inicio
@@ -24,8 +30,14 @@ g_23 => mesa fin (no instancia nada)
 
 //Indicadores para la pared
 //pared frontal
-w_01 => pared vacia medio
-w_02 => pared vacia esquina
+w_011 => pared vacia medio frente
+w_012 => pared vacia medio iquierda
+w_013 => pared vacia medio derecha
+w_014 => pared vacia medio trasera
+w_021 => pared vacia esquina izquierda/frente |-
+w_022 => pared vacia esquina frente/derecha    -|
+w_023 => pared vacia esquina izquierda/trasera |_
+w_024 => pared vacia esquina trasera/derecha    _|
 w_11 => pared cuadro1
 w_12 => pared cuadro2
 

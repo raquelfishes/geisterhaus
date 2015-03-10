@@ -50,11 +50,26 @@ public class LoadSceneFile : MonoBehaviour {
 					case "g_23":
 						auxRow.Add (123);
 						break;
-					case "w_01":
-						auxRow.Add (201);
+					case "w_011":
+						auxRow.Add (2011);
 						break;
-					case "w_02":
-						auxRow.Add (202);
+					case "w_012":
+						auxRow.Add (2012);
+						break;
+					case "w_013":
+						auxRow.Add (2013);
+						break;
+					case "w_014":
+						auxRow.Add (2014);
+						break;
+					case "w_021":
+						auxRow.Add (2021);
+					case "w_022":
+						auxRow.Add (2022);
+					case "w_023":
+						auxRow.Add (2023);
+					case "w_024":
+						auxRow.Add (2024);
 						break;
 					case "w_11":
 						auxRow.Add (211);
