@@ -64,10 +64,13 @@ public class LoadSceneFile : MonoBehaviour {
 						break;
 					case "w_021":
 						auxRow.Add (2021);
+						break;
 					case "w_022":
 						auxRow.Add (2022);
+						break;
 					case "w_023":
 						auxRow.Add (2023);
+						break;
 					case "w_024":
 						auxRow.Add (2024);
 						break;
