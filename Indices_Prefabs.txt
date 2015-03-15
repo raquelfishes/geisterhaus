@@ -15,8 +15,14 @@
 2024 => pared vacia esquina trasera/derecha    _|
 211 => pared con cuadro1
 212 => pared con cuadro2
-50 => puerta inicio
-51 => puerta fin
+501 => puerta inicio
+502 => puerta inicio
+503 => puerta inicio
+504 => puerta inicio
+511 => puerta fin
+512 => puerta fin
+513 => puerta fin
+514 => puerta fin
 
 
 //TextoArchivo
@@ -38,9 +44,21 @@ w_021 => pared vacia esquina izquierda/frente |-
 w_022 => pared vacia esquina frente/derecha    -|
 w_023 => pared vacia esquina izquierda/trasera |_
 w_024 => pared vacia esquina trasera/derecha    _|
-w_11 => pared cuadro1
-w_12 => pared cuadro2
+w_111 => pared cuadro1 frente
+w_112 => pared cuadro1 iquierda
+w_113 => pared cuadro1 derecha
+w_114 => pared cuadro1 trasera
+w_121 => pared cuadro2 frente
+w_122 => pared cuadro2 iquierda
+w_123 => pared cuadro2 derecha
+w_124 => pared cuadro2 trasera
 
 //Indicadores para la puerta
-d_0 => puerta de entrada
-d_1 => puerta de salida
+d_01 => puerta de entrada frente
+d_02 => puerta de entrada iquierda
+d_03 => puerta de entrada derecha
+d_04 => puerta de entrada trasera
+d_11 => puerta de salida frente
+d_12 => puerta de salida iquierda
+d_13 => puerta de salida derecha
+d_14 => puerta de salida trasera

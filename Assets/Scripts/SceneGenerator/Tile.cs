@@ -10,6 +10,7 @@ public class Tile {
 	//RF = right front -- LF = right left -- RB = right back -- LB = back left
 	public enum typeCorner{RF,LF,RB,LB,NOT}
 	public enum typeWall{R,L,F,B,NOT}
+	public enum typeDoor{IN,OUT, NOT}
 
 	public typeTile _myTypeTile;
 	public typeObstacle _myTypeObstacle;
@@ -17,6 +18,7 @@ public class Tile {
 	public typePossessed _myTypePossessed;
 	public typeCorner _myTypeCorner;
 	public typeWall _myTypeWall;
+	public typeDoor _myTypeDoor;
 	public bool horizontal;
 	public bool esquina;
 
@@ -27,6 +29,7 @@ public class Tile {
 		_myTypePossessed = typePossessed.NOT;
 		_myTypeCorner = typeCorner.NOT;
 		_myTypeWall = typeWall.NOT;
+		_myTypeDoor = typeDoor.NOT;
 		horizontal = true;
 		esquina = false;
 	}

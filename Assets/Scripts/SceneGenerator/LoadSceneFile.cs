@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class LoadSceneFile : MonoBehaviour {
 
-	private List<List<int>> _roomIds = new List<List<int>> ();	
+	private List<List<int>> _roomIds;	
 	private string filename = "C:/Users/Raquel/Documents/master/TJ/geisterhaus/Assets/FilesScenes/scene1.txt";
 
 	private int _nTyles;
@@ -14,6 +14,7 @@ public class LoadSceneFile : MonoBehaviour {
 
 	void Start () {
 	//LoadSceneFile(string filename){
+		_roomIds = new List<List<int>> ();
 		StreamReader inputStream = new StreamReader(filename);
 		int nLine = 0;
 		while(!inputStream.EndOfStream)
@@ -80,11 +81,29 @@ public class LoadSceneFile : MonoBehaviour {
 					case "w_12":
 						auxRow.Add (212);
 						break;
-					case "d_0":
-						auxRow.Add (50);
+					case "d_01":
+						auxRow.Add (501);
 						break;
-					case "d_1":
-						auxRow.Add (51);
+					case "d_02":
+						auxRow.Add (502);
+						break;
+					case "d_03":
+						auxRow.Add (503);
+						break;
+					case "d_04":
+						auxRow.Add (504);
+						break;
+					case "d_11":
+						auxRow.Add (511);
+						break;
+					case "d_12":
+						auxRow.Add (512);
+						break;
+					case "d_13":
+						auxRow.Add (513);
+						break;
+					case "d_14":
+						auxRow.Add (514);
 						break;
 					case "null":
 						auxRow.Add (-1);

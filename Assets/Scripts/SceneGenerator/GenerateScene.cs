@@ -147,11 +147,45 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS2;
 			_myRoom [row] [col]._myTypeWall = Tile.typeWall.F;
 			break;
-		case 50:
+		case 501:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.F;
 			break;
-		case 51:
+		case 502:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.L;
+			break;
+		case 503:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.R;
+			break;
+		case 504:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.B;
+			break;
+		case 511:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.F;
+			break;
+		case 512:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.L;
+			break;
+		case 513:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.R;
+			break;
+		case 514:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
+			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
+			_myRoom [row] [col]._myTypeWall = Tile.typeWall.B;
 			break;
 		default:
 			break;
@@ -238,6 +272,50 @@ public class GenerateScene : MonoBehaviour {
 		}
 	}
 
+	private void instantiateDoor(Tile.typeDoor d , Tile.typeWall t, Vector3 positionG){
+		GameObject go;
+		Vector3 positionW;
+		Quaternion quater;
+		switch (t) {
+		case Tile.typeWall.F:
+			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+			positionW = new Vector3(positionG.x,positionG.y,positionG.z-aumentoZ/2);
+			quater = Quaternion.identity;
+			if (d == Tile.typeDoor.IN)
+				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+			else if (d == Tile.typeDoor.OUT)
+				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+			break;
+		case Tile.typeWall.L:
+			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+			positionW = new Vector3(positionG.x-aumentoX/2,positionG.y,positionG.z);
+			quater = Quaternion.Euler(new Vector3(0,90,0));
+			if (d == Tile.typeDoor.IN)
+				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+			else if (d == Tile.typeDoor.OUT)
+				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+			break;
+		case Tile.typeWall.R:
+			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+			positionW = new Vector3(positionG.x+aumentoX/2,positionG.y,positionG.z);
+			quater = Quaternion.Euler(new Vector3(0,-90,0));
+			if (d == Tile.typeDoor.IN)
+				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+			else if (d == Tile.typeDoor.OUT)
+				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+			break;
+		case Tile.typeWall.B:
+			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+			positionW = new Vector3(positionG.x,positionG.y,positionG.z+aumentoZ/2);
+			quater = Quaternion.Euler(new Vector3(0,180,0));
+			if (d == Tile.typeDoor.IN)
+				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+			else if (d == Tile.typeDoor.OUT)
+				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+			break;
+		}
+	}
+
 	private void instantiateTyles(){
 		
 		//creamos los nuevos tiles
@@ -297,6 +375,9 @@ public class GenerateScene : MonoBehaviour {
 							break;
 						}
 						break;
+					case Tile.typeTile.DOOR:
+						instantiateDoor(_myRoom[i][j]._myTypeDoor, _myRoom[i][j]._myTypeWall, positionG);
+					break;
 					default:
 						break;
 				}			
