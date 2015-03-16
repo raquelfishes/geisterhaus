@@ -13,8 +13,14 @@
 2022 => pared vacia esquina frente/derecha    -|
 2023 => pared vacia esquina trasera/izquierda |_
 2024 => pared vacia esquina trasera/derecha    _|
-211 => pared con cuadro1
-212 => pared con cuadro2
+2111 => pared con cuadro1 frente
+2112 => pared con cuadro1 iquierda
+2113 => pared con cuadro1 derecha
+2114 => pared con cuadro1 trasera
+2121 => pared con cuadro2 frente
+2122 => pared con cuadro2 iquierda
+2123 => pared con cuadro2 derecha
+2124 => pared con cuadro2 trasera
 501 => puerta inicio
 502 => puerta inicio
 503 => puerta inicio
