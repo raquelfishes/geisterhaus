@@ -1,20 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HumanPlayer : MonoBehaviour {
-
-	private int life;
+public class HumanPlayer : HumanController {
+	
 	public Vector3 direction;
 	private bool selected=false;
 	GameObject _gameManager = null;
-	float speed = 1.0f;
-
-
+	
 	// Use this for initialization
 	void Start () {
 		_gameManager = GameObject.Find ("GameManager");
 		direction = new Vector3 (0.0f, 0.0f, -1.0f);
-		life = 10;
+		_life = 10;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +24,7 @@ public class HumanPlayer : MonoBehaviour {
 			if (vertAxis != 0.0f)
 				turnVertical(vertAxis);
 		}
-		transform.Translate (direction * speed *Time.deltaTime);
+		transform.Translate (direction * _speed *Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -62,18 +59,6 @@ public class HumanPlayer : MonoBehaviour {
 		return direction;
 	}
 
-	public void downLife(){
-		--life;
-	}
-
-	public void setLife(int li){
-		life = li;
-	}
-
-	public int getLife(){
-		return life;
-	}
-
 	public void deselect(){
 		selected = false;
 	}
@@ -81,9 +66,4 @@ public class HumanPlayer : MonoBehaviour {
 	public void select(){
 		selected = true;
 	}
-
-	public void hurt(){
-		life -= 2;
-	}
-
 }

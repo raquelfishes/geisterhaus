@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class LoadSceneFile : MonoBehaviour {
 
 	private List<List<int>> _roomIds = new List<List<int>> ();	
-	private string filename = "C:/Users/Raquel/Documents/master/TJ/geisterhaus/Assets/FilesScenes/scene1.txt";
+	private string filename = "./Assets/FilesScenes/scene1.txt";
 
 	private int _nTyles;
 	private int _nRows;

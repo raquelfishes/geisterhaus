@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour {
 		humansAlive = humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select();
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
+
 		initializeGhostModus(singleHuman);
 		initializeGhostsId ();
 		initializeGhostsPositions ();
@@ -127,8 +128,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-    private void initializeGhostModus(bool b)
-    {
+    private void initializeGhostModus(bool b){
         for (int i = 0; i < ghosts.Length; i++)
             ghosts[i].GetComponent<GhostController>().setInteligence(b);
         if (!b) //Not single human, so ghosts are controlled by the player
