@@ -19,17 +19,14 @@ public class LoadPathsFile : MonoBehaviour {
 		string[] numbersControl = inputLine.Split(new char[] {' ','\t'});
 		_nPaths = int.Parse (numbersControl[0]);
 
-		while (!inputStream.EndOfStream) {
-
+		for(int i=0; i<_nPaths; i++){
 			inputLine = inputStream.ReadLine ();
-			//Case lines which has the tiles
 			string[] move = inputLine.Split (new char[] {' ','\t'});
 			_Paths.Add (move);
-	
 		}
 		inputStream.Close( ); 
-		gameObject.SendMessage ("loadParameters", _nPaths);
-		gameObject.SendMessage ("generateScene", _Paths);
+		gameObject.SendMessage ("loadnPaths", _nPaths);
+		gameObject.SendMessage ("loadPaths", _Paths);
 	}
 	
 	// Update is called once per frame
