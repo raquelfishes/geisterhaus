@@ -20,6 +20,7 @@ public class GhostPlayer : GhostController {
 	}
 
 	void OnMouseDown(){
+		Debug.Log ("seleccion fantasma");
         if (!_isSelected)
         {
 			select ();
