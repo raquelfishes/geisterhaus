@@ -47,12 +47,12 @@ public class GenerateScene : MonoBehaviour {
 		Renderer m_renderer = tileGroundEmpty.renderer;
 		aumentoX = m_renderer.bounds.size.x;
 		aumentoZ = m_renderer.bounds.size.z;
-		instantiateCameras();
+		//instantiateCameras();
 		createRoom ();
 		generateTyles (_roomIds);
 		instantiateTyles ();
-		instantiateCharacters();
-		instantiateGameManager();
+		//instantiateCharacters();
+		//instantiateGameManager();
 	}
 
 	private void instantiateCameras(){

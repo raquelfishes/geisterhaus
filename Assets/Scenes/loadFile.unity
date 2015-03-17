@@ -186,8 +186,10 @@ GameObject:
   - 4: {fileID: 960294173}
   - 114: {fileID: 960294172}
   - 114: {fileID: 960294174}
+  - 114: {fileID: 960294176}
+  - 114: {fileID: 960294175}
   m_Layer: 0
-  m_Name: CargaFichero
+  m_Name: LevelCreator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,6 +232,8 @@ MonoBehaviour:
   _nRows: 0
   _nColumns: 0
   _nTyles: 0
+  numHumans: 0
+  numGhosts: 0
   tileGroundEmpty: {fileID: 191834, guid: 19d75ea873e5ef946b5c6892e5853680, type: 2}
   tilesGroundObstacles:
   - {fileID: 190254, guid: d1f052ec45817914cabb95520f77f98d, type: 2}
@@ -241,51 +245,36 @@ MonoBehaviour:
   - {fileID: 183276, guid: 979359bbb2264724cb600948e0e11f1b, type: 2}
   tileDoorIn: {fileID: 120720, guid: a80eb433c74196849b475c2bd3bf4edb, type: 2}
   tileDoorOut: {fileID: 146318, guid: c1cf3660930be3d43b125c0a95a5b541, type: 2}
---- !u!1 &1236703136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1236703137}
-  - 114: {fileID: 1236703138}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: GameManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1236703137
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236703136}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.9961872, y: 5.14273262, z: -11.6815138}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
---- !u!114 &1236703138
+  gameManager: {fileID: 135032, guid: 1bcda9586afac364eb72e6210f0bf323, type: 2}
+--- !u!114 &960294175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236703136}
+  m_GameObject: {fileID: 960294171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2de28578f9ee6a4eae033bf5c52421e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5087477e3ef80e44e9172f20c68b6841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  humans: []
-  ghosts: []
-  ghost_objects: []
-  singleGhost: 0
-  singleHuman: 0
-  finishMsg: {fileID: 0}
+  positionFirstHuman: {x: 0, y: 2, z: 0}
+  ghost: {fileID: 186740, guid: ce3f7cc32aa1e4b498a39bd662c4468a, type: 2}
+  human: {fileID: 132004, guid: 63f32ed624183154a96369fe9d0c850c, type: 2}
+--- !u!114 &960294176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 960294171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdd166a7d152524d868ff332b289abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  humanCamera: {fileID: 157236, guid: c9510579a7865d743ae6d2ff4d8304d8, type: 2}
+  positionCamera: {x: 6.5, y: 5.5, z: -25}
+  rotationCamera: {x: 0, y: 0, z: 0, w: 1}
+  ghostCamera: {fileID: 179244, guid: f4a091dc396e2c24a95bad96b77278bd, type: 2}
 --- !u!1 &1288142702
 GameObject:
   m_ObjectHideFlags: 0
