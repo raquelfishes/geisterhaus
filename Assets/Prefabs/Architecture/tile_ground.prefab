@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2391834}
   - 95: {fileID: 9591834}
   - 65: {fileID: 6507110}
+  - 64: {fileID: 6429642}
   m_Layer: 0
   m_Name: tile_ground
   m_TagString: Untagged
@@ -58,8 +59,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191834}
   m_Mesh: {fileID: 4300000, guid: d3405bc7aa5943b44a2c5a45b15d2c4a, type: 3}
---- !u!65 &6507110
-BoxCollider:
+--- !u!64 &6429642
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -68,7 +69,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.89999998, y: 1.1021823e-16, z: 1.89999998}
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: d3405bc7aa5943b44a2c5a45b15d2c4a, type: 3}
+--- !u!65 &6507110
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.60000002, y: 1.1021823e-16, z: 1.60000002}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9591834
 Animator:

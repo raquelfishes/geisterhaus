@@ -1,0 +1,26 @@
+2
+D D D D R R R R D R R D R
+R R R R D L D R R D D R D D R
+
+
+81	9	9
+====================
+w_02	w_01	w_01	w_01	w_01	w_01	w_01	w_01	w_02
+w_01	D	g_0	g_0	g_0	g_0	g_0	g_0	w_01
+w_01	D	g_0	g_0	g_0	g_0	g_0	g_0	w_01
+w_01	D	g_0	g_0	g_0	g_0	g_0	g_0	w_01
+w_01	D	g_0	g_0	g_0	g_0	g_0	g_0	w_01
+w_01	R	R	R	R	D	g_0	g_0	w_01
+w_01	g_0	g_0	g_0	g_0	R	R	D	w_01
+w_01	g_0	g_0	g_0	g_0	g_0	g_0	R	w_01
+w_02	w_01	w_01	w_01	w_01	w_01	w_01	w_01	w_02
+====================
+w_02	w_01	w_01	w_01	w_01	w_01	w_01	w_01	w_02
+w_01	R	R	R	R	D	g_0	g_0	w_01
+w_01	g_0	g_0	g_0	D	L	g_0	g_0	w_01
+w_01	g_0	g_0	g_0	R	R	D	g_0	w_01
+w_01	g_0	g_0	g_0	g_0	g_0	D	g_0	w_01
+w_01	g_0	g_0	g_0	g_0	g_0	R	D	w_01
+w_01	g_0	g_0	g_0	g_0	g_0	g_0	D	w_01
+w_01	g_0	g_0	g_0	g_0	g_0	g_0	R	w_01
+w_02	w_01	w_01	w_01	w_01	w_01	w_01	w_01	w_02

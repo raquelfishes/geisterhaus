@@ -14,7 +14,7 @@ public class GhostController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update (){
 		//if (!_isInteligent)
         //    gameObject.GetComponent<GhostPlayer>().updateGhost();
         //else
@@ -23,31 +23,23 @@ public class GhostController : MonoBehaviour {
         //transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
-    public void setId(int i)
-    {
+    public void setId(int i){
         _id = i;
     }
 
-    public int getId()
-    {
+    public int getId(){
         return _id;
     }
 
-    public void setObjPosition(Vector3 position)
-    {
+    public void setObjPosition(Vector3 position){
         _objPosition = position;
     }
 
-    public void setInteligence(bool b)
-    {
+    public void setInteligence(bool b){
         _isInteligent = b;
-        if (_isInteligent)
-        {
+        if (_isInteligent){
 			gameObject.AddComponent<GhostInteligence>();
-        }
-        else
-        {
-			
+        }else{	
 			gameObject.AddComponent<GhostPlayer>();
         }
     }

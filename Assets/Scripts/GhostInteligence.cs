@@ -24,13 +24,11 @@ public class GhostInteligence : GhostController {
 		humans= GameObject.FindGameObjectsWithTag("Human");
 		ghost_objects= GameObject.FindGameObjectsWithTag("GhostObject");
         //_gameManager = GameObject.FindGameObjectWithTag("GameManager");
-		_isInteligent = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//Thread.Sleep(1500); // Comprobamos cada 1.5 segundos
-		_isInteligent = true;
 		switch (estado) {
 			case Estado.ESPERANDO:
 				int i=0;

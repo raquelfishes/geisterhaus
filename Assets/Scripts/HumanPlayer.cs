@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HumanPlayer : MonoBehaviour {
-
-	private int life;
+public class HumanPlayer : HumanController {
+	
 	public Vector3 direction;
 	private bool isSelected=false;
 	GameObject _gameManager = null;
 	float speed = 1.0f;
 	public bool isMoving=true;
 	public bool isInScene=false;
-
+	public int life;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +31,7 @@ public class HumanPlayer : MonoBehaviour {
 		}
 		if (isMoving)
 			transform.Translate (direction * speed *Time.deltaTime);
+
 		if (isSelected)
 			gameObject.particleSystem.enableEmission = true;
 		else
@@ -68,18 +68,6 @@ public class HumanPlayer : MonoBehaviour {
 
 	public Vector3 getDirection(){
 		return direction;
-	}
-
-	public void downLife(){
-		--life;
-	}
-
-	public void setLife(int li){
-		life = li;
-	}
-
-	public int getLife(){
-		return life;
 	}
 
 	public void deselect(){

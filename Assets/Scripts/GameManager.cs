@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour {
 	private int humansPassDoor = 0;
 	private int humansAlive;
 
+	private int _nPaths = 0;
+	private string[] _Paths;
+
     public bool singleGhost = false;
     public bool singleHuman = false;
 
@@ -28,9 +31,10 @@ public class GameManager : MonoBehaviour {
 			globalEnergy += human_aux.GetComponent<HumanPlayer>().getLife();
 		}
 		humansAlive = humans.Count;
-		humans [human_selected].GetComponent<HumanPlayer>().select();
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
-		initializeGhostModus(singleHuman);
+
+		initializeGhostModus(singleHuman); //If singleHuman==true ghosts are intelligen
+		initializeHumanModus(singleGhost); //If singleGhost==true humans are intelligen
 		initializeGhostsId ();
 		initializeGhostsPositions ();
         //ghosts[ghost_selected].GetComponent<GhostController>().select();
@@ -89,9 +93,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void moveGhostHere(Vector3 obj_position){
-		if (singleHuman)
-        	ghosts[ghost_selected].GetComponent<GhostInteligence>().setObjPosition(obj_position);
-		else
+		if (!singleHuman)
+        	//ghosts[ghost_selected].GetComponent<GhostInteligence>().setObjPosition(obj_position);
+		//else
 			ghosts[ghost_selected].GetComponent<GhostPlayer>().setObjPosition(obj_position);
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
@@ -136,8 +140,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-    private void initializeGhostModus(bool b)
-    {
+    private void initializeGhostModus(bool b){
         for (int i = 0; i < ghosts.Length; i++)
             ghosts[i].GetComponent<GhostController>().setInteligence(b);
         if (!b) //Not single human, so ghosts are controlled by the player
@@ -146,9 +149,28 @@ public class GameManager : MonoBehaviour {
 
 	private void exitGame(){
 		for (int i=0; i<ghost_objects.Length; i++)
-			ghost_objects [i].GetComponent<GhostController> ().enabled = false;
+			ghost_objects[i].GetComponent<GhostController> ().enabled = false;
 	}
 
+	private void loadnPaths(int nPaths){
+		_nPaths = nPaths;
+	}
+	
+	private void loadPaths(string[] Paths){
+		_Paths = Paths;
+	}
+
+	private void initializeHumanModus(bool intelligence){
+		for (int i = 0; i < ghosts.Length; i++) {
+			humans [i].GetComponent<HumanController> ().setInteligence(intelligence);
+			if (intelligence){
+				int randomNumber = Random.Range(0, _nPaths);
+				humans[i].GetComponent<HumanIntelligence>().setPath(_Paths[randomNumber]);
+			}
+		}
+		if(!intelligence) //Not single gosht, so humans are controlled by the player
+			humans[human_selected].GetComponent<HumanPlayer>().select();
+	}
 
 	public void addHumanScene(GameObject human){
 		humans.Add(human);
