@@ -7,9 +7,10 @@ public class HumanCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_humanCamera = GameObject.Find ("HumanCamera").camera;
+		_humanCamera = gameObject.camera;
 		GameObject[] ghost_objects = GameObject.FindGameObjectsWithTag("GhostObject");
 		for (int i = 0; i < ghost_objects.Length; i++) {
+			//Enmascarar eventos de raton en los objetos
 			_humanCamera.eventMask = ~(1 << ghost_objects[i].layer);
 		}
 	}

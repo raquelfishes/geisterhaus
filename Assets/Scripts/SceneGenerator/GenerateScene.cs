@@ -7,6 +7,9 @@ public class GenerateScene : MonoBehaviour {
 	public int _nRows = 0;
 	public int _nColumns = 0;
 	public int _nTyles = 0;
+
+	public int numHumans=3;
+	public int numGhosts=2;
 	
 	private List<List<Tile>> _myRoom;
 	
@@ -21,6 +24,8 @@ public class GenerateScene : MonoBehaviour {
 	
 	public GameObject tileDoorIn;
 	public GameObject tileDoorOut;
+
+	public GameObject gameManager;
 	
 	private float aumentoX;
 	private float aumentoZ;
@@ -42,9 +47,24 @@ public class GenerateScene : MonoBehaviour {
 		Renderer m_renderer = tileGroundEmpty.renderer;
 		aumentoX = m_renderer.bounds.size.x;
 		aumentoZ = m_renderer.bounds.size.z;
+		instantiateCameras();
 		createRoom ();
 		generateTyles (_roomIds);
 		instantiateTyles ();
+		instantiateCharacters();
+		instantiateGameManager();
+	}
+
+	private void instantiateCameras(){
+		gameObject.SendMessage("instantiateCameras");
+	}
+
+	private void instantiateCharacters(){
+		gameObject.SendMessage("instantiateCharacters",new Vector2(numHumans,numGhosts));
+	}
+
+	private void instantiateGameManager(){
+		GameObject go = Instantiate(gameManager,Vector3.zero,Quaternion.identity) as GameObject;
 	}
 	
 	private void createRoom(){
@@ -54,9 +74,7 @@ public class GenerateScene : MonoBehaviour {
 			for (int j=0; j<_nColumns; j++){
 				_myRoom[i].Add (new Tile());
 			}
-		}
-
-		
+		}		
 	}
 	
 	private void generateTyles(List<List<int>> _roomIds){
@@ -262,32 +280,20 @@ public class GenerateScene : MonoBehaviour {
 		GameObject go;
 		switch (t) {
 			case Tile.typeCorner.LF:
-				//go = Instantiate(tileGroundEmpty,position,Quaternion.identity) as GameObject;
 				instantiateWall(Tile.typeWall.L, position, ref positionW, ref quater);
 				instantiateWall(Tile.typeWall.F, position, ref positionW, ref quater);
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x,position.y-(float)0.2,position.z+aumentoZ/2),Quaternion.identity) as GameObject;
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x-aumentoX/2,position.y-(float)0.2,position.z),Quaternion.Euler(new Vector3(0,-90,0))) as GameObject;
 				break;
 			case Tile.typeCorner.RF:
-				//go = Instantiate(tileGroundEmpty,position,Quaternion.identity) as GameObject;
 				instantiateWall(Tile.typeWall.R, position, ref positionW, ref quater);
 				instantiateWall(Tile.typeWall.F, position, ref positionW, ref quater);
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x,position.y-(float)0.2,position.z+aumentoZ/2),Quaternion.identity) as GameObject;
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x+aumentoX/2,position.y-(float)0.2,position.z),Quaternion.Euler(new Vector3(0,90,0))) as GameObject;
 				break;
 			case Tile.typeCorner.LB:
-				//go = Instantiate(tileGroundEmpty,position,Quaternion.identity) as GameObject;
 				instantiateWall(Tile.typeWall.L, position, ref positionW, ref quater);
 				instantiateWall(Tile.typeWall.B, position, ref positionW, ref quater);
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x,position.y-(float)0.2,position.z-aumentoZ/2),Quaternion.Euler(new Vector3(0,180,0))) as GameObject;
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x-aumentoX/2,position.y-(float)0.2,position.z),Quaternion.Euler(new Vector3(0,-90,0))) as GameObject;
 				break;
 			case Tile.typeCorner.RB:
-				//go = Instantiate(tileGroundEmpty,position,Quaternion.identity) as GameObject;
 				instantiateWall(Tile.typeWall.R, position, ref positionW, ref quater);
 				instantiateWall(Tile.typeWall.B, position, ref positionW, ref quater);
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x,position.y-(float)0.2,position.z-aumentoZ/2),Quaternion.Euler(new Vector3(0,180,0))) as GameObject;
-				//go = Instantiate(tileWallEmpty,new Vector3(position.x+aumentoX/2,position.y-(float)0.2,position.z),Quaternion.Euler(new Vector3(0,90,0))) as GameObject;
 				break;
 		}
 	}
@@ -296,25 +302,21 @@ public class GenerateScene : MonoBehaviour {
 		GameObject go;
 		switch (t) {
 			case Tile.typeWall.F:
-				//go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 				positionW = new Vector3(positionG.x,positionG.y-(float)0.2,positionG.z+aumentoZ/2);
 				quater = Quaternion.identity;
 				go = Instantiate(tileWallEmpty,positionW, quater) as GameObject;
 				break;
 			case Tile.typeWall.L:
-				//go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 				positionW = new Vector3(positionG.x-aumentoX/2,positionG.y-(float)0.2,positionG.z);
 				quater = Quaternion.Euler(new Vector3(0,-90,0));
 				go = Instantiate(tileWallEmpty,positionW,quater) as GameObject;
 				break;
 			case Tile.typeWall.R:
-				//go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 				positionW = new Vector3(positionG.x+aumentoX/2,positionG.y-(float)0.2,positionG.z);
 				quater = Quaternion.Euler(new Vector3(0,90,0));
 				go = Instantiate(tileWallEmpty,positionW,quater) as GameObject;
 				break;
 			case Tile.typeWall.B:
-				//go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 				positionW = new Vector3(positionG.x,positionG.y-(float)0.2,positionG.z-aumentoZ/2);
 				quater = Quaternion.Euler(new Vector3(0,180,0));
 				go = Instantiate(tileWallEmpty,positionW,quater) as GameObject;
@@ -328,38 +330,46 @@ public class GenerateScene : MonoBehaviour {
 		Quaternion quater;
 		switch (t) {
 		case Tile.typeWall.F:
-			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
-			positionW = new Vector3(positionG.x,positionG.y,positionG.z-aumentoZ/2);
+			positionW = new Vector3(positionG.x,positionG.y,positionG.z+aumentoZ/2);
 			quater = Quaternion.identity;
-			if (d == Tile.typeDoor.IN)
+			if (d == Tile.typeDoor.IN){
 				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go.GetComponent<DoorInController>().directionIn = Vector3.back;
+				go.GetComponent<DoorInController>().orientationIn = quater;
+			}
 			else if (d == Tile.typeDoor.OUT)
 				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
 			break;
 		case Tile.typeWall.L:
-			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 			positionW = new Vector3(positionG.x-aumentoX/2,positionG.y,positionG.z);
 			quater = Quaternion.Euler(new Vector3(0,-90,0));
-			if (d == Tile.typeDoor.IN)
+			if (d == Tile.typeDoor.IN){
 				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go.GetComponent<DoorInController>().directionIn = Vector3.right;
+				go.GetComponent<DoorInController>().orientationIn = quater;
+			}
 			else if (d == Tile.typeDoor.OUT)
 				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
 			break;
 		case Tile.typeWall.R:
-			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 			positionW = new Vector3(positionG.x+aumentoX/2,positionG.y,positionG.z);
 			quater = Quaternion.Euler(new Vector3(0,90,0));
-			if (d == Tile.typeDoor.IN)
+			if (d == Tile.typeDoor.IN){
 				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go.GetComponent<DoorInController>().directionIn = Vector3.left;
+				go.GetComponent<DoorInController>().orientationIn = quater;
+			}
 			else if (d == Tile.typeDoor.OUT)
 				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
 			break;
 		case Tile.typeWall.B:
-			go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
-			positionW = new Vector3(positionG.x,positionG.y,positionG.z+aumentoZ/2);
+			positionW = new Vector3(positionG.x,positionG.y,positionG.z-aumentoZ/2);
 			quater = Quaternion.Euler(new Vector3(0,180,0));
-			if (d == Tile.typeDoor.IN)
+			if (d == Tile.typeDoor.IN){
 				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go.GetComponent<DoorInController>().directionIn = Vector3.forward;
+				go.GetComponent<DoorInController>().orientationIn = quater;
+			}
 			else if (d == Tile.typeDoor.OUT)
 				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
 			break;
@@ -427,6 +437,7 @@ public class GenerateScene : MonoBehaviour {
 						}
 						break;
 					case Tile.typeTile.DOOR:
+						go = Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
 						instantiateDoor(_myRoom[i][j]._myTypeDoor, _myRoom[i][j]._myTypeWall, positionG);
 					break;
 					default:

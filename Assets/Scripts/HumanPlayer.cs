@@ -8,6 +8,7 @@ public class HumanPlayer : MonoBehaviour {
 	private bool selected=false;
 	GameObject _gameManager = null;
 	float speed = 1.0f;
+	public bool isMoving=true;
 
 
 	// Use this for initialization
@@ -15,6 +16,7 @@ public class HumanPlayer : MonoBehaviour {
 		_gameManager = GameObject.Find ("GameManager");
 		direction = new Vector3 (0.0f, 0.0f, -1.0f);
 		life = 10;
+		isMoving = true;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +29,8 @@ public class HumanPlayer : MonoBehaviour {
 			if (vertAxis != 0.0f)
 				turnVertical(vertAxis);
 		}
-		transform.Translate (direction * speed *Time.deltaTime);
+		if (isMoving)
+			transform.Translate (direction * speed *Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -84,6 +87,14 @@ public class HumanPlayer : MonoBehaviour {
 
 	public void hurt(){
 		life -= 2;
+	}
+
+	public void setMoving(bool b){
+		isMoving = b;
+	}
+
+	public bool getMoving(){
+		return isMoving;
 	}
 
 }

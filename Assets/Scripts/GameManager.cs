@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
 		Debug.Log ("humanos vivos antes: " + humans.Count);
 		int index = humans.IndexOf (object_aux);
 		humanDietoGhosts (index);
-		humans.RemoveAt(humans.IndexOf (object_aux));
+		humans.RemoveAt(index);
 		Destroy (object_aux);
 		--humansAlive;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour {
 			killHuman (object_aux);
 	}
 
-	public void addHumanCount(){
+	public void addHumanOut(){
 		++humansPassDoor;
 		if (humansPassDoor >= humans.Count) {
 			finishMsg.gameObject.SetActive (true);
@@ -140,5 +140,15 @@ public class GameManager : MonoBehaviour {
 			ghost_objects [i].GetComponent<GhostController> ().enabled = false;
 	}
 
+
+	public void addHumanScene(GameObject human){
+		humans.Add(human);
+	}
+
+	public void removeHumanScene(GameObject human){
+		int index = humans.IndexOf (human);
+		humanDietoGhosts (index);
+		humans.RemoveAt(index);
+	}
 
 }

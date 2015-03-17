@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DoorTrigger : MonoBehaviour {
+public class DoorOutController : MonoBehaviour {
 
 	GameObject _gameManager = null;
 
@@ -17,6 +17,12 @@ public class DoorTrigger : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		Debug.Log ("trigger enter " + other.gameObject.tag);
-		_gameManager.GetComponent<GameManager> ().addHumanOut ();
+		//Open door
+		_gameManager.GetComponent<GameManager>().addHumanOut();
+	}
+
+	void OnTriggerExit (Collider other) {
+		//me cargo al humano de la escena
+		_gameManager.GetComponent<GameManager>().removeHumanScene(other.gameObject);
 	}
 }

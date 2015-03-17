@@ -1,20 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreateScene : MonoBehaviour {
+public class GenerateCharacters : MonoBehaviour {
 
-	public int n_humans;
-	public int n_ghosts;
+	public Vector3 positionFirstHuman = new Vector3 (0.0f, 2.0f, 0.0f);
 	public GameObject ghost;
 	public GameObject human;
-	public GameObject doorIn;
 
-	void Awake(){
-		//createHumans (n_humans);
-		//createGhosts (n_ghosts);
-	}
 	// Use this for initialization
 	void Start () {
+	
 	}
 	
 	// Update is called once per frame
@@ -28,9 +23,9 @@ public class CreateScene : MonoBehaviour {
 	}
 
 	private void createHumans(int num){
-		Vector3 pos = doorIn.transform.position;
-		Vector3 aux = new Vector3(0.0f,0.0f,1.0f);
-		pos = pos - aux * n_humans;
+		Vector3 pos = positionFirstHuman;
+		Vector3 aux = new Vector3(2.0f,0.0f,0.0f);
+		//pos = pos - aux * num;
 		for (int i=0; i<num; i++) {
 			var aux_human = Instantiate (human, pos, Quaternion.identity) as GameObject;
 			aux_human.AddComponent<HumanPlayer>();
