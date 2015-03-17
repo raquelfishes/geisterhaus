@@ -36,7 +36,11 @@ public class GameManager : MonoBehaviour {
         //ghosts[ghost_selected].GetComponent<GhostController>().select();
         //initializeHumanModus(singleGhost);
 		humansPassDoor = 0;
-		SendMessage ("createBar", globalEnergy);
+		//SendMessage ("createBar", globalEnergy);
+		foreach (GameObject object_aux in ghost_objects) {
+			object_aux.GetComponent<ObjectController>().initialize ();
+		}
+		GameObject.FindWithTag ("DoorIn").GetComponent<DoorInController> ().initialize ();
 	}
 	
 	// Update is called once per frame
@@ -47,8 +51,10 @@ public class GameManager : MonoBehaviour {
 
 	void nextSelectedHuman(){
 		humans [human_selected].GetComponent<HumanPlayer>().deselect ();
+		Debug.Log (humans.Count);
 		human_selected = (human_selected+1)%humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select ();
+		Debug.Log ("humano seleccionado: " + human_selected);
 	}
 
 	public void changeGhostSelected(int i){
@@ -57,17 +63,20 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void initializeGhostsId(){
-		for (int i=0; i<ghosts.Length; i++)
+		for (int i=0; i<ghosts.Length; i++) {
+			ghosts [i].GetComponent<GhostController> ().setId (i);
 			if (singleHuman)
-				ghosts[i].GetComponent<GhostInteligence>().setId(i);
+				ghosts [i].GetComponent<GhostInteligence> ().setId (i);
 			else
-				ghosts[i].GetComponent<GhostPlayer>().setId(i);
-		//ghosts[i].GetComponent<GhostController>().setId(i);
+				ghosts [i].GetComponent<GhostPlayer> ().setId (i);
+			//ghosts[i].GetComponent<GhostController>().setId(i);
+		}
 	}
 
 	void initializeGhostsPositions(){
 		for (int i=0; i<ghosts.Length; i++) {
 			//ghost_objects [i].GetComponent<ObjectController>().ghostIn (ghosts [i].GetComponent<GhostPlayer> ().getId ());
+			ghosts[i].GetComponent<GhostController>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
             if (singleHuman)
 				ghosts[i].GetComponent<GhostInteligence>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
 			else

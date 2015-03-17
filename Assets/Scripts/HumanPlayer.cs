@@ -5,10 +5,11 @@ public class HumanPlayer : MonoBehaviour {
 
 	private int life;
 	public Vector3 direction;
-	private bool selected=false;
+	private bool isSelected=false;
 	GameObject _gameManager = null;
 	float speed = 1.0f;
 	public bool isMoving=true;
+	public bool isInScene=false;
 
 
 	// Use this for initialization
@@ -21,7 +22,7 @@ public class HumanPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (selected) {
+		if (isSelected) {
 			float horAxis = Input.GetAxisRaw ("Horizontal");
 			if (horAxis != 0.0f)
 				turnHorizontal(horAxis);
@@ -31,6 +32,10 @@ public class HumanPlayer : MonoBehaviour {
 		}
 		if (isMoving)
 			transform.Translate (direction * speed *Time.deltaTime);
+		if (isSelected)
+			gameObject.particleSystem.enableEmission = true;
+		else
+			gameObject.particleSystem.enableEmission = false;
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -78,11 +83,11 @@ public class HumanPlayer : MonoBehaviour {
 	}
 
 	public void deselect(){
-		selected = false;
+		isSelected = false;
 	}
 
 	public void select(){
-		selected = true;
+		isSelected = true;
 	}
 
 	public void hurt(){

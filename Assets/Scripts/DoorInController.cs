@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Threading;
 
 public class DoorInController : MonoBehaviour {
 
@@ -11,14 +12,19 @@ public class DoorInController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_gameManager = GameObject.Find ("GameManager");
-		humans = GameObject.FindGameObjectsWithTag("Human");
+		_gameManager = GameObject.FindWithTag ("GameManager");
+		//humans = GameObject.FindGameObjectsWithTag("Human");
 		//takeHumanToDoor();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void initialize(){
+		humans = GameObject.FindGameObjectsWithTag("Human");
+		takeHumanToDoor();
 	}
 
 	void OnTriggerEnter (Collider other) {
@@ -29,18 +35,27 @@ public class DoorInController : MonoBehaviour {
 	}
 
 	void OnTriggerExit (Collider other){
-		_gameManager.GetComponent<GameManager>().addHumanScene(other.gameObject);
+		waitBetweenHumans ();
+		//_gameManager.GetComponent<GameManager>().addHumanScene(other.gameObject);
 		if (indexHuman < humans.Length-1){
 			++indexHuman;
 			takeHumanToDoor();
 		}
 	}
 
+	IEnumerator waitBetweenHumans(){
+		print("time: " + Time.time);
+		yield return new WaitForSeconds(10);
+		print(Time.time);
+	}
+
 	private void takeHumanToDoor(){
+		waitBetweenHumans ();
 		GameObject go = humans[indexHuman];
-		go.transform.position = gameObject.transform.position;
+		go.transform.position = gameObject.transform.position+new Vector3(0.0f,1.0f,0.0f);
 		go.transform.rotation = orientationIn;
 		go.GetComponent<HumanPlayer>().setDirection(directionIn);
 		go.GetComponent<HumanPlayer>().setMoving(true);
+		go.GetComponent<HumanPlayer> ().isInScene = true;
 	}
 }

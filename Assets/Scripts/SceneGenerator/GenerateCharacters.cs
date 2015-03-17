@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GenerateCharacters : MonoBehaviour {
 
-	public Vector3 positionFirstHuman = new Vector3 (0.0f, 2.0f, 0.0f);
+	public Vector3 positionFirstHuman = new Vector3 (0.0f, 1.0f, 0.0f);
 	public GameObject ghost;
 	public GameObject human;
 
@@ -17,9 +17,9 @@ public class GenerateCharacters : MonoBehaviour {
 	
 	}
 
-	private void instantiateCharacters(Vector2 v){
-		createHumans((int)v[0]);
-		createGhosts((int)v[1]);
+	public void instantiateCharacters(int numHumans, int numGhosts){
+		createHumans(numHumans);
+		createGhosts(numGhosts);
 	}
 
 	private void createHumans(int num){

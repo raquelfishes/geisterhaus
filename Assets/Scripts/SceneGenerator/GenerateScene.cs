@@ -51,16 +51,16 @@ public class GenerateScene : MonoBehaviour {
 		createRoom ();
 		generateTyles (_roomIds);
 		instantiateTyles ();
-		//instantiateCharacters();
-		//instantiateGameManager();
+		instantiateCharacters();
+		instantiateGameManager();
 	}
 
 	private void instantiateCameras(){
-		gameObject.SendMessage("instantiateCameras");
+		gameObject.GetComponent<GenerateCameras>().instantiateCameras();
 	}
 
 	private void instantiateCharacters(){
-		gameObject.SendMessage("instantiateCharacters",new Vector2(numHumans,numGhosts));
+		gameObject.GetComponent<GenerateCharacters>().instantiateCharacters(numHumans,numGhosts);
 	}
 
 	private void instantiateGameManager(){

@@ -9,8 +9,8 @@ public class ObjectController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_gameManager = GameObject.Find ("GameManager");
-		_ghostCamera = GameObject.Find ("GhostCamera").camera;
+		//_gameManager = GameObject.Find ("GameManager");
+		//_ghostCamera = GameObject.Find ("GhostCamera").camera;
 	}
 	
 	// Update is called once per frame
@@ -19,6 +19,7 @@ public class ObjectController : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
+		Debug.Log ("mouse!!!");
 		Ray ray = _ghostCamera.ScreenPointToRay(Input.mousePosition);
 		if (idGhost == -1 && Physics.Raycast(ray)) {
 			_gameManager.GetComponent<GameManager>().moveGhostHere(transform.position);
@@ -26,7 +27,11 @@ public class ObjectController : MonoBehaviour {
 		}
 	}
 
-
+	public void initialize(){
+		_gameManager = GameObject.FindWithTag ("GameManager");
+		_ghostCamera = GameObject.FindWithTag ("GhostCamera").camera;
+		Debug.Log (_gameManager);
+	}
 
 	public void ghostOut(int id){
 		Debug.Log ("Ghost out " + id + "    " + idGhost);
