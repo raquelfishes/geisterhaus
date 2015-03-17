@@ -52,7 +52,7 @@ public class DoorInController : MonoBehaviour {
 	private void takeHumanToDoor(){
 		waitBetweenHumans ();
 		GameObject go = humans[indexHuman];
-		go.transform.position = gameObject.transform.position+new Vector3(0.0f,1.0f,0.0f);
+		go.transform.position = gameObject.transform.position+new Vector3(0.0f,0.45f,0.0f);
 		go.transform.rotation = orientationIn;
 		go.GetComponent<HumanPlayer>().setDirection(directionIn);
 		go.GetComponent<HumanPlayer>().setMoving(true);
