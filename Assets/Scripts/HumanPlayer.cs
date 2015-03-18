@@ -5,18 +5,10 @@ public class HumanPlayer : HumanController {
 	
 	public Vector3 direction;
 	private bool isSelected=false;
-	GameObject _gameManager = null;
-	float speed = 1.0f;
-	public bool isMoving=true;
-	public bool isInScene=false;
-	public int life;
 
 	// Use this for initialization
 	void Start () {
-		_gameManager = GameObject.Find ("GameManager");
 		direction = new Vector3 (0.0f, 0.0f, -1.0f);
-		life = 10;
-		isMoving = true;
 	}
 	
 	// Update is called once per frame
@@ -29,8 +21,8 @@ public class HumanPlayer : HumanController {
 			if (vertAxis != 0.0f)
 				turnVertical(vertAxis);
 		}
-		if (isMoving)
-			transform.Translate (direction * speed *Time.deltaTime);
+		if (_isMoving)
+			transform.Translate (direction * _speed *Time.deltaTime);
 
 		if (isSelected)
 			gameObject.particleSystem.enableEmission = true;
@@ -39,9 +31,7 @@ public class HumanPlayer : HumanController {
 	}
 
 	void OnCollisionEnter(Collision collision){
-		Debug.Log ("Cambio direccion"+ direction);
 		direction = (-1.0f) * direction;
-		Debug.Log (" a "+ direction);
 	}
 
 	private void turnHorizontal(float axis){
@@ -76,18 +66,6 @@ public class HumanPlayer : HumanController {
 
 	public void select(){
 		isSelected = true;
-	}
-
-	public void hurt(){
-		life -= 2;
-	}
-
-	public void setMoving(bool b){
-		isMoving = b;
-	}
-
-	public bool getMoving(){
-		return isMoving;
 	}
 
 }

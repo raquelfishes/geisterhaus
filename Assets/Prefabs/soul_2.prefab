@@ -14,6 +14,7 @@ GameObject:
   - 54: {fileID: 5411536}
   - 198: {fileID: 19876512}
   - 199: {fileID: 19976512}
+  - 114: {fileID: 11447904}
   m_Layer: 0
   m_Name: soul_2
   m_TagString: Human
@@ -160,6 +161,21 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11447904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27154f57d325e14aaac8ce9b151edfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isMoving: 0
+  isInScene: 0
+  _isInteligent: 0
+  tileGroundEmpty: {fileID: 191834, guid: 19d75ea873e5ef946b5c6892e5853680, type: 2}
 --- !u!198 &19876512
 ParticleSystem:
   m_ObjectHideFlags: 1

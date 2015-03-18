@@ -7,11 +7,16 @@ public class HumanController : MonoBehaviour {
 	protected int _id;
 	protected int _life;
 	protected float _speed = 1.0f;
+	public bool _isMoving=false;
+	public bool isInScene=false;
 	public bool _isInteligent;
+	public GameObject tileGroundEmpty;
 
 	// Use this for initialization
 	void Start () {
-		_gameManager = GameObject.Find("GameManager");
+		_gameManager = GameObject.FindWithTag("GameManager");
+		_life = 10;
+		_isMoving = false;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +46,14 @@ public class HumanController : MonoBehaviour {
 	
 	public int getId(){
 		return _id;
+	}
+
+	public void setMoving(bool b){
+		_isMoving = b;
+	}
+	
+	public bool getMoving(){
+		return _isMoving;
 	}
 	
 	public void setInteligence(bool b){

@@ -24,7 +24,7 @@ public class DoorInController : MonoBehaviour {
 
 	public void initialize(){
 		humans = GameObject.FindGameObjectsWithTag("Human");
-		takeHumanToDoor();
+		StartCoroutine(waitBetweenHumans(0));
 	}
 
 	void OnTriggerEnter (Collider other) {
@@ -35,27 +35,40 @@ public class DoorInController : MonoBehaviour {
 	}
 
 	void OnTriggerExit (Collider other){
-		waitBetweenHumans ();
+		//StartCoroutine(waitBetweenHumans());
 		//_gameManager.GetComponent<GameManager>().addHumanScene(other.gameObject);
-		if (indexHuman < humans.Length-1){
-			++indexHuman;
-			takeHumanToDoor();
-		}
+		//if (indexHuman < humans.Length-1){
+		//	++indexHuman;
+		//	StartCoroutine(waitBetweenHumans(indexHuman));
+		//}
 	}
 
-	IEnumerator waitBetweenHumans(){
-		print("time: " + Time.time);
-		yield return new WaitForSeconds(10);
-		print(Time.time);
+	IEnumerator waitBetweenHumans(int index){
+		print("time antes: " + Time.time);
+		yield return new WaitForSeconds(2);
+		takeHumanToDoor (index);
+		print("time despues: " + Time.time);
 	}
 
-	private void takeHumanToDoor(){
-		waitBetweenHumans ();
+	private void takeHumanToDoor(int indexHuman){
+		//StartCoroutine(waitBetweenHumans());
 		GameObject go = humans[indexHuman];
 		go.transform.position = gameObject.transform.position+new Vector3(0.0f,0.45f,0.0f);
 		go.transform.rotation = orientationIn;
-		go.GetComponent<HumanPlayer>().setDirection(directionIn);
-		go.GetComponent<HumanPlayer>().setMoving(true);
-		go.GetComponent<HumanPlayer> ().isInScene = true;
+		if (go.GetComponent<HumanController> ()._isInteligent) {
+			//go.GetComponent<HumanIntelligence> ().setDirection (directionIn);
+			go.GetComponent<HumanIntelligence> ().setMoving (true);
+			go.GetComponent<HumanIntelligence> ().isInScene = true;
+		} 
+		else {
+			go.GetComponent<HumanPlayer> ().setDirection (directionIn);
+			go.GetComponent<HumanPlayer> ().setMoving (true);
+			go.GetComponent<HumanPlayer> ().isInScene = true;
+		}
+		//recursive method
+		if (indexHuman < humans.Length-1){
+			++indexHuman;
+			StartCoroutine(waitBetweenHumans(indexHuman));
+		}
 	}
 }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class HumanIntelligence : HumanController {
 
-	private string _Path="DDDRRRRRRDDDLLLDDDRRRDDDRRRUUULLL";
-	//private string _Path;
-	public GameObject tileGroundEmpty;
+	//private string _Path="DDDRRRRRRDDDLLLDDDRRRDDDRRRUUULLL";
+	private string[] _Path;
+	//public GameObject tileGroundEmpty;
 	private float aumentoX;
 	private float aumentoZ;
 	private Vector3 position;
@@ -33,19 +33,24 @@ public class HumanIntelligence : HumanController {
 
 	public void pathEvaluate(){
 		switch (_Path[destiny]){
-		case 'D':	position=transform.position-new Vector3(0.0f,0.0f,aumentoZ);
+		case "D":	position=transform.position-new Vector3(0.0f,0.0f,aumentoZ);
 			break;
-		case 'U':	position=transform.position+new Vector3(0.0f,0.0f,aumentoZ);
+		case "U":	position=transform.position+new Vector3(0.0f,0.0f,aumentoZ);
 			break;
-		case 'L':	position=transform.position-new Vector3(aumentoX,0.0f,0.0f);
+		case "L":	position=transform.position-new Vector3(aumentoX,0.0f,0.0f);
 			break;
-		case 'R':	position=transform.position+new Vector3(aumentoX,0.0f,0.0f);
+		case "R":	position=transform.position+new Vector3(aumentoX,0.0f,0.0f);
 			break;
 		default:	break;
 		}
 	}
 
-	public void setPath(string Path){
+	public void setPath(string[] Path){
+		printX ();
 		_Path = Path;
+	}
+
+	public void printX(){
+		Debug.Log ("XXXXXXX");
 	}
 }
