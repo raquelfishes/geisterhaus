@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour {
 	private int humansPassDoor = 0;
 	private int humansAlive;
 
-	private int _nPaths = 0;
-	private string[] _Paths;
+	public int _nPaths;
+	public string[] _Paths;
 
     public bool singleGhost = false;
     public bool singleHuman = false;
@@ -151,14 +151,6 @@ public class GameManager : MonoBehaviour {
 	private void exitGame(){
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].GetComponent<GhostController> ().enabled = false;
-	}
-
-	private void loadnPaths(int nPaths){
-		_nPaths = nPaths;
-	}
-	
-	private void loadPaths(string[] Paths){
-		_Paths = Paths;
 	}
 
 	private void initializeHumanModus(bool intelligence){
