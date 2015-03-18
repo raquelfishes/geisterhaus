@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour {
 	public void changeGhostSelected(int i){
 		ghosts [ghost_selected].GetComponent<GhostPlayer>().deselect ();
 		ghost_selected = i;
+		ghosts [ghost_selected].GetComponent<GhostPlayer>().select ();
 	}
 
 	void initializeGhostsId(){

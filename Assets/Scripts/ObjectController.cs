@@ -21,9 +21,13 @@ public class ObjectController : MonoBehaviour {
 	void OnMouseDown(){
 		//Debug.Log ("mouse!!!");
 		Ray ray = _ghostCamera.ScreenPointToRay(Input.mousePosition);
-		if (idGhost == -1 && Physics.Raycast(ray)) {
-			_gameManager.GetComponent<GameManager>().moveGhostHere(transform.position);
+		if (idGhost == -1 && Physics.Raycast (ray)) {
+			//It's not a ghost inside me!!!!! A ghost is comming here!!!!!!
+			_gameManager.GetComponent<GameManager> ().moveGhostHere (transform.position);
 			//ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
+		} else {
+			//there is a ghost inside me!!! I want to select it!!!!
+			_gameManager.GetComponent<GameManager>().changeGhostSelected(idGhost);
 		}
 	}
 
