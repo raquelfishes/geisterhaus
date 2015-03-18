@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 3aaac8cc07d50fd4bbef2b96207a83dd
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: WateringCan_Body
+    100004: WateringCan_Bolt
+    100006: WateringCan_HandleBack
+    100008: WateringCan_HandleTop
+    100010: WateringCan_Mouth
+    100012: WateringCan_Mouth1
+    100014: WateringCan_Pipe1
+    100016: WateringCan_Pipe2
+    400000: //RootNode
+    400002: WateringCan_Body
+    400004: WateringCan_Bolt
+    400006: WateringCan_HandleBack
+    400008: WateringCan_HandleTop
+    400010: WateringCan_Mouth
+    400012: WateringCan_Mouth1
+    400014: WateringCan_Pipe1
+    400016: WateringCan_Pipe2
+    2300000: WateringCan_Body
+    2300002: WateringCan_Bolt
+    2300004: WateringCan_HandleBack
+    2300006: WateringCan_HandleTop
+    2300008: WateringCan_Mouth
+    2300010: WateringCan_Mouth1
+    2300012: WateringCan_Pipe1
+    2300014: WateringCan_Pipe2
+    3300000: WateringCan_Body
+    3300002: WateringCan_Bolt
+    3300004: WateringCan_HandleBack
+    3300006: WateringCan_HandleTop
+    3300008: WateringCan_Mouth
+    3300010: WateringCan_Mouth1
+    3300012: WateringCan_Pipe1
+    3300014: WateringCan_Pipe2
+    4300000: WateringCan_Mouth
+    4300002: WateringCan_Bolt
+    4300004: WateringCan_Body
+    4300006: WateringCan_Mouth1
+    4300008: WateringCan_Pipe2
+    4300010: WateringCan_Pipe1
+    4300012: WateringCan_HandleBack
+    4300014: WateringCan_HandleTop
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
