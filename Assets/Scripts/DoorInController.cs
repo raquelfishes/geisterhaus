@@ -28,10 +28,8 @@ public class DoorInController : MonoBehaviour {
 	}
 
 	IEnumerator waitBetweenHumans(int index){
-		print("time antes: " + Time.time);
 		yield return new WaitForSeconds(2);
 		takeHumanToDoor (index);
-		print("time despues: " + Time.time);
 	}
 
 	private void takeHumanToDoor(int indexHuman){

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DoorOutController : MonoBehaviour {
+public class Destroyer : MonoBehaviour {
 
 	GameObject _gameManager = null;
 
@@ -15,14 +15,7 @@ public class DoorOutController : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter (Collider other) {
-		//me cargo al humano de la escena
-		_gameManager.GetComponent<GameManager>().addHumanOut();
-		_gameManager.GetComponent<GameManager>().killHuman(other.gameObject);
-	}
-
-	void OnTriggerExit (Collider other) {
-		//me cargo al humano de la escena
+	void OnTriggerEnter(Collider other){
 		_gameManager.GetComponent<GameManager>().addHumanOut();
 		_gameManager.GetComponent<GameManager>().killHuman(other.gameObject);
 	}

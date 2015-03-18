@@ -51,6 +51,12 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown ("ChangeH"))
 			nextSelectedHuman ();
+
+		if (humans.Count == 0) {
+			//Se acaba el juego!!!!!!!!!!!!
+			finishLevel();
+		}
+
 	}
 
 	void nextSelectedHuman(){
@@ -112,17 +118,20 @@ public class GameManager : MonoBehaviour {
 	{
 		Debug.Log ("humanos vivos antes: " + humans.Count);
 		int index = humans.IndexOf (object_aux);
-		humanDietoGhosts (index);
-		humans.RemoveAt(index);
+		Debug.Log ("indice humano: " + index);
+		if (index != -1) {
+			humans.RemoveAt (index);
+			humanDietoGhosts (index);
+		}
 		Destroy (object_aux);
 		--humansAlive;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
-		if (humansAlive == 0) {
-			Debug.Log ("Todos muertos!!!!");
-			finishMsg.gameObject.SetActive (true);
-			finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
-			Application.Quit();
-		}
+		//if (humansAlive == 0) {
+		//	Debug.Log ("Todos muertos!!!!");
+		//	finishMsg.gameObject.SetActive (true);
+		//	finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
+		//	Application.Quit();
+		//}
 	}
 
 	public void hurtHuman(GameObject object_aux){
@@ -133,26 +142,12 @@ public class GameManager : MonoBehaviour {
 			killHuman (object_aux);
 	}
 
-	public void addHumanOut(){
-		++humansPassDoor;
-		if (humansPassDoor >= humans.Count) {
-			finishMsg.gameObject.SetActive (true);
-			finishMsg.gameObject.guiText.text = "HUMANS WINS!";
-			exitGame();
-		}
-	}
-
     private void initializeGhostModus(bool b){
         for (int i = 0; i < ghosts.Length; i++)
             ghosts[i].GetComponent<GhostController>().setInteligence(b);
         if (!b) //Not single human, so ghosts are controlled by the player
             ghosts[ghost_selected].GetComponent<GhostPlayer>().select();
     }
-
-	private void exitGame(){
-		for (int i=0; i<ghost_objects.Length; i++)
-			ghost_objects[i].GetComponent<GhostController> ().enabled = false;
-	}
 
 	private void initializeHumanModus(bool intelligence){
 		for (int i = 0; i < humans.Count; i++) {
@@ -167,15 +162,27 @@ public class GameManager : MonoBehaviour {
 			humans[human_selected].GetComponent<HumanPlayer>().select();
 	}
 
-	public void addHumanScene(GameObject human){
-		humans.Add(human);
+	public void addHumanOut(){
+		++humansPassDoor;
+		//if (humansPassDoor >= humans.Count) {
+		//	finishMsg.gameObject.SetActive (true);
+		//	finishMsg.gameObject.guiText.text = "HUMANS WINS!";
+		//	exitGame();
+		//}
 	}
 
-	public void removeHumanScene(GameObject human){
-		int index = humans.IndexOf (human);
-		Debug.Log (index);
-		humanDietoGhosts (index);
-		humans.RemoveAt(index);
+	public void finishLevel(){
+		if (humansPassDoor > 0) {
+			//Ganan los humanos
+			Debug.Log ("HUMANS WINS!");
+		} else {
+			//Ganan los fantasmas
+			Debug.Log ("GHOSTS WINS!");
+		}
 	}
 
+	private void exitGame(){
+		for (int i=0; i<ghost_objects.Length; i++)
+			ghost_objects[i].GetComponent<GhostController> ().enabled = false;
+	}
 }
