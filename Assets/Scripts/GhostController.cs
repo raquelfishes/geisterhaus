@@ -10,7 +10,7 @@ public class GhostController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _gameManager = GameObject.Find("GameManager");
+        _gameManager = GameObject.FindWithTag("GameManager");
 	}
 	
 	// Update is called once per frame

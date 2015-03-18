@@ -6,11 +6,10 @@ public class GhostPlayer : GhostController {
 	//GameObject _gameManager = null;
 	//public Vector3 obj_position;
     private bool _isSelected = false;
-    int id;
 
 	// Use this for initialization
 	void Start () {
-		//_gameManager = GameObject.Find ("GameManager");
+		_gameManager = GameObject.FindWithTag("GameManager");
 		_objPosition = _objPosition;
 	}
 	
@@ -20,11 +19,12 @@ public class GhostPlayer : GhostController {
 	}
 
 	void OnMouseDown(){
-		Debug.Log ("seleccion fantasma");
+		Debug.Log ("seleccion fantasma  "+ _isSelected+"  "+_id);
         if (!_isSelected)
         {
 			select ();
-			_gameManager.GetComponent<GameManager>().changeGhostSelected(id);
+			Debug.Log(_gameManager);
+			_gameManager.GetComponent<GameManager>().changeGhostSelected(_id);
 		}
 	}
 

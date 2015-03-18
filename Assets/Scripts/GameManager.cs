@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 		GameObject[] humans_aux = GameObject.FindGameObjectsWithTag("Human");
 		foreach (GameObject human_aux in humans_aux) {
 			humans.Add (human_aux);
-			globalEnergy += human_aux.GetComponent<HumanPlayer>().getLife();
+			//globalEnergy += human_aux.GetComponent<HumanPlayer>().getLife();
 		}
 		humansAlive = humans.Count;
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour {
 
 	void nextSelectedHuman(){
 		humans [human_selected].GetComponent<HumanPlayer>().deselect ();
-		Debug.Log (humans.Count);
 		human_selected = (human_selected+1)%humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select ();
 		Debug.Log ("humano seleccionado: " + human_selected);
@@ -97,13 +96,15 @@ public class GameManager : MonoBehaviour {
         	//ghosts[ghost_selected].GetComponent<GhostInteligence>().setObjPosition(obj_position);
 		//else
 			ghosts[ghost_selected].GetComponent<GhostPlayer>().setObjPosition(obj_position);
+		Debug.Log ("moviendo fantasma" + ghost_selected);
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
 	}
 
 	public void humanDietoGhosts(int indexHuman){
-		for (int i=0; i<ghosts.Length; i++)
-			ghosts[i].SendMessage ("humanDie",indexHuman);
+		if (singleHuman) //If ghosts inteligents, they don't have to follow that human
+			for (int i=0; i<ghosts.Length; i++)
+				ghosts[i].SendMessage ("humanDie",indexHuman);
 	}
 
 	public void killHuman(GameObject object_aux)
@@ -124,7 +125,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void hurtHuman(GameObject object_aux){
-		SendMessage ("reducirVida");
+		//SendMessage ("reducirVida");
 		int index = humans.IndexOf (object_aux);
 		humans [index].GetComponent<HumanPlayer> ().hurt ();
 		if (humans [index].GetComponent<HumanPlayer> ().getLife () <= 0)
@@ -161,7 +162,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void initializeHumanModus(bool intelligence){
-		for (int i = 0; i < ghosts.Length; i++) {
+		for (int i = 0; i < humans.Count; i++) {
 			humans [i].GetComponent<HumanController> ().setInteligence(intelligence);
 			if (intelligence){
 				int randomNumber = Random.Range(0, _nPaths);

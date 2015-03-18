@@ -30,7 +30,6 @@ public class ObjectController : MonoBehaviour {
 	public void initialize(){
 		_gameManager = GameObject.FindWithTag ("GameManager");
 		_ghostCamera = GameObject.FindWithTag ("GhostCamera").camera;
-		Debug.Log (_gameManager);
 	}
 
 	public void ghostOut(int id){
@@ -66,7 +65,7 @@ public class ObjectController : MonoBehaviour {
 			if (idGhost != -1){
 				//_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
 				_gameManager.GetComponent<GameManager>().hurtHuman(other.gameObject);
-				Debug.Log ("humano que se choca!!!!");
+				//Debug.Log ("humano que se choca!!!!");
 			}
 		}
 	}
