@@ -27,22 +27,6 @@ public class DoorInController : MonoBehaviour {
 		StartCoroutine(waitBetweenHumans(0));
 	}
 
-	void OnTriggerEnter (Collider other) {
-		Debug.Log ("humano entra " + other.gameObject.tag);
-		//open door
-		//_gameManager.GetComponent<GameManager>().addHumanScene(other.gameObject);
-		//_gameManager.GetComponent<GameManager> ().addHumanCount ();
-	}
-
-	void OnTriggerExit (Collider other){
-		//StartCoroutine(waitBetweenHumans());
-		//_gameManager.GetComponent<GameManager>().addHumanScene(other.gameObject);
-		//if (indexHuman < humans.Length-1){
-		//	++indexHuman;
-		//	StartCoroutine(waitBetweenHumans(indexHuman));
-		//}
-	}
-
 	IEnumerator waitBetweenHumans(int index){
 		print("time antes: " + Time.time);
 		yield return new WaitForSeconds(2);
@@ -59,6 +43,7 @@ public class DoorInController : MonoBehaviour {
 			//go.GetComponent<HumanIntelligence> ().setDirection (directionIn);
 			go.GetComponent<HumanIntelligence> ().setMoving (true);
 			go.GetComponent<HumanIntelligence> ().isInScene = true;
+			go.GetComponent<HumanIntelligence> ().position = gameObject.transform.position+new Vector3(0.0f,0.45f,0.0f);;
 		} 
 		else {
 			go.GetComponent<HumanPlayer> ().setDirection (directionIn);
