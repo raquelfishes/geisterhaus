@@ -33,7 +33,7 @@ public class GenerateScene : MonoBehaviour {
 	private float aumentoZ;
 
 	private int _nPaths = 0;
-	private string[] _Paths;
+	private List<string[]> _Paths;
 
 	public void Start(){
 		Renderer m_renderer = tileGroundEmpty.renderer;
@@ -52,8 +52,9 @@ public class GenerateScene : MonoBehaviour {
 		_nPaths = nPaths;
 	}
 	
-	private void loadPaths(string[] Paths){
+	private void loadPaths(List<string[]> Paths){
 		_Paths = Paths;
+		instantiateGameManager ();
 	}
 	
 	private void generateScene(List<List<int>> _roomIds){
@@ -65,7 +66,7 @@ public class GenerateScene : MonoBehaviour {
 		generateTyles (_roomIds);
 		instantiateTyles ();
 		instantiateCharacters();
-		instantiateGameManager();
+		//instantiateGameManager();
 	}
 
 	private void instantiateCameras(){
@@ -79,8 +80,11 @@ public class GenerateScene : MonoBehaviour {
 	private void instantiateGameManager(){
 		GameObject go = Instantiate(gameManager,Vector3.zero,Quaternion.identity) as GameObject;
 		go.GetComponent<GameManager>().singleGhost = singleGhost;
+		//go.GetComponent<GameManager>().setSingleGhost(singleGhost);
 		go.GetComponent<GameManager> ()._nPaths = _nPaths;
+		//go.GetComponent<GameManager> ().setPaths (_nPaths, _Paths);
 		go.GetComponent<GameManager> ()._Paths = _Paths;
+		//go.GetComponent<GameManager> ().setPaths(_Paths);
 	}
 	
 	private void createRoom(){

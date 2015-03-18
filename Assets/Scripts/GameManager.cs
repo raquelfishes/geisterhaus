@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	private int humansAlive;
 
 	public int _nPaths;
-	public string[] _Paths;
+	public List<string[]> _Paths;
 
     public bool singleGhost = false;
     public bool singleHuman = false;
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour {
 		}
 		GameObject.FindWithTag ("DoorIn").GetComponent<DoorInController> ().initialize ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown ("ChangeH"))
@@ -157,8 +157,10 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < humans.Count; i++) {
 			humans [i].GetComponent<HumanController> ().setInteligence(intelligence);
 			if (intelligence){
+				humans [i].GetComponent<HumanIntelligence> ().tileGroundEmpty = humans [i].GetComponent<HumanController> ().tileGroundEmpty;
 				int randomNumber = Random.Range(0, _nPaths);
 				humans[i].GetComponent<HumanIntelligence>().setPath(_Paths[randomNumber]);
+				//humans[i].GetComponent<HumanIntelligence>().printX();
 			}
 		}
 		if(!intelligence) //Not single gosht, so humans are controlled by the player

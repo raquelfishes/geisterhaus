@@ -10,6 +10,7 @@ public class HumanController : MonoBehaviour {
 	public bool _isMoving=false;
 	public bool isInScene=false;
 	public bool _isInteligent;
+	public GameObject tileGroundEmpty;
 
 	// Use this for initialization
 	void Start () {
