@@ -61,11 +61,9 @@ public class GhostInteligence : GhostController {
                         idObjectAux = j;
 					}	
 				}
-                if (idObjectAux == idObject && nearObjectAux < MINRADIUS)
-                {
+                if (idObjectAux == idObject && nearObjectAux < MINRADIUS){
 					estado=Estado.ASUSTANDO;
-				}
-                else if (idObjectAux != idObject){
+				}else if (idObjectAux != idObject){
 					//transform.position = Vector3.MoveTowards (transform.position, ghost_objects[idObject].transform.position, 0.05f);
                     _objPosition = ghost_objects[idObjectAux].transform.position;
                     idObject = idObjectAux;
