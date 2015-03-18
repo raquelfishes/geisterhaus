@@ -22,13 +22,11 @@ public class HumanIntelligence : HumanController {
 	void Update () {
 
 		bool iguales=(transform.position.x==position.x)&&(transform.position.z==position.z);
-		//Debug.Log (transform.position.x+"=="+position.x+" -> "+transform.position.z+"=="+position.z+" ? "+iguales);
 		if (iguales){
 			pathEvaluate ();
 			if (destiny<_Path.Length-1) ++destiny;
 		}
 		transform.position = Vector3.MoveTowards(transform.position, position, 0.03f);
-		//Debug.Log (transform.position);
 	}
 
 	public void pathEvaluate(){
@@ -46,11 +44,6 @@ public class HumanIntelligence : HumanController {
 	}
 
 	public void setPath(string[] Path){
-		printX ();
 		_Path = Path;
-	}
-
-	public void printX(){
-		Debug.Log ("XXXXXXX");
 	}
 }
