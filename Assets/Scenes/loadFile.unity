@@ -123,8 +123,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: numHumans
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: ghost
+      value: 
+      objectReference: {fileID: 100000, guid: 3daa30ccfbba2704b8e972a634c00f3f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
   m_RootGameObject: {fileID: 1245447010}
@@ -175,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
-  ghost: {fileID: 186740, guid: ce3f7cc32aa1e4b498a39bd662c4468a, type: 2}
+  ghost: {fileID: 100000, guid: 3daa30ccfbba2704b8e972a634c00f3f, type: 2}
   human: {fileID: 132004, guid: 63f32ed624183154a96369fe9d0c850c, type: 2}
 --- !u!114 &1245447013
 MonoBehaviour:
@@ -206,7 +210,7 @@ MonoBehaviour:
   _nRows: 0
   _nColumns: 0
   _nTyles: 0
-  numHumans: 10
+  numHumans: 25
   numGhosts: 2
   singleGhost: 1
   singleHuman: 0

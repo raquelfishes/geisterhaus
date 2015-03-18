@@ -173,6 +173,7 @@ public class GameManager : MonoBehaviour {
 
 	public void removeHumanScene(GameObject human){
 		int index = humans.IndexOf (human);
+		Debug.Log (index);
 		humanDietoGhosts (index);
 		humans.RemoveAt(index);
 	}
