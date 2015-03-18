@@ -161,7 +161,6 @@ public class GameManager : MonoBehaviour {
 				humans [i].GetComponent<HumanIntelligence> ().tileGroundEmpty = humans [i].GetComponent<HumanController> ().tileGroundEmpty;
 				int randomNumber = Random.Range(0, _nPaths);
 				humans[i].GetComponent<HumanIntelligence>().setPath(_Paths[randomNumber]);
-				//humans[i].GetComponent<HumanIntelligence>().printX();
 			}
 		}
 		if(!intelligence) //Not single gosht, so humans are controlled by the player

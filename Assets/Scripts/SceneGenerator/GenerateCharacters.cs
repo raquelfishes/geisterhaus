@@ -6,16 +6,10 @@ public class GenerateCharacters : MonoBehaviour {
 	public Vector3 positionFirstHuman = new Vector3 (0.0f, 0.45f, 0.0f);
 	public GameObject ghost;
 	public GameObject human;
+	
+	void Start (){}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	void Update (){}
 
 	public void instantiateCharacters(int numHumans, int numGhosts){
 		createHumans(numHumans);
