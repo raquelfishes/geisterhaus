@@ -10,8 +10,8 @@ public class CreateScene : MonoBehaviour {
 	public GameObject doorIn;
 
 	void Awake(){
-		//createHumans (n_humans);
-		//createGhosts (n_ghosts);
+		createHumans (n_humans);
+		createGhosts (n_ghosts);
 	}
 	// Use this for initialization
 	void Start () {

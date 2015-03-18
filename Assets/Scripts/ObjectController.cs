@@ -19,7 +19,7 @@ public class ObjectController : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		Debug.Log ("mouse!!!");
+		//Debug.Log ("mouse!!!");
 		Ray ray = _ghostCamera.ScreenPointToRay(Input.mousePosition);
 		if (idGhost == -1 && Physics.Raycast(ray)) {
 			_gameManager.GetComponent<GameManager>().moveGhostHere(transform.position);
@@ -30,7 +30,7 @@ public class ObjectController : MonoBehaviour {
 	public void initialize(){
 		_gameManager = GameObject.FindWithTag ("GameManager");
 		_ghostCamera = GameObject.FindWithTag ("GhostCamera").camera;
-		Debug.Log (_gameManager);
+		//Debug.Log (_gameManager);
 	}
 
 	public void ghostOut(int id){
@@ -58,7 +58,7 @@ public class ObjectController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		GameObject vida = GameObject.Find ("HealthBar");
-		Debug.Log ("entra algo!!!!!"+other.gameObject.tag);
+		//Debug.Log ("entra algo!!!!!"+other.gameObject.tag);
 		if (other.gameObject.tag == "Ghost") {
 			ghostIn (other.gameObject.GetComponent<GhostController> ().getId ());
 		}
@@ -66,7 +66,7 @@ public class ObjectController : MonoBehaviour {
 			if (idGhost != -1){
 				//_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
 				_gameManager.GetComponent<GameManager>().hurtHuman(other.gameObject);
-				Debug.Log ("humano que se choca!!!!");
+				//Debug.Log ("humano que se choca!!!!");
 			}
 		}
 	}

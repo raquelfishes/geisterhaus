@@ -10,7 +10,9 @@ public class GenerateScene : MonoBehaviour {
 
 	public int numHumans=3;
 	public int numGhosts=2;
-	
+
+	public bool singleGhost= true;
+
 	private List<List<Tile>> _myRoom;
 	
 	private float ultimaPosicionX=0;
@@ -30,6 +32,9 @@ public class GenerateScene : MonoBehaviour {
 	private float aumentoX;
 	private float aumentoZ;
 
+	private int _nPaths = 0;
+	private string[] _Paths;
+
 	public void Start(){
 		Renderer m_renderer = tileGroundEmpty.renderer;
 		aumentoX = m_renderer.bounds.size.x;
@@ -41,6 +46,14 @@ public class GenerateScene : MonoBehaviour {
 		_nRows = (int)v.x;
 		_nColumns = (int)v.y;
 		_nTyles = (int)v.z;
+	}
+
+	private void loadnPaths(int nPaths){
+		_nPaths = nPaths;
+	}
+	
+	private void loadPaths(string[] Paths){
+		_Paths = Paths;
 	}
 	
 	private void generateScene(List<List<int>> _roomIds){
@@ -65,6 +78,9 @@ public class GenerateScene : MonoBehaviour {
 
 	private void instantiateGameManager(){
 		GameObject go = Instantiate(gameManager,Vector3.zero,Quaternion.identity) as GameObject;
+		go.GetComponent<GameManager>().singleGhost = singleGhost;
+		go.GetComponent<GameManager> ()._nPaths = _nPaths;
+		go.GetComponent<GameManager> ()._Paths = _Paths;
 	}
 	
 	private void createRoom(){

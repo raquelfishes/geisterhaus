@@ -28,7 +28,7 @@ public class GenerateCharacters : MonoBehaviour {
 		//pos = pos - aux * num;
 		for (int i=0; i<num; i++) {
 			var aux_human = Instantiate (human, pos, Quaternion.identity) as GameObject;
-			aux_human.AddComponent<HumanPlayer>();
+			aux_human.AddComponent<HumanController>();
 			pos = pos + aux;
 		}
 	}

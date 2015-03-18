@@ -20,9 +20,8 @@ public class GhostPlayer : GhostController {
 	}
 
 	void OnMouseDown(){
-		Debug.Log ("seleccion fantasma");
-        if (!_isSelected)
-        {
+		Debug.Log ("fantasma "+id);
+        if (!_isSelected){
 			select ();
 			_gameManager.GetComponent<GameManager>().changeGhostSelected(id);
 		}

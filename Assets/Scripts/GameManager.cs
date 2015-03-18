@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour {
 	private int humansPassDoor = 0;
 	private int humansAlive;
 
-	private int _nPaths = 0;
-	private string[] _Paths;
+	public int _nPaths;
+	public string[] _Paths;
 
     public bool singleGhost = false;
     public bool singleHuman = false;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 		GameObject[] humans_aux = GameObject.FindGameObjectsWithTag("Human");
 		foreach (GameObject human_aux in humans_aux) {
 			humans.Add (human_aux);
-			globalEnergy += human_aux.GetComponent<HumanPlayer>().getLife();
+			//globalEnergy += human_aux.GetComponent<HumanPlayer>().getLife();
 		}
 		humansAlive = humans.Count;
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
@@ -152,16 +152,8 @@ public class GameManager : MonoBehaviour {
 			ghost_objects[i].GetComponent<GhostController> ().enabled = false;
 	}
 
-	private void loadnPaths(int nPaths){
-		_nPaths = nPaths;
-	}
-	
-	private void loadPaths(string[] Paths){
-		_Paths = Paths;
-	}
-
 	private void initializeHumanModus(bool intelligence){
-		for (int i = 0; i < ghosts.Length; i++) {
+		for (int i = 0; i < humans.Count; i++) {
 			humans [i].GetComponent<HumanController> ().setInteligence(intelligence);
 			if (intelligence){
 				int randomNumber = Random.Range(0, _nPaths);
