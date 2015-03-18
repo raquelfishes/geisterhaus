@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GenerateCharacters : MonoBehaviour {
 
-	public Vector3 positionFirstHuman = new Vector3 (0.0f, 1.0f, 0.0f);
+	public Vector3 positionFirstHuman = new Vector3 (0.0f, 0.45f, 0.0f);
 	public GameObject ghost;
 	public GameObject human;
 
@@ -24,7 +24,7 @@ public class GenerateCharacters : MonoBehaviour {
 
 	private void createHumans(int num){
 		Vector3 pos = positionFirstHuman;
-		Vector3 aux = new Vector3(2.0f,0.45f,0.0f);
+		Vector3 aux = new Vector3(2.0f,0.0f,0.0f);
 		//pos = pos - aux * num;
 		for (int i=0; i<num; i++) {
 			var aux_human = Instantiate (human, pos, Quaternion.identity) as GameObject;

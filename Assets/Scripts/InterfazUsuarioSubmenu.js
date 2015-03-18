@@ -6,10 +6,10 @@ function OnGUI(){
 	}
 	if(LIB1){
 		if(GUI.Button(Rect(Screen.width/2-110,105,100,30),"J1: Fantamas")){
-			Application.LoadLevel("nivel_prueba");
+			Application.LoadLevel("loadFile");
 		}
 		if(GUI.Button(Rect(Screen.width/2+10,105,100,30),"J2: Visitantes")){
-			Application.LoadLevel("nivel_prueba");
+			Application.LoadLevel("loadFile");
 		}	
 	}
 	
@@ -19,10 +19,10 @@ function OnGUI(){
 	
 	if(LIB2){
 		if(GUI.Button(Rect(Screen.width/2-110,185,100,30),"Fantamas")){
-			Application.LoadLevel("nivel_prueba");
+			Application.LoadLevel("loadFile");
 		}
 		if(GUI.Button(Rect(Screen.width/2+10,185,100,30),"Visitantes")){
-			Application.LoadLevel("nivel_prueba");
+			Application.LoadLevel("loadFile");
 		}	
 	}
 }

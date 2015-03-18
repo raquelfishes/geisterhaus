@@ -12,6 +12,7 @@ public class GenerateScene : MonoBehaviour {
 	public int numGhosts=2;
 
 	public bool singleGhost= true;
+	public bool singleHuman= true;
 
 	private List<List<Tile>> _myRoom;
 	
@@ -80,11 +81,9 @@ public class GenerateScene : MonoBehaviour {
 	private void instantiateGameManager(){
 		GameObject go = Instantiate(gameManager,Vector3.zero,Quaternion.identity) as GameObject;
 		go.GetComponent<GameManager>().singleGhost = singleGhost;
-		//go.GetComponent<GameManager>().setSingleGhost(singleGhost);
+		go.GetComponent<GameManager>().singleHuman = singleHuman;
 		go.GetComponent<GameManager> ()._nPaths = _nPaths;
-		//go.GetComponent<GameManager> ().setPaths (_nPaths, _Paths);
 		go.GetComponent<GameManager> ()._Paths = _Paths;
-		//go.GetComponent<GameManager> ().setPaths(_Paths);
 	}
 	
 	private void createRoom(){
