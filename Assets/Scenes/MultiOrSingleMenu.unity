@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d34ab037a20fd44fb95911ff263e3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  house: {fileID: 2800000, guid: cf6db00e551d62e4396ebaf560d5ed30, type: 3}
+  house: {fileID: 2800000, guid: 30a4ad942eabf7b428f908ead6bd9bff, type: 3}
 --- !u!82 &78417177
 AudioSource:
   m_ObjectHideFlags: 0

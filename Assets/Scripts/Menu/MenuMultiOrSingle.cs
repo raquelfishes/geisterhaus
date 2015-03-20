@@ -10,7 +10,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 
 	void OnGUI () {
 
-		if(GUI.Button(new Rect(Screen.width/3,120,100,30),house)){
+		if(GUI.Button(new Rect(Screen.width/3-50,140,120,80),house)){
 			Application.LoadLevel("MainMenu");
 		}
 

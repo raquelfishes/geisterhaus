@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour {
 		Destroy (object_aux);
 		--humansAlive;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
-		if (humansAlive > 10) {
+		if (humansAlive > 20) {
 			camara.SetActive (true);
 		//	Debug.Log ("Todos muertos!!!!");
 		//	finishMsg.gameObject.SetActive (true);
