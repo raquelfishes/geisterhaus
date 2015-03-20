@@ -22,6 +22,15 @@ public class GameManager : MonoBehaviour {
 
 	private int globalEnergy;
 
+	// Menu Variables
+	private string[] scoreBoard= {"PassDoor: ","Alive: ","SingleGhost: ","SingleHuman: "};
+	private float posX = 0.01f * Screen.width;
+	private float posY = 0.05f  * Screen.height;
+	private float height= 0.15f  * Screen.height;
+	private float width = 0.12f * Screen.width;
+	public GameObject camara;
+	public GUIStyle scoreBoardStyle;
+
 	// Use this for initialization
 	void Start () {
 		ghost_objects = GameObject.FindGameObjectsWithTag("GhostObject");
@@ -52,11 +61,15 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetButtonDown ("ChangeH"))
 			nextSelectedHuman ();
 
-		if (humans.Count == 0) {
-			//Se acaba el juego!!!!!!!!!!!!
+		if (humans.Count == 0) { //Se acaba el juego!!!!!!!!!!!!
 			finishLevel();
 		}
 
+		// Tamaño del menu
+		posX = 0.01f * Screen.width;
+		posY = 0.05f  * Screen.height;
+		width = 0.12f * Screen.width;
+		height= 0.05f  * Screen.height;
 	}
 
 	void nextSelectedHuman(){
@@ -126,12 +139,13 @@ public class GameManager : MonoBehaviour {
 		Destroy (object_aux);
 		--humansAlive;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
-		//if (humansAlive == 0) {
+		if (humansAlive > 10) {
+			camara.SetActive (true);
 		//	Debug.Log ("Todos muertos!!!!");
 		//	finishMsg.gameObject.SetActive (true);
 		//	finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
 		//	Application.Quit();
-		//}
+		}
 	}
 
 	public void hurtHuman(GameObject object_aux){
@@ -184,5 +198,26 @@ public class GameManager : MonoBehaviour {
 	private void exitGame(){
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].GetComponent<GhostController> ().enabled = false;
+	}
+
+	//Se muestra el marcador en pantalla
+	void OnGUI () {
+		//GUI.color = Color.white;
+		//GUI.contentColor = Color.red;
+		scoreBoardStyle.fontSize = 7+ Mathf.FloorToInt(5.0f*Screen.width/1300.0f+5.0f*Screen.height/597.0f);
+
+		string[] datos={humansPassDoor.ToString("0.00"),humansAlive.ToString("0.00"),singleGhost.ToString(),singleHuman.ToString()};
+
+		for (int i=0; i<scoreBoard.Length; i++){
+			// Ghost Camera
+			GUI.Box (new Rect (posX, posY+i*30.0f, width, height), scoreBoard[i] + datos[i], scoreBoardStyle);
+			// Human Camera
+			GUI.Box (new Rect (posX, Screen.height/2 + posY+i*30.0f ,width, height), scoreBoard[i] + datos[i],scoreBoardStyle);
+		}
+		// Human Camera
+		//GUI.Box (new Rect (10, Screen.height - 160 ,160,25), "PassDoor: " + humansPassDoor.ToString("0.00"),scoreBoardStyle);
+		//GUI.Box (new Rect (10, Screen.height - 120 ,160,25), "Alive: " + humansAlive.ToString("0.00"));
+		//GUI.Box (new Rect (10,Screen.height - 80,160,25), "SingleGhost: " + singleGhost);
+		//GUI.Box (new Rect (10,Screen.height - 40,160,25), "SingleHuman: " + singleHuman);
 	}
 }

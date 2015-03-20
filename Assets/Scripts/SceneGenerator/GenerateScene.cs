@@ -36,6 +36,9 @@ public class GenerateScene : MonoBehaviour {
 	private int _nPaths = 0;
 	private List<string[]> _Paths;
 
+	public GUIStyle scoreBoardStyle;
+	public GameObject camara;
+
 	public void Start(){
 		Renderer m_renderer = tileGroundEmpty.renderer;
 		aumentoX = m_renderer.bounds.size.x;
@@ -84,6 +87,8 @@ public class GenerateScene : MonoBehaviour {
 		go.GetComponent<GameManager>().singleHuman = singleHuman;
 		go.GetComponent<GameManager> ()._nPaths = _nPaths;
 		go.GetComponent<GameManager> ()._Paths = _Paths;
+		go.GetComponent<GameManager> ().scoreBoardStyle = scoreBoardStyle;
+		go.GetComponent<GameManager> ().camara = camara;
 	}
 	
 	private void createRoom(){

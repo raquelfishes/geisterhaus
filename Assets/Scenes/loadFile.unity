@@ -133,6 +133,67 @@ Prefab:
       propertyPath: numGhosts
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Normal.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Normal.m_TextColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Normal.m_TextColor.b
+      value: .103447914
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 5acaff980fe478549a856e7918ca5efa,
+        type: 3}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_ContentOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Padding.m_Left
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Name
+      value: ScoreBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Border.m_Left
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Border.m_Right
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Border.m_Top
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Border.m_Bottom
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_WordWrap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: scoreBoardStyle.m_Normal.m_Background
+      value: 
+      objectReference: {fileID: 2800000, guid: eb6ae52fd261a944aa5916df2b2ba572, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
   m_RootGameObject: {fileID: 1245447010}
@@ -230,6 +291,65 @@ MonoBehaviour:
   tileDoorIn: {fileID: 120720, guid: a80eb433c74196849b475c2bd3bf4edb, type: 2}
   tileDoorOut: {fileID: 146318, guid: c1cf3660930be3d43b125c0a95a5b541, type: 2}
   gameManager: {fileID: 135032, guid: 1bcda9586afac364eb72e6210f0bf323, type: 2}
+  scoreBoardStyle:
+    m_Name: ScoreBoard
+    m_Normal:
+      m_Background: {fileID: 2800000, guid: eb6ae52fd261a944aa5916df2b2ba572, type: 3}
+      m_TextColor: {r: 1, g: 0, b: .103447914, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 2
+      m_Right: 2
+      m_Top: 2
+      m_Bottom: 2
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 10
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 12800000, guid: 5acaff980fe478549a856e7918ca5efa, type: 3}
+    m_FontSize: 0
+    m_FontStyle: 1
+    m_Alignment: 4
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
 --- !u!114 &1245447015
 MonoBehaviour:
   m_ObjectHideFlags: 0
