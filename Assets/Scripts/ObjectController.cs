@@ -48,6 +48,10 @@ public class ObjectController : MonoBehaviour {
 		Debug.Log ("ghost in: " + idGhost);
 	}
 
+	public int getidGhost(){
+		return idGhost;
+	}
+
 	public Vector3 getPosition(){
 		return transform.position;
 	}

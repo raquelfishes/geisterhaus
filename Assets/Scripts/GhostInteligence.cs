@@ -28,7 +28,6 @@ public class GhostInteligence : GhostController {
 	
 	// Update is called once per frame
 	void Update () {
-		//Thread.Sleep(1500); // Comprobamos cada 1.5 segundos
 		switch (estado) {
 			case Estado.ESPERANDO:
 				int i=0;
@@ -52,7 +51,7 @@ public class GhostInteligence : GhostController {
 			break;
 
 			case Estado.CAMBIO:
-				double nearObjectAux = modulo(ghost_objects[0].transform.position-humans[idHuman].transform.position);
+				/*double nearObjectAux = modulo(ghost_objects[0].transform.position-humans[idHuman].transform.position);
 				int idObjectAux=0;
 				for(int j=1;j<ghost_objects.Length;j++){
 					actionRadius=modulo(ghost_objects[j].transform.position-humans[idHuman].transform.position);
@@ -61,15 +60,42 @@ public class GhostInteligence : GhostController {
                         idObjectAux = j;
 					}	
 				}
-                if (idObjectAux == idObject && nearObjectAux < MINRADIUS){
+
+			 	if (idObjectAux == idObject && nearObjectAux < MINRADIUS){
 					estado=Estado.ASUSTANDO;
 				}else if (idObjectAux != idObject){
 					//transform.position = Vector3.MoveTowards (transform.position, ghost_objects[idObject].transform.position, 0.05f);
                     _objPosition = ghost_objects[idObjectAux].transform.position;
                     idObject = idObjectAux;
                     nearObject = nearObjectAux;
+				}*/
+				int numObjets=ghost_objects.Length;
+				double[] distancias= new double[numObjets];
+				int[] indices=new int[numObjets];
+
+				for(int j=0;j<numObjets;j++){
+					distancias[j]=modulo(ghost_objects[j].transform.position-humans[idHuman].transform.position);;
+					indices[j]=j;
 				}
-				
+
+				Array.Sort(distancias,indices);
+
+				if (indices[0] == idObject && distancias[0] < MINRADIUS){
+					estado=Estado.ASUSTANDO;
+				}else if (indices[0] != idObject){
+					int libre=0;
+					bool encontrado=false;
+					while ((libre<numObjets)&& !encontrado){
+						if(ghost_objects[libre].GetComponent<ObjectController>().getidGhost()!=-1)
+							++libre;
+						else 
+							encontrado=true;
+					}
+					if (encontrado){
+						_objPosition = ghost_objects[indices[libre]].transform.position;
+						idObject = indices[libre];
+					}
+				}
 			break;
 
 			case Estado.ASUSTANDO:

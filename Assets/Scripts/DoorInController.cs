@@ -28,7 +28,7 @@ public class DoorInController : MonoBehaviour {
 	}
 
 	IEnumerator waitBetweenHumans(int index){
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		takeHumanToDoor (index);
 	}
 
