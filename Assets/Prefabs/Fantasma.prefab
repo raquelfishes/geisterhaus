@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Fantasma
   m_TagString: Untagged
@@ -29,7 +28,6 @@ GameObject:
   - 23: {fileID: 2300000}
   - 111: {fileID: 11100000}
   - 135: {fileID: 13500000}
-  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: fantasmaModelo
   m_TagString: Enemigo
@@ -122,34 +120,6 @@ MonoBehaviour:
   rotacionPorSegundo: 75
   radioActual: 2
   incrementoRadioPorSegundo: .5
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df9b343d5b885d4f8508c152e69345b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 400000, guid: 4f2b448ece6bb4940be1ce4a87b8e110, type: 2}
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  n_humans: 0
-  n_ghosts: 0
-  ghost: {fileID: 0}
-  human: {fileID: 0}
-  doorIn: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
