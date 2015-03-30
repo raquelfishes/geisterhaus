@@ -1,0 +1,86 @@
+Initialize engine version: 4.5.4f1 (e036f44c54c9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 840M         (ID=0x1341)
+    Vendor:   NVIDIA
+    VRAM:     1972 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Master\Teoria de Juegos (TJ)\Repositorio\geisterhaus\Juego_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Master\Teoria de Juegos (TJ)\Repositorio\geisterhaus\Juego_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Master\Teoria de Juegos (TJ)\Repositorio\geisterhaus\Juego_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Master\Teoria de Juegos (TJ)\Repositorio\geisterhaus\Juego_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.172 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+WARNING: Shader Unsupported: 'Toon/Basic Outline' - Pass 'OUTLINE' shader state not supported
+UnloadTime: 0.824942 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 163.
+Total: 1.551953 ms (FindLiveObjects: 0.023948 ms CreateObjectMapping: 0.021810 ms MarkObjects: 0.221524 ms  DeleteObjects: 0.011118 ms)
+
+UnloadTime: 0.764216 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 324.
+Total: 2.339262 ms (FindLiveObjects: 0.035067 ms CreateObjectMapping: 0.025659 ms MarkObjects: 0.285244 ms  DeleteObjects: 0.785171 ms)
+
+120	12	10
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+====================
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_021	d_01	w_011	w_011	w_011	w_011	w_011	w_011	w_011	w_022
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_0	g_0	g_0	g_1	g_0	g_0	g_0	w_013
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_1	w_013
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_1	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_0	g_0	g_1	g_0	g_0	g_1	g_0	w_013
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	d_13
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+w_023	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_024
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Platform assembly: D:\Master\Teoria de Juegos (TJ)\Repositorio\geisterhaus\Juego_Data\Managed\System.dll (this message is harmless)

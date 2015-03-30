@@ -6,13 +6,18 @@ public class MenuMultiOrSingle : MonoBehaviour {
 	private bool LIB1=false;
 	private bool LIB2=false;
 	private AsyncOperation async;
-	public Texture2D house;
+	public Texture2D returnButton;
 
 	public Texture2D loading;
 	private int loadProgress =0;
 	public GameObject text;
 	public GameObject progressBar;
 	public GameObject background;
+
+	
+	void Awake () {
+		DontDestroyOnLoad(transform.gameObject);
+	}
 
 	void Start(){
 		text.SetActive (false);
@@ -22,7 +27,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 
 	void OnGUI () {
 
-		if(GUI.Button(new Rect(Screen.width/3-50,140,120,80),house)){
+		if(GUI.Button(new Rect(Screen.width-80,40,60,50),returnButton)){
 			Application.LoadLevel("MainMenu");
 		}
 
@@ -47,6 +52,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 		
 		if(LIB2){
 			if(GUI.Button(new Rect(Screen.width/2-110,265,100,30),"Fantamas")){
+				//async=Application.LoadLevelAsync("loadFile");
 				Application.LoadLevel("loadFile");
 			}
 			if(GUI.Button(new Rect(Screen.width/2+10,265,100,30),"Visitantes")){
@@ -54,9 +60,6 @@ public class MenuMultiOrSingle : MonoBehaviour {
 			}	
 		}
 
-		//if (async != null) {
-		//	GUI.Box (new Rect (0, 0, Screen.width, Screen.height), Mathf.Floor(async.progress*100.0f).ToString()+"%");
-		//}
 		if(Application.isLoadingLevel)
 			GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), loading);
 	}
@@ -66,13 +69,13 @@ public class MenuMultiOrSingle : MonoBehaviour {
 		progressBar.SetActive (true);
 		background.SetActive (true);
 
-		//progressBar.transform.localScale = new Vector3(loadProgress,progressBar.transform.y,progressBar.transform.x);
+		progressBar.transform.localScale = new Vector3(loadProgress,progressBar.transform.position.y,progressBar.transform.position.z);
 		text.guiText.text= "Loading... "+loadProgress+"%";
 
 		async=Application.LoadLevelAsync(mode);
 		while (!async.isDone) {
 			loadProgress= (int)(async.progress*100);
-			//progressBar.transform.localScale = new Vector3(loadProgress,progressBar.transform.y,progressBar.transform.x);
+			progressBar.transform.localScale = new Vector3(loadProgress,progressBar.transform.position.y,progressBar.transform.position.z);
 			yield return null;
 		}
 	}

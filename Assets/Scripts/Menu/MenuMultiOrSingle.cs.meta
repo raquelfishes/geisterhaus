@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: 5d34ab037a20fd44fb95911ff263e3ac
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - house: {fileID: 2800000, guid: 30a4ad942eabf7b428f908ead6bd9bff, type: 3}
+  - loading: {fileID: 2800000, guid: 507cf5d98bf253249a779fa1613386c6, type: 3}
+  - text: {instanceID: 0}
+  - progressBar: {instanceID: 0}
+  - background: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

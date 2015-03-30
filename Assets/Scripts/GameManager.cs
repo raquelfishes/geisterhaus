@@ -70,6 +70,8 @@ public class GameManager : MonoBehaviour {
 		posY = 0.05f  * Screen.height;
 		width = 0.12f * Screen.width;
 		height= 0.05f  * Screen.height;
+		if (Input.GetKeyDown (KeyCode.Escape)) 
+			Application.LoadLevel("MainMenu");
 	}
 
 	void nextSelectedHuman(){

@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class Menu : MonoBehaviour {
-
+	
 	void OnGUI () {
+
 		if(GUI.Button(new Rect(Screen.width/2-85,120,170,50),"Jugar")){
 			Application.LoadLevel("MultiOrSingleMenu");
 		}
