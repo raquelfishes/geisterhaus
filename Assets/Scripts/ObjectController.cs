@@ -6,11 +6,12 @@ public class ObjectController : MonoBehaviour {
 	GameObject _gameManager = null;
 	int idGhost = -1;
 	Camera _ghostCamera;
+	bool asignado= false;
 
 	// Use this for initialization
 	void Start () {
-		//_gameManager = GameObject.Find ("GameManager");
-		//_ghostCamera = GameObject.Find ("GhostCamera").camera;
+		//_gameManager = GameObject.FindWithTag ("GameManager");
+		//_ghostCamera = GameObject.FindWithTag ("GhostCamera").camera;
 	}
 	
 	// Update is called once per frame
@@ -18,14 +19,19 @@ public class ObjectController : MonoBehaviour {
 	
 	}
 
+	public void setAsignado(bool b) {asignado = b;}
+	public bool getAsignado() {return asignado;}
+
 	void OnMouseDown(){
 		//Debug.Log ("mouse!!!");
 		Ray ray = _ghostCamera.ScreenPointToRay(Input.mousePosition);
-		if (idGhost == -1 && Physics.Raycast (ray)) {
+		if (idGhost == -1 && Physics.Raycast (ray) && !asignado) {
 			//It's not a ghost inside me!!!!! A ghost is comming here!!!!!!
-			_gameManager.GetComponent<GameManager> ().moveGhostHere (transform.position);
+			//_gameManager.GetComponent<GameManager> ().moveGhostHere (transform.position);
+			_gameManager.GetComponent<GameManager> ().moveGhostHere (gameObject);
+			//asignado= true;
 			//ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
-		} else {
+		} else if (idGhost!= -1) {
 			//there is a ghost inside me!!! I want to select it!!!!
 			_gameManager.GetComponent<GameManager>().changeGhostSelected(idGhost);
 		}
@@ -38,14 +44,16 @@ public class ObjectController : MonoBehaviour {
 	}
 
 	public void ghostOut(int id){
-		Debug.Log ("Ghost out " + id + "    " + idGhost);
-		if (idGhost == id)
+		//Debug.Log ("Ghost out " + id + "    " + idGhost);
+		if (idGhost == id){
 			idGhost = -1;
+			asignado = false;
+		}
 	}
 
 	public void ghostIn(int id){
 		idGhost = id;
-		Debug.Log ("ghost in: " + idGhost);
+		//Debug.Log ("ghost in: " + idGhost);
 	}
 
 	public int getidGhost(){

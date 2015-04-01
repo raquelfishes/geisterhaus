@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour {
 		initializeHumanModus(singleGhost); //If singleGhost==true humans are intelligen
 		initializeGhostsId ();
 		initializeGhostsPositions ();
-        //ghosts[ghost_selected].GetComponent<GhostController>().select();
-        //initializeHumanModus(singleGhost);
+       
 		humansPassDoor = 0;
 		//SendMessage ("createBar", globalEnergy);
 		foreach (GameObject object_aux in ghost_objects) {
@@ -78,7 +77,6 @@ public class GameManager : MonoBehaviour {
 		humans [human_selected].GetComponent<HumanPlayer>().deselect ();
 		human_selected = (human_selected+1)%humans.Count;
 		humans [human_selected].GetComponent<HumanPlayer>().select ();
-		Debug.Log ("humano seleccionado: " + human_selected);
 	}
 
 	public void changeGhostSelected(int i){
@@ -94,18 +92,16 @@ public class GameManager : MonoBehaviour {
 				ghosts [i].GetComponent<GhostInteligence> ().setId (i);
 			else
 				ghosts [i].GetComponent<GhostPlayer> ().setId (i);
-			//ghosts[i].GetComponent<GhostController>().setId(i);
 		}
 	}
 
 	void initializeGhostsPositions(){
 		for (int i=0; i<ghosts.Length; i++) {
-			//ghost_objects [i].GetComponent<ObjectController>().ghostIn (ghosts [i].GetComponent<GhostPlayer> ().getId ());
-			ghosts[i].GetComponent<GhostController>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
+			ghosts[i].GetComponent<GhostController>().setObj(ghost_objects[i]);
             if (singleHuman)
-				ghosts[i].GetComponent<GhostInteligence>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
+				ghosts[i].GetComponent<GhostInteligence>().setObj(ghost_objects[i]);
 			else
-				ghosts[i].GetComponent<GhostPlayer>().setObjPosition(ghost_objects[i].GetComponent<ObjectController>().getPosition());
+				ghosts[i].GetComponent<GhostPlayer>().setObj(ghost_objects[i]);
 		}
 	}
 
@@ -113,12 +109,10 @@ public class GameManager : MonoBehaviour {
 		return ghost_selected;
 	}
 
-	public void moveGhostHere(Vector3 obj_position){
+	//public void moveGhostHere(Vector3 obj_position){
+	public void moveGhostHere(GameObject obj){
 		if (!singleHuman)
-        	//ghosts[ghost_selected].GetComponent<GhostInteligence>().setObjPosition(obj_position);
-		//else
-			ghosts[ghost_selected].GetComponent<GhostPlayer>().setObjPosition(obj_position);
-		Debug.Log ("moviendo fantasma" + ghost_selected);
+			ghosts[ghost_selected].GetComponent<GhostPlayer>().setObj(obj);
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].SendMessage ("ghostOut",ghost_selected);
 	}
@@ -129,11 +123,10 @@ public class GameManager : MonoBehaviour {
 				ghosts[i].SendMessage ("humanDie",indexHuman);
 	}
 
-	public void killHuman(GameObject object_aux)
-	{
-		Debug.Log ("humanos vivos antes: " + humans.Count);
+	public void killHuman(GameObject object_aux){
+
 		int index = humans.IndexOf (object_aux);
-		Debug.Log ("indice humano: " + index);
+
 		if (index != -1) {
 			humans.RemoveAt (index);
 			humanDietoGhosts (index);
@@ -204,11 +197,9 @@ public class GameManager : MonoBehaviour {
 
 	//Se muestra el marcador en pantalla
 	void OnGUI () {
-		//GUI.color = Color.white;
-		//GUI.contentColor = Color.red;
 		scoreBoardStyle.fontSize = 7+ Mathf.FloorToInt(5.0f*Screen.width/1300.0f+5.0f*Screen.height/597.0f);
 
-		string[] datos={humansPassDoor.ToString("0.00"),humansAlive.ToString("0.00"),singleGhost.ToString(),singleHuman.ToString()};
+		string[] datos={humansPassDoor.ToString("0.00"),humans.Count.ToString("0.00"),singleGhost.ToString(),singleHuman.ToString()};
 
 		for (int i=0; i<scoreBoard.Length; i++){
 			// Ghost Camera

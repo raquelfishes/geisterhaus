@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class GhostPlayer : GhostController {
-
-	//GameObject _gameManager = null;
-	//public Vector3 obj_position;
+	
     private bool _isSelected = false;
 
 	// Use this for initialization

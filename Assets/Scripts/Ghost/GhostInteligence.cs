@@ -8,8 +8,6 @@ public class GhostInteligence : GhostController {
 
 	public enum Estado{ESPERANDO, CAMBIO, ASUSTANDO};
 	public Estado estado;
-	//public GameObject gameManager = null;
-	//public Vector3 obj_position;
 	public double actionRadius;
 	public double nearHuman, nearObject;
 	public GameObject[] humans;
@@ -51,24 +49,6 @@ public class GhostInteligence : GhostController {
 			break;
 
 			case Estado.CAMBIO:
-				/*double nearObjectAux = modulo(ghost_objects[0].transform.position-humans[idHuman].transform.position);
-				int idObjectAux=0;
-				for(int j=1;j<ghost_objects.Length;j++){
-					actionRadius=modulo(ghost_objects[j].transform.position-humans[idHuman].transform.position);
-                    if (actionRadius < nearObjectAux) {
-                        nearObjectAux = actionRadius;
-                        idObjectAux = j;
-					}	
-				}
-
-			 	if (idObjectAux == idObject && nearObjectAux < MINRADIUS){
-					estado=Estado.ASUSTANDO;
-				}else if (idObjectAux != idObject){
-					//transform.position = Vector3.MoveTowards (transform.position, ghost_objects[idObject].transform.position, 0.05f);
-                    _objPosition = ghost_objects[idObjectAux].transform.position;
-                    idObject = idObjectAux;
-                    nearObject = nearObjectAux;
-				}*/
 				int numObjets=ghost_objects.Length;
 				double[] distancias= new double[numObjets];
 				int[] indices=new int[numObjets];
@@ -88,13 +68,13 @@ public class GhostInteligence : GhostController {
 					int libre=0;
 					bool encontrado=false;
 					while ((libre<numObjets)&& !encontrado){
-						if(ghost_objects[libre].GetComponent<ObjectController>().getidGhost()!=-1)
+					if(ghost_objects[libre].GetComponent<ObjectController>().getidGhost()!=-1 || ghost_objects[libre].GetComponent<ObjectController>().getAsignado())
 							++libre;
 						else 
 							encontrado=true;
 					}
 					if (encontrado){
-						_objPosition = ghost_objects[indices[libre]].transform.position;
+						setObj(ghost_objects[indices[libre]]);
 						idObject = indices[libre];
 					}
 				}
@@ -109,7 +89,7 @@ public class GhostInteligence : GhostController {
 				}
 			break;
 		}
-		transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
+		transform.position = Vector3.MoveTowards(transform.position, _obj.transform.position, 0.05f);
 	}
 
 	double modulo(Vector3 vector){

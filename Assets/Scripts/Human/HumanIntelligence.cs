@@ -65,10 +65,10 @@ public class HumanIntelligence : HumanController {
 
 	void OnCollisionEnter(Collision colision){
 		if (_Path[destiny]=="U"){
-			position=transform.position-new Vector3(0.0f,0.0f,0.1f);
+			position=transform.position-new Vector3(0.0f,0.0f,0.3f);
 		}
 		if(_Path[destiny]=="L"){
-			position=transform.position+new Vector3(0.1f,0.0f,0.0f);
+			position=transform.position+new Vector3(0.3f,0.0f,0.0f);
 		}
 		while(transform.position != position)
 			transform.position = Vector3.MoveTowards (transform.position, position, 0.03f);
