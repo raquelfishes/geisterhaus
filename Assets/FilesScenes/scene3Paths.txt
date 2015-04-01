@@ -1,0 +1,59 @@
+4
+D D D D D D D R R U R R D R R R R D D R
+D D R R R R R D D R D D R D D D R
+D L D D D D D D D D D R R R R R R R R R U R
+D D D D D R R R D D R U U U R R R R D D D D D R
+
+120	12	10
+====================
+g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+g_0	D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+w_021	D	w_011	w_011	w_011	w_011	w_011	w_011	w_011	w_022
+w_012	D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+w_012	D	g_0	g_0	g_0	g_1	g_0	g_0	g_0	w_013
+w_012	D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+w_012	D	g_0	g_0	g_0	g_0	g_0	g_0	g_1	w_013
+w_012	D	g_1	R	R	D	g_0	g_0	g_0	w_013
+w_012	R	R	U	g_0	R	R	R	R	D
+w_012	g_0	g_0	g_0	g_1	g_0	g_0	g_1	g_0	D
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	R d_13
+w_023	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_024
+====================
+g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+g_0	D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+w_021	D	w_011	w_011	w_011	w_011	w_011	w_011	w_011	w_022
+w_012	R	R	R	R	R	D	g_0	g_0	w_013
+w_012	g_0	g_0	g_0	g_0	g_1	D	g_0	g_0	w_013
+w_012	g_0	g_0	g_0	g_0	g_0	R	D	g_0	w_013
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	D	g_1	w_013
+w_012	g_0	g_1	g_0	g_0	g_0	g_0	R	D	w_013
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	D	w_013
+w_012	g_0	g_0	g_0	g_1	g_0	g_0	g_1	D	w_013
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	R	d_13
+w_023	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_024
+====================
+g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+g_0	D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+D	L	w_011	w_011	w_011	w_011	w_011	w_011	w_011	w_022
+D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+D	g_0	g_0	g_0	g_0	g_1	g_0	g_0	g_0	w_013
+D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_1	w_013
+D	g_0	g_1	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+D	g_0	g_0	g_0	g_1	g_0	g_0	g_1	g_0	w_013
+D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	R d_13
+R	R	R	R	R	R	R	R	R	U
+====================
+g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+g_0	D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0
+w_021	D	w_011	w_011	w_011	w_011	w_011	w_011	w_011	w_022
+w_012	D	g_0	g_0	g_0	g_0	g_0	g_0	g_0	w_013
+w_012	D	g_0	g_0	g_0	g_1	g_0	g_0	g_0	w_013
+w_012	D	g_0	g_0	g_0	R	R	R	R	D
+w_012	R	R	R	D	U	g_0	g_0	g_1	D
+w_012	g_0	g_1	g_0	D	U	g_0	g_0	g_0	D
+w_012	g_0	g_0	g_0	R	U	g_0	g_0	g_0	D
+w_012	g_0	g_0	g_0	g_1	g_0	g_0	g_1	g_0	D
+w_012	g_0	g_0	g_0	g_0	g_0	g_0	g_0	g_0	R d_13
+w_023	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_014	w_024
