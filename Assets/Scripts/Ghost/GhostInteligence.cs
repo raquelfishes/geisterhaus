@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-using System.Threading;
 
 public class GhostInteligence : GhostController {
 
@@ -23,7 +22,6 @@ public class GhostInteligence : GhostController {
 		estado= Estado.ESPERANDO;
 		humans= GameObject.FindGameObjectsWithTag("Human");
 		ghost_objects= GameObject.FindGameObjectsWithTag("GhostObject");
-        //_gameManager = GameObject.FindGameObjectWithTag("GameManager");
 	}
 	
 	// Update is called once per frame
@@ -31,11 +29,13 @@ public class GhostInteligence : GhostController {
 		switch (estado) {
 			case Estado.ESPERANDO:
 				int i=0;
-				actionRadius= modulo(transform.position-humans[0].transform.position);
+				if(humans[0]!=null)
+					actionRadius= modulo(transform.position-humans[0].transform.position);
 				nearHuman=actionRadius;
 				idHuman=0;
 				while((i<humans.Length)&&(estado==Estado.ESPERANDO)){
-					actionRadius= modulo(transform.position-humans[i].transform.position);
+					if(humans[i]!=null)
+						actionRadius= modulo(transform.position-humans[i].transform.position);
 					if(actionRadius<MINRADIUS){
 						estado=Estado.ASUSTANDO;
 						idHuman=i;
@@ -74,8 +74,10 @@ public class GhostInteligence : GhostController {
 				int[] indices=new int[numObjets];
 
 				for(int j=0;j<numObjets;j++){
-					distancias[j]=modulo(ghost_objects[j].transform.position-humans[idHuman].transform.position);;
-					indices[j]=j;
+					if(humans[idHuman]!=null){
+						distancias[j]=modulo(ghost_objects[j].transform.position-humans[idHuman].transform.position);;
+						indices[j]=j;
+					}
 				}
 
 				Array.Sort(distancias,indices);
@@ -99,7 +101,8 @@ public class GhostInteligence : GhostController {
 			break;
 
 			case Estado.ASUSTANDO:
-				actionRadius= modulo(transform.position-humans[idHuman].transform.position);
+				if(humans[idHuman]!=null)
+					actionRadius= modulo(transform.position-humans[idHuman].transform.position);
 				if(actionRadius > MINRADIUS){
 					estado=Estado.ESPERANDO;
 					idHuman=-1;
