@@ -6,12 +6,13 @@ using System.Collections.Generic;
 public class LoadPathsFile : MonoBehaviour {
 
 	private List<string[]> _Paths = new List<string[]> ();	
-	private string filename = "./Assets/FilesScenes/scene1Paths.txt";
+	private string filename = "./Assets/FilesScenes/scenePaths.txt";
 	
 	private int _nPaths;
 
 	// Use this for initialization
 	void Start () {
+		filename = "./Assets/FilesScenes/scene" + GameObject.FindWithTag ("GameState").GetComponent<GameState> ().getNivel () + "Paths.txt";
 		StreamReader inputStream = new StreamReader(filename);
 
 		//Case first line

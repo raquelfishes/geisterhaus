@@ -29,6 +29,7 @@ public class GenerateScene : MonoBehaviour {
 	public GameObject tileDoorOut;
 
 	public GameObject gameManager;
+	public GameObject gameState;
 	
 	private float aumentoX;
 	private float aumentoZ;
@@ -37,12 +38,13 @@ public class GenerateScene : MonoBehaviour {
 	private List<string[]> _Paths;
 
 	public GUIStyle scoreBoardStyle;
-	public GameObject camara;
+	public GameObject gameOverCamara;
 
 	public void Start(){
 		Renderer m_renderer = tileGroundEmpty.renderer;
 		aumentoX = m_renderer.bounds.size.x;
 		aumentoZ = m_renderer.bounds.size.z;
+		gameState = GameObject.FindWithTag ("GameState");
 	}
 	public void Update(){}
 
@@ -78,17 +80,22 @@ public class GenerateScene : MonoBehaviour {
 	}
 
 	private void instantiateCharacters(){
-		gameObject.GetComponent<GenerateCharacters>().instantiateCharacters(numHumans,numGhosts);
+		numHumans = gameState.GetComponent<GameState> ().getNumHumans ();
+		int[] lifeHumans = gameState.GetComponent<GameState> ().getLifeHumans ();
+		gameObject.GetComponent<GenerateCharacters>().instantiateCharacters(numHumans,lifeHumans,numGhosts);
 	}
 
 	private void instantiateGameManager(){
+		gameState = GameObject.FindWithTag ("GameState");
 		GameObject go = Instantiate(gameManager,Vector3.zero,Quaternion.identity) as GameObject;
+		singleGhost = (gameState.GetComponent<GameState> ().getModeGame () == 1);
+		singleHuman = (gameState.GetComponent<GameState> ().getModeGame () == 2);
 		go.GetComponent<GameManager>().singleGhost = singleGhost;
 		go.GetComponent<GameManager>().singleHuman = singleHuman;
 		go.GetComponent<GameManager> ()._nPaths = _nPaths;
 		go.GetComponent<GameManager> ()._Paths = _Paths;
 		go.GetComponent<GameManager> ().scoreBoardStyle = scoreBoardStyle;
-		go.GetComponent<GameManager> ().camara = camara;
+		go.GetComponent<GameManager> ().camara = gameOverCamara;
 	}
 	
 	private void createRoom(){

@@ -31,8 +31,11 @@ public class GameManager : MonoBehaviour {
 	public GameObject camara;
 	public GUIStyle scoreBoardStyle;
 
+	public GameObject gameState;
+
 	// Use this for initialization
 	void Start () {
+		gameState = GameObject.FindWithTag ("GameState");
 		ghost_objects = GameObject.FindGameObjectsWithTag("GhostObject");
 		GameObject[] humans_aux = GameObject.FindGameObjectsWithTag("Human");
 		foreach (GameObject human_aux in humans_aux) {
@@ -134,20 +137,20 @@ public class GameManager : MonoBehaviour {
 		Destroy (object_aux);
 		--humansAlive;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
-		if (humansAlive < 1) {
-			camara.SetActive (true);
+		//if (humansAlive < 1) {
+
 		//	Debug.Log ("Todos muertos!!!!");
 		//	finishMsg.gameObject.SetActive (true);
 		//	finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
 		//	Application.Quit();
-		}
+		//}
 	}
 
 	public void hurtHuman(GameObject object_aux){
 		//SendMessage ("reducirVida");
 		int index = humans.IndexOf (object_aux);
-		humans [index].GetComponent<HumanPlayer> ().hurt ();
-		if (humans [index].GetComponent<HumanPlayer> ().getLife () <= 0)
+		humans [index].GetComponent<HumanController> ().hurt ();
+		if (humans [index].GetComponent<HumanController> ().getLife () <= 0)
 			killHuman (object_aux);
 	}
 
@@ -184,9 +187,18 @@ public class GameManager : MonoBehaviour {
 		if (humansPassDoor > 0) {
 			//Ganan los humanos
 			Debug.Log ("HUMANS WINS!");
+			//Guardar los parametros y cargar el siguiente nivel
+			gameState.GetComponent<GameState>().setNivel(gameState.GetComponent<GameState>().getNivel()+1);
+			gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
+			for (int i = 0; i < humans.Count; i++) {
+				gameState.GetComponent<GameState>().setLifeHuman(i,humans[i].GetComponent<HumanController>().getLife());
+			}
+			Application.LoadLevel("loadFile");
 		} else {
 			//Ganan los fantasmas
 			Debug.Log ("GHOSTS WINS!");
+			//Mostrar camara de gameOver
+			camara.SetActive (true);
 		}
 	}
 

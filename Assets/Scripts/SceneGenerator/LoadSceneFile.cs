@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class LoadSceneFile : MonoBehaviour {
 
 	private List<List<int>> _roomIds = new List<List<int>> ();	
-	private string filename = "./Assets/FilesScenes/scene1.txt";
+	private string filename = "./Assets/FilesScenes/scene.txt";
 
 	private int _nTyles;
 	private int _nRows;
@@ -14,6 +14,7 @@ public class LoadSceneFile : MonoBehaviour {
 
 	void Start () {
 	//LoadSceneFile(string filename){
+		filename = "./Assets/FilesScenes/scene" + GameObject.FindWithTag ("GameState").GetComponent<GameState> ().getNivel () + ".txt";
 		_roomIds = new List<List<int>> ();
 		StreamReader inputStream = new StreamReader(filename);
 		int nLine = 0;

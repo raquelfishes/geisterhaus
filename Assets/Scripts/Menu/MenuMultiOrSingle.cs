@@ -14,6 +14,8 @@ public class MenuMultiOrSingle : MonoBehaviour {
 	public GameObject progressBar;
 	public GameObject background;
 
+	private GameObject _gameState;
+
 	
 	void Awake () {
 		DontDestroyOnLoad(transform.gameObject);
@@ -23,6 +25,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 		text.SetActive (false);
 		progressBar.SetActive (false);
 		background.SetActive (false);
+		_gameState = GameObject.FindWithTag ("GameState");
 	}
 
 	void OnGUI () {
@@ -38,9 +41,18 @@ public class MenuMultiOrSingle : MonoBehaviour {
 		if(LIB1){
 			if(GUI.Button(new Rect(Screen.width/2-110,155,100,30),"J1: Fantamas")){
 				//StartCoroutine(loadingScreen("loadFile"));
+				_gameState.GetComponent<GameState>().setModeGame(0);
+				_gameState.GetComponent<GameState>().setPlayer1(0); //jugador 1 fantasma
+				_gameState.GetComponent<GameState>().setNivel(1);
+				_gameState.GetComponent<GameState>().setNumHumans(10);
 				Application.LoadLevel("loadFile");
+
 			}
-			if(GUI.Button(new Rect(Screen.width/2+10,155,100,30),"J2: Visitantes")){
+			if(GUI.Button(new Rect(Screen.width/2+10,155,100,30),"J1: Visitantes")){
+				_gameState.GetComponent<GameState>().setModeGame(0);
+				_gameState.GetComponent<GameState>().setPlayer1(1); //jugador 1 humanos
+				_gameState.GetComponent<GameState>().setNivel(1);
+				_gameState.GetComponent<GameState>().setNumHumans(10);
 				Application.LoadLevel("loadFile");
 			}	
 		}
@@ -53,9 +65,17 @@ public class MenuMultiOrSingle : MonoBehaviour {
 		if(LIB2){
 			if(GUI.Button(new Rect(Screen.width/2-110,265,100,30),"Fantamas")){
 				//async=Application.LoadLevelAsync("loadFile");
+				_gameState.GetComponent<GameState>().setModeGame(1);
+				_gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 fantasma
+				_gameState.GetComponent<GameState>().setNivel(1);
+				_gameState.GetComponent<GameState>().setNumHumans(10);
 				Application.LoadLevel("loadFile");
 			}
 			if(GUI.Button(new Rect(Screen.width/2+10,265,100,30),"Visitantes")){
+				_gameState.GetComponent<GameState>().setModeGame(2);
+				_gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 fantasma
+				_gameState.GetComponent<GameState>().setNivel(1);
+				_gameState.GetComponent<GameState>().setNumHumans(10);
 				Application.LoadLevel("loadFile");
 			}	
 		}

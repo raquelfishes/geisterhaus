@@ -11,18 +11,18 @@ public class GenerateCharacters : MonoBehaviour {
 
 	void Update (){}
 
-	public void instantiateCharacters(int numHumans, int numGhosts){
-		createHumans(numHumans);
+	public void instantiateCharacters(int numHumans, int[] lifeHumans, int numGhosts){
+		createHumans(numHumans,lifeHumans);
 		createGhosts(numGhosts);
 	}
 
-	private void createHumans(int num){
+	private void createHumans(int num, int[] lifeHumans){
 		Vector3 pos = positionFirstHuman;
 		Vector3 aux = new Vector3(2.0f,0.0f,0.0f);
 		//pos = pos - aux * num;
 		for (int i=0; i<num; i++) {
 			var aux_human = Instantiate (human, pos, Quaternion.identity) as GameObject;
-			//aux_human.AddComponent<HumanController>();
+			aux_human.GetComponent<HumanController>().setLife(lifeHumans[i]);
 			pos = pos + aux;
 		}
 	}
@@ -31,7 +31,8 @@ public class GenerateCharacters : MonoBehaviour {
 		Vector3 pos= new Vector3(0.0f,0.0f,0.0f);
 		for (int i=0; i<num; i++) {
 			var aux_ghost = Instantiate (ghost, pos, Quaternion.identity) as GameObject;
-			//aux_ghost.AddComponent<GhostController>();
+
+
 		}
 	}
 }
