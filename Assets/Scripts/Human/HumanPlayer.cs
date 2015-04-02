@@ -36,29 +36,30 @@ public class HumanPlayer : HumanController {
 	}
 
 	void OnCollisionEnter(Collision collision){
-		direction = (-1.0f) * direction;
+		//direction = (-1.0f) * direction;
+		gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,gameObject.transform.eulerAngles.y+180,0));
 	}
 
 	private void turnHorizontal(float axis){
 		if (axis > 0.0f) {
 			//Turn right
-			direction = Vector3.right;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
+			//direction = Vector3.right;
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
 		} else {
 			//Turn left
-			direction = Vector3.left;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
+			//direction = Vector3.left;
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
 		}
 	}
 
 	private void turnVertical(float axis){
 		if (axis > 0.0f) {
 			//Turn forward
-			direction = Vector3.forward;
+			//direction = Vector3.forward;
 			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,0,0));
 		} else {
 			//Turn back
-			direction = Vector3.back;
+			//direction = Vector3.back;
 			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
 		}
 	}

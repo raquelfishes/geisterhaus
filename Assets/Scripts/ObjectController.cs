@@ -4,9 +4,9 @@ using System.Collections;
 public class ObjectController : MonoBehaviour {
 
 	GameObject _gameManager = null;
-	int idGhost = -1;
+	public int idGhost = -1;
 	Camera _ghostCamera;
-	bool asignado= false;
+	public bool asignado= false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,22 +24,27 @@ public class ObjectController : MonoBehaviour {
 
 	void OnMouseDown(){
 		//Debug.Log ("mouse!!!");
-		Ray ray = _ghostCamera.ScreenPointToRay(Input.mousePosition);
-		if (idGhost == -1 && Physics.Raycast (ray) && !asignado) {
-			//It's not a ghost inside me!!!!! A ghost is comming here!!!!!!
-			//_gameManager.GetComponent<GameManager> ().moveGhostHere (transform.position);
-			_gameManager.GetComponent<GameManager> ().moveGhostHere (gameObject);
-			//asignado= true;
-			//ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
-		} else if (idGhost!= -1) {
-			//there is a ghost inside me!!! I want to select it!!!!
-			_gameManager.GetComponent<GameManager>().changeGhostSelected(idGhost);
+		if (GameObject.FindWithTag ("GameState").GetComponent<GameState> ().getModeGame () != 2) {
+			//Si estamos en un modo de juego donde utilicemos la camara ghost
+			Ray ray = _ghostCamera.ScreenPointToRay (Input.mousePosition);
+			if (idGhost == -1 && Physics.Raycast (ray) && !asignado) {
+				//It's not a ghost inside me!!!!! A ghost is comming here!!!!!!
+				//_gameManager.GetComponent<GameManager> ().moveGhostHere (transform.position);
+				_gameManager.GetComponent<GameManager> ().moveGhostHere (gameObject);
+				//asignado= true;
+				//ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
+			} else if (idGhost != -1) {
+				//there is a ghost inside me!!! I want to select it!!!!
+				_gameManager.GetComponent<GameManager> ().changeGhostSelected (idGhost);
+			}
 		}
 	}
 
 	public void initialize(){
 		_gameManager = GameObject.FindWithTag ("GameManager");
-		_ghostCamera = GameObject.FindWithTag ("GhostCamera").camera;
+		if (GameObject.FindWithTag("GameState").GetComponent<GameState>().getModeGame() != 2)
+			//Si estamos en un modo de juego donde utilicemos la camara ghost
+			_ghostCamera = GameObject.FindWithTag ("GhostCamera").camera;
 		//Debug.Log (_gameManager);
 	}
 

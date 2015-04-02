@@ -13,7 +13,6 @@ GameObject:
   - 95: {fileID: 9546318}
   - 65: {fileID: 6546318}
   - 114: {fileID: 11496536}
-  - 114: {fileID: 11499856}
   m_Layer: 0
   m_Name: tile_doorOut
   m_TagString: DoorOut
@@ -70,8 +69,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.70000005, y: 5, z: .5}
-  m_Center: {x: 0, y: 2.5, z: .25}
+  m_Size: {x: 3, y: 5, z: 3}
+  m_Center: {x: 0, y: 2.5, z: 2}
 --- !u!95 &9546318
 Animator:
   serializedVersion: 3
@@ -90,17 +89,6 @@ Animator:
 --- !u!114 &11496536
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e21a18ba2cdaa04a9de5cd9b6a65d26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11499856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146318}

@@ -15,7 +15,7 @@ GameObject:
   - 65: {fileID: 6532006}
   m_Layer: 0
   m_Name: soul_2
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,8 +58,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151348}
-  m_LocalRotation: {x: -.709079504, y: .000413282425, z: -.000495930726, w: .705128312}
-  m_LocalPosition: {x: -6.60076571, y: -.251227379, z: 3.63071275}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: -.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 432004}

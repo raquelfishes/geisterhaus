@@ -74,8 +74,10 @@ public class GhostInteligence : GhostController {
 							encontrado=true;
 					}
 					if (encontrado){
-						setObj(ghost_objects[indices[libre]]);
-						idObject = indices[libre];
+						//setObj(ghost_objects[indices[libre]]);
+						setObj(ghost_objects[libre]);
+						//idObject = indices[libre];
+						idObject = libre;
 					}
 				}
 			break;
@@ -89,7 +91,7 @@ public class GhostInteligence : GhostController {
 				}
 			break;
 		}
-		transform.position = Vector3.MoveTowards(transform.position, _obj.transform.position, 0.05f);
+		transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
 	}
 
 	double modulo(Vector3 vector){

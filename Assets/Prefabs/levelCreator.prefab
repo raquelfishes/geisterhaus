@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
   ghost: {fileID: 186740, guid: ce3f7cc32aa1e4b498a39bd662c4468a, type: 2}
-  human: {fileID: 132004, guid: 63f32ed624183154a96369fe9d0c850c, type: 2}
+  human: {fileID: 134472, guid: 375f83b45a4dd4c4e963fdd8e2802798, type: 2}
 --- !u!114 &11487032
 MonoBehaviour:
   m_ObjectHideFlags: 1
