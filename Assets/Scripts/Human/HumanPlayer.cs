@@ -44,11 +44,11 @@ public class HumanPlayer : HumanController {
 		if (axis > 0.0f) {
 			//Turn right
 			//direction = Vector3.right;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
 		} else {
 			//Turn left
 			//direction = Vector3.left;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
 		}
 	}
 

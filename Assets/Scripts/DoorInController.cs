@@ -44,7 +44,8 @@ public class DoorInController : MonoBehaviour {
 			go.GetComponent<HumanIntelligence> ().position = gameObject.transform.position+new Vector3(0.0f,0.45f,0.0f);;
 		} 
 		else {
-			go.GetComponent<HumanPlayer> ().setDirection (directionIn);
+			go.GetComponent<HumanPlayer> ().setDirection (-directionIn);
+			go.transform.rotation = Quaternion.Euler (new Vector3 (0,orientationIn.y+180,0));
 			go.GetComponent<HumanPlayer> ().setMoving (true);
 			go.GetComponent<HumanPlayer> ().isInScene = true;
 		}
