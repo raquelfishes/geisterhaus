@@ -170,11 +170,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: singleHuman
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: numHumans
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: ghost
@@ -182,7 +182,7 @@ Prefab:
       objectReference: {fileID: 100000, guid: 3daa30ccfbba2704b8e972a634c00f3f, type: 2}
     - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: numGhosts
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: scoreBoardStyle.m_Normal.m_TextColor.r
@@ -408,10 +408,10 @@ MonoBehaviour:
   _nRows: 0
   _nColumns: 0
   _nTyles: 0
-  numHumans: 25
-  numGhosts: 2
+  numHumans: 10
+  numGhosts: 3
   singleGhost: 1
-  singleHuman: 0
+  singleHuman: 1
   tileGroundEmpty: {fileID: 191834, guid: 19d75ea873e5ef946b5c6892e5853680, type: 2}
   tilesGroundObstacles:
   - {fileID: 190254, guid: d1f052ec45817914cabb95520f77f98d, type: 2}
@@ -424,6 +424,7 @@ MonoBehaviour:
   tileDoorIn: {fileID: 120720, guid: a80eb433c74196849b475c2bd3bf4edb, type: 2}
   tileDoorOut: {fileID: 146318, guid: c1cf3660930be3d43b125c0a95a5b541, type: 2}
   gameManager: {fileID: 135032, guid: 1bcda9586afac364eb72e6210f0bf323, type: 2}
+  gameState: {fileID: 0}
   scoreBoardStyle:
     m_Name: ScoreBoard
     m_Normal:
@@ -483,7 +484,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  camara: {fileID: 609332786}
+  gameOverCamara: {fileID: 0}
 --- !u!114 &1245447015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,9 +591,9 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: ba3c9fe87e0dd19419af3f2ad65dfac9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .488000005
+  m_Volume: .270000011
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
