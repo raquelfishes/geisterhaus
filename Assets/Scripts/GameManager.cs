@@ -134,7 +134,8 @@ public class GameManager : MonoBehaviour {
 			humans.RemoveAt (index);
 			humanDietoGhosts (index);
 		}
-		Destroy (object_aux);
+		//Destroy (object_aux);
+		object_aux.GetComponentInChildren<CharacterController> ().MuereInsensato ();
 		--humansAlive;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
 		//if (humansAlive < 1) {

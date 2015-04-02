@@ -60,25 +60,21 @@ public class GenerateScene : MonoBehaviour {
 	
 	private void loadPaths(List<string[]> Paths){
 		_Paths = Paths;
-		instantiateGameManager ();
+		//instantiateGameManager ();
 	}
 	
 	private void generateScene(List<List<int>> _roomIds){
 		Renderer m_renderer = tileGroundEmpty.renderer;
 		aumentoX = m_renderer.bounds.size.x;
 		aumentoZ = m_renderer.bounds.size.z;
-		//instantiateCameras();
+		instantiateCharacters ();
 		createRoom ();
 		generateTyles (_roomIds);
 		instantiateTyles ();
-		instantiateCharacters();
-		//instantiateGameManager();
+		//instantiateCharacters();
+		instantiateGameManager();
 	}
-
-	private void instantiateCameras(){
-		gameObject.GetComponent<GenerateCameras>().instantiateCameras();
-	}
-
+	
 	private void instantiateCharacters(){
 		numHumans = gameState.GetComponent<GameState> ().getNumHumans ();
 		int[] lifeHumans = gameState.GetComponent<GameState> ().getLifeHumans ();

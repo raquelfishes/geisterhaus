@@ -9,6 +9,7 @@ public class HumanPlayer : HumanController {
 	// Use this for initialization
 	void Start () {
 		direction = direction = Vector3.back;
+		gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
 		_gameManager = GameObject.FindWithTag("GameManager");
 		_life = 10;
 		_isMoving = false;
@@ -39,21 +40,27 @@ public class HumanPlayer : HumanController {
 	}
 
 	private void turnHorizontal(float axis){
-		if (axis > 0.0f)
+		if (axis > 0.0f) {
 			//Turn right
 			direction = Vector3.right;
-		else
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
+		} else {
 			//Turn left
 			direction = Vector3.left;
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
+		}
 	}
 
 	private void turnVertical(float axis){
-		if (axis > 0.0f)
+		if (axis > 0.0f) {
 			//Turn forward
 			direction = Vector3.forward;
-		else
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,0,0));
+		} else {
 			//Turn back
 			direction = Vector3.back;
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
+		}
 	}
 
 	public void setDirection(Vector3 vec){

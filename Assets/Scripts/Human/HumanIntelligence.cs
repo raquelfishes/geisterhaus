@@ -38,12 +38,16 @@ public class HumanIntelligence : HumanController {
 	public void pathEvaluate(){
 		switch (_Path[destiny]){
 			case "D":	position=transform.position-new Vector3(0.0f,0.0f,aumentoZ);
+				gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
 				break;
 			case "U":	position=transform.position+new Vector3(0.0f,0.0f,aumentoZ);
+				gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,0,0));
 				break;
 			case "L":	position=transform.position-new Vector3(aumentoX,0.0f,0.0f);
+				gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
 				break;
 			case "R":	position=transform.position+new Vector3(aumentoX,0.0f,0.0f);
+				gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
 				break;
 			default:	break;
 		}
@@ -52,12 +56,16 @@ public class HumanIntelligence : HumanController {
 	public void pathEvaluateIni(){
 		switch (_Path[destiny]){
 		case "D":	position=transform.position-new Vector3(0.0f,0.0f,iniz);
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
 			break;
 		case "U":	position=transform.position+new Vector3(0.0f,0.0f,iniz);
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,0,0));
 			break;
 		case "L":	position=transform.position-new Vector3(inix,0.0f,0.0f);
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
 			break;
 		case "R":	position=transform.position+new Vector3(inix,0.0f,0.0f);
+			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
 			break;
 		default:	break;
 		}

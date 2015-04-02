@@ -11,17 +11,19 @@ public class HumanController : MonoBehaviour {
 	public bool isInScene=false;
 	public bool _isInteligent;
 	public GameObject tileGroundEmpty;
+	public GameObject soul;
 
 	// Use this for initialization
 	void Start () {
 		_gameManager = GameObject.FindWithTag("GameManager");
 		_life = 10;
 		_isMoving = false;
+		soul.GetComponent<CharacterController>().setGrounded(true);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		soul.GetComponent<CharacterController>().setGrounded(true);
 	}
 
 	public void downLife(){
