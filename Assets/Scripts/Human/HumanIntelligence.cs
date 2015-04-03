@@ -24,7 +24,7 @@ public class HumanIntelligence : HumanController {
 	}
 
 	void Update () {
-	  if (isInScene) {
+	  if (isInScene && _isMoving) {
 			if(inicial){pathEvaluateIni (); inicial=!inicial;transform.position = Vector3.MoveTowards (transform.position, position, 0.03f);++destiny;}
 			bool iguales = (transform.position.x == position.x) && (transform.position.z == position.z);
 			if (iguales) {

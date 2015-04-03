@@ -6,7 +6,7 @@ public class HumanController : MonoBehaviour {
 
 	protected GameObject _gameManager = null;
 	protected int _id;
-	protected int _life;
+	public int _life=100;
 	protected int _hurtSize = 25;
 	protected float _speed = 1.0f;
 	public bool _isMoving=false;
@@ -23,7 +23,7 @@ public class HumanController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_life = 100;
+		//_life = 100;
 		_gameManager = GameObject.FindWithTag("GameManager");
 		GameObject gameState = GameObject.FindWithTag("GameState");
 		if (gameState.GetComponent<GameState> ().getModeGame () == 0) {

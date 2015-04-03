@@ -3,16 +3,13 @@ using System.Collections;
 using System.Threading;
 
 public class DoorInController : MonoBehaviour {
-
-	GameObject _gameManager = null;
+	
 	GameObject[] humans;
-	private int indexHuman = 0;
 	public Vector3 directionIn = new Vector3(0.0f,0.0f,1.0f);
 	public Quaternion orientationIn = Quaternion.identity;
 
 	// Use this for initialization
 	void Start () {
-		_gameManager = GameObject.FindWithTag ("GameManager");
 		//humans = GameObject.FindGameObjectsWithTag("Human");
 		//takeHumanToDoor();
 	}

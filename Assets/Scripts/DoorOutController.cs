@@ -17,13 +17,15 @@ public class DoorOutController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		//me cargo al humano de la escena
-		_gameManager.GetComponent<GameManager>().addHumanOut();
+		_gameManager.GetComponent<GameManager>().addHumanOut(other.gameObject);
+		other.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
 		_gameManager.GetComponent<GameManager>().killHuman(other.gameObject);
 	}
 
 	void OnTriggerExit (Collider other) {
 		//me cargo al humano de la escena
-		_gameManager.GetComponent<GameManager>().addHumanOut();
+		_gameManager.GetComponent<GameManager>().addHumanOut(other.gameObject);
+		other.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
 		_gameManager.GetComponent<GameManager>().killHuman(other.gameObject);
 	}
 }

@@ -67,6 +67,10 @@ public class GameManager : MonoBehaviour {
 			finishLevel();
 		}
 
+		if (human_selected > humans.Count-1){
+			--human_selected;
+		}
+
 		// Tamaño del menu
 		posX = 0.01f * Screen.width;
 		posY = 0.05f  * Screen.height;
@@ -179,8 +183,10 @@ public class GameManager : MonoBehaviour {
 			humans[human_selected].GetComponent<HumanPlayer>().select();
 	}
 
-	public void addHumanOut(){
+	public void addHumanOut(GameObject human){
+		gameState.GetComponent<GameState>().setLifeHuman(humansPassDoor,human.GetComponent<HumanController>().getLife());
 		++humansPassDoor;
+		gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
 		//if (humansPassDoor >= humans.Count) {
 		//	finishMsg.gameObject.SetActive (true);
 		//	finishMsg.gameObject.guiText.text = "HUMANS WINS!";
@@ -194,10 +200,10 @@ public class GameManager : MonoBehaviour {
 			Debug.Log ("HUMANS WINS!");
 			//Guardar los parametros y cargar el siguiente nivel
 			gameState.GetComponent<GameState>().setNivel(gameState.GetComponent<GameState>().getNivel()+1);
-			gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
-			for (int i = 0; i < humans.Count; i++) {
-				gameState.GetComponent<GameState>().setLifeHuman(i,humans[i].GetComponent<HumanController>().getLife());
-			}
+			//gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
+			//for (int i = 0; i < humans.Count; i++) {
+			//	gameState.GetComponent<GameState>().setLifeHuman(i,humans[i].GetComponent<HumanController>().getLife());
+			//}
 			Application.LoadLevel("loadFile");
 		} else {
 			//Ganan los fantasmas
