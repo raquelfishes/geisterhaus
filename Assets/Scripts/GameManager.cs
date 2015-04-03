@@ -134,10 +134,11 @@ public class GameManager : MonoBehaviour {
 			humans.RemoveAt (index);
 			humanDietoGhosts (index);
 		}
-		//Destroy (object_aux);
 		object_aux.GetComponentInChildren<CharacterController> ().MuereInsensato ();
 		--humansAlive;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
+		Destroy (object_aux);
+		object_aux.GetComponent<HumanController> ().destroyHealthBar ();
 		//if (humansAlive < 1) {
 
 		//	Debug.Log ("Todos muertos!!!!");

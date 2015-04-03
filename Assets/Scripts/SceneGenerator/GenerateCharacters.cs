@@ -7,7 +7,7 @@ public class GenerateCharacters : MonoBehaviour {
 	public Vector3 positionFirstHuman = new Vector3 (0.0f, 0.45f, 0.0f);
 	public GameObject ghost;
 	public GameObject human;
-	public Slider healthBar;
+	public GameObject healthBar;
 	
 	void Start (){}
 
@@ -26,18 +26,18 @@ public class GenerateCharacters : MonoBehaviour {
 		for (int i=0; i<num; i++) {
 			var aux_human = Instantiate (human, pos, Quaternion.identity) as GameObject;
 			if (gameState.GetComponent<GameState> ().getModeGame () == 0) {
-				var aux_healthBarHuman = Instantiate (healthBar, pos, Quaternion.identity) as Slider;
-				var aux_healthBarGhost = Instantiate (healthBar, pos, Quaternion.identity) as Slider;
+				var aux_healthBarHuman = Instantiate (healthBar, pos, Quaternion.identity) as GameObject;
+				var aux_healthBarGhost = Instantiate (healthBar, pos, Quaternion.identity) as GameObject;
 				aux_healthBarHuman.transform.parent = GameObject.Find ("Canvas").transform;
 				aux_healthBarGhost.transform.parent = GameObject.Find ("Canvas").transform;
 				aux_human.GetComponent<HumanController>().setHealthBarHuman(aux_healthBarHuman);
 				aux_human.GetComponent<HumanController>().setHealthBarGhost(aux_healthBarGhost);
 			} else if (gameState.GetComponent<GameState> ().getModeGame () == 1) {
-				var aux_healthBarGhost = Instantiate (healthBar, pos, Quaternion.identity) as Slider;
+				var aux_healthBarGhost = Instantiate (healthBar, pos, Quaternion.identity) as GameObject;
 				aux_healthBarGhost.transform.parent = GameObject.Find ("Canvas").transform;
 				aux_human.GetComponent<HumanController>().setHealthBarGhost(aux_healthBarGhost);
 			} else if (gameState.GetComponent<GameState> ().getModeGame () == 2) {
-				var aux_healthBarHuman = Instantiate (healthBar, pos, Quaternion.identity) as Slider;
+				var aux_healthBarHuman = Instantiate (healthBar, pos, Quaternion.identity) as GameObject;
 				aux_healthBarHuman.transform.parent = GameObject.Find ("Canvas").transform;
 				aux_human.GetComponent<HumanController>().setHealthBarHuman(aux_healthBarHuman);
 			}

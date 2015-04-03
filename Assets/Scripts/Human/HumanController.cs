@@ -15,8 +15,8 @@ public class HumanController : MonoBehaviour {
 	public GameObject tileGroundEmpty;
 	public GameObject soul;
 
-	public Slider _healthBarHuman;
-	public Slider _healthBarGhost;
+	public GameObject _healthBarHuman;
+	public GameObject _healthBarGhost;
 
 	public Camera _humanCamera;
 	public Camera _ghostCamera;
@@ -29,14 +29,14 @@ public class HumanController : MonoBehaviour {
 		if (gameState.GetComponent<GameState> ().getModeGame () == 0) {
 			_humanCamera = GameObject.FindWithTag("HumanCamera").GetComponent<Camera>();
 			_ghostCamera = GameObject.FindWithTag("GhostCamera").GetComponent<Camera>();
-			_healthBarHuman.value = _life;
-			_healthBarGhost.value = _life;
+			_healthBarHuman.GetComponent<Slider>().value = _life;
+			_healthBarGhost.GetComponent<Slider>().value = _life;
 		} else if (gameState.GetComponent<GameState> ().getModeGame () == 1) {
 			_ghostCamera = GameObject.FindWithTag("GhostCamera").GetComponent<Camera>();
-			_healthBarGhost.value = _life;
+			_healthBarGhost.GetComponent<Slider>().value = _life;
 		} else if (gameState.GetComponent<GameState> ().getModeGame () == 2) {
 			_humanCamera = GameObject.FindWithTag("HumanCamera").GetComponent<Camera>();
-			_healthBarHuman.value = _life;
+			_healthBarHuman.GetComponent<Slider>().value = _life;
 		}
 
 		_isMoving = false;
@@ -48,36 +48,47 @@ public class HumanController : MonoBehaviour {
 	void Update () {
 		soul.GetComponent<CharacterController>().setGrounded(true);
 		if (_humanCamera != null) {
-			_healthBarHuman.transform.position = _humanCamera.WorldToScreenPoint (gameObject.transform.position);
-			_healthBarHuman.transform.position += new Vector3(0.0f,5.0f,0.0f);
+			_healthBarHuman.transform.position = _humanCamera.WorldToScreenPoint (gameObject.transform.position + new Vector3(0.0f,1.5f,0.0f));
+			//_healthBarHuman.transform.position += new Vector3(0.0f,5.0f,0.0f);
 		}
 		if (_ghostCamera != null) {
-			_healthBarGhost.transform.position = _ghostCamera.WorldToScreenPoint (gameObject.transform.position);
-			_healthBarGhost.transform.position += new Vector3(0.0f,5.0f,0.0f);
+			_healthBarGhost.transform.position = _ghostCamera.WorldToScreenPoint (gameObject.transform.position + new Vector3(0.0f,1.5f,0.0f));
+			//_healthBarGhost.transform.position += new Vector3(0.0f,5.0f,0.0f);
 		}
 	}
 
-	public void setHealthBarHuman(Slider bar){
+	public void destroyHealthBar(){
+		if (_humanCamera != null) {
+			Destroy (_healthBarHuman);
+			//_healthBarHuman.enabled=false;
+		}
+		if (_ghostCamera != null) {
+			Destroy (_healthBarGhost);
+			//_healthBarGhost.enabled=false;
+		}
+	}
+
+	public void setHealthBarHuman(GameObject bar){
 		_healthBarHuman = bar;
 	}
-	public void setHealthBarGhost(Slider bar){
+	public void setHealthBarGhost(GameObject bar){
 		_healthBarGhost = bar;
 	}
 
 	public void downLife(){
 		_life -= _hurtSize;
 		if (_humanCamera != null)
-			_healthBarHuman.value -= _life;
+			_healthBarHuman.GetComponent<Slider>().value -= _life;
 		if (_ghostCamera != null)
-			_healthBarGhost.value -= _life;
+			_healthBarGhost.GetComponent<Slider>().value -= _life;
 	}
 	
 	public void setLife(int li){
 		_life = li;
 		if (_humanCamera != null)
-			_healthBarHuman.value = _life;
+			_healthBarHuman.GetComponent<Slider>().value = _life;
 		if (_ghostCamera != null)
-			_healthBarGhost.value = _life;
+			_healthBarGhost.GetComponent<Slider>().value = _life;
 	}
 	
 	public int getLife(){
@@ -87,9 +98,9 @@ public class HumanController : MonoBehaviour {
 	public void hurt(){
 		_life -= 2;
 		if (_humanCamera != null)
-			_healthBarHuman.value -= _life;
+			_healthBarHuman.GetComponent<Slider>().value -= _life;
 		if (_ghostCamera != null)
-			_healthBarGhost.value -= _life;
+			_healthBarGhost.GetComponent<Slider>().value -= _life;
 	}
 
 	public void setId(int i){
