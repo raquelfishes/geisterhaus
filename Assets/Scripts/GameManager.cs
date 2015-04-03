@@ -77,9 +77,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void nextSelectedHuman(){
-		humans [human_selected].GetComponent<HumanPlayer>().deselect ();
-		human_selected = (human_selected+1)%humans.Count;
-		humans [human_selected].GetComponent<HumanPlayer>().select ();
+		if (humans.Count > 1) {
+			humans [human_selected].GetComponent<HumanPlayer> ().deselect ();
+			human_selected = (human_selected + 1) % humans.Count;
+			humans [human_selected].GetComponent<HumanPlayer> ().select ();
+		}
 	}
 
 	public void changeGhostSelected(int i){
