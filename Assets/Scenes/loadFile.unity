@@ -128,7 +128,7 @@ Prefab:
     - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: ghost
       value: 
-      objectReference: {fileID: 100000, guid: 3daa30ccfbba2704b8e972a634c00f3f, type: 2}
+      objectReference: {fileID: 100000, guid: edd2da14c30e72f4093ae4eefa16f370, type: 2}
     - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: numGhosts
       value: 3
@@ -207,6 +207,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11472634, guid: d6864ddf64ae8074a85ca3904c32680c,
         type: 2}
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: human
+      value: 
+      objectReference: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
   m_RootGameObject: {fileID: 1245447010}
@@ -350,8 +354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
-  ghost: {fileID: 100000, guid: 3daa30ccfbba2704b8e972a634c00f3f, type: 2}
-  human: {fileID: 134472, guid: 375f83b45a4dd4c4e963fdd8e2802798, type: 2}
+  ghost: {fileID: 100000, guid: edd2da14c30e72f4093ae4eefa16f370, type: 2}
+  human: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
   healthBar: {fileID: 11472634, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &1245447013
 MonoBehaviour:

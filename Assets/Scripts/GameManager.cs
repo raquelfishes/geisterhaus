@@ -141,28 +141,13 @@ public class GameManager : MonoBehaviour {
 			humanDietoGhosts (index);
 			if (index==human_selected) nextSelectedHuman();
 		}
-<<<<<<< HEAD
-		object_aux.GetComponent<HumanController> ().destroyHealthBar ();
-=======
 
->>>>>>> 46924ca0cc94556ef9082fed1f0d8d1fe202104f
+		object_aux.GetComponent<HumanController> ().destroyHealthBar ();
 		object_aux.GetComponentInChildren<CharacterController> ().MuereInsensato ();
 		--humansAlive;
 		Destroy (object_aux);
 		if (index<human_selected) --human_selected;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
-<<<<<<< HEAD
-		//Destroy (object_aux);
-
-		//if (humansAlive < 1) {
-
-		//	Debug.Log ("Todos muertos!!!!");
-		//	finishMsg.gameObject.SetActive (true);
-		//	finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
-		//	Application.Quit();
-		//}
-=======
->>>>>>> 46924ca0cc94556ef9082fed1f0d8d1fe202104f
 	}
 
 	public void hurtHuman(GameObject object_aux){
@@ -196,15 +181,7 @@ public class GameManager : MonoBehaviour {
 	public void addHumanOut(GameObject human){
 		gameState.GetComponent<GameState>().setLifeHuman(humansPassDoor,human.GetComponent<HumanController>().getLife());
 		++humansPassDoor;
-<<<<<<< HEAD
 		gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
-		//if (humansPassDoor >= humans.Count) {
-		//	finishMsg.gameObject.SetActive (true);
-		//	finishMsg.gameObject.guiText.text = "HUMANS WINS!";
-		//	exitGame();
-		//}
-=======
->>>>>>> 46924ca0cc94556ef9082fed1f0d8d1fe202104f
 	}
 
 	public void finishLevel(){
