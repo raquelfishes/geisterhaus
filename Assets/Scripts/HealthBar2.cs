@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthBar : MonoBehaviour {
+public class HealthBar2 : MonoBehaviour {
 
 	//Apariencia de la barra de vida
 	public GUIStyle healthBar;

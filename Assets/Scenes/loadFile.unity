@@ -202,6 +202,11 @@ Prefab:
       propertyPath: gameOverCamara
       value: 
       objectReference: {fileID: 160534, guid: bb8735ab74db4bc4289e3b88bef2d327, type: 2}
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 11472634, guid: d6864ddf64ae8074a85ca3904c32680c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
   m_RootGameObject: {fileID: 1245447010}
@@ -210,7 +215,7 @@ Prefab:
 --- !u!1 &1019412600
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 122146, guid: 907223d573e9ee34586667b30e6749ca, type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
@@ -228,7 +233,8 @@ GameObject:
 --- !u!114 &1019412601
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11422150, guid: 907223d573e9ee34586667b30e6749ca,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019412600}
   m_Enabled: 1
@@ -244,7 +250,8 @@ MonoBehaviour:
 --- !u!114 &1019412602
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11422148, guid: 907223d573e9ee34586667b30e6749ca,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019412600}
   m_Enabled: 1
@@ -265,7 +272,8 @@ MonoBehaviour:
 --- !u!223 &1019412603
 Canvas:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 22322158, guid: 907223d573e9ee34586667b30e6749ca,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019412600}
   m_Enabled: 1
@@ -282,7 +290,8 @@ Canvas:
 --- !u!224 &1019412604
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 22422146, guid: 907223d573e9ee34586667b30e6749ca,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019412600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -343,7 +352,7 @@ MonoBehaviour:
   positionFirstHuman: {x: 0, y: 2, z: 0}
   ghost: {fileID: 100000, guid: 3daa30ccfbba2704b8e972a634c00f3f, type: 2}
   human: {fileID: 134472, guid: 375f83b45a4dd4c4e963fdd8e2802798, type: 2}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 11472634, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &1245447013
 MonoBehaviour:
   m_ObjectHideFlags: 0

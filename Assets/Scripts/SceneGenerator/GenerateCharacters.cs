@@ -50,8 +50,6 @@ public class GenerateCharacters : MonoBehaviour {
 		Vector3 pos= new Vector3(0.0f,0.0f,0.0f);
 		for (int i=0; i<num; i++) {
 			var aux_ghost = Instantiate (ghost, pos, Quaternion.identity) as GameObject;
-
-
 		}
 	}
 }
