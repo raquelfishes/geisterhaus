@@ -8,13 +8,7 @@ public class GhostController : MonoBehaviour {
 	protected GameObject _obj;
     protected int _id;
     public bool _isInteligent;
-	private Animator anim;
-	
-	// Use this for initialization
-	void Awake () {
-		anim = GetComponent<Animator>();
-		anim.SetBool ("isUpDown", true);
-	}
+
 	// Use this for initialization
 	void Start () {
         _gameManager = GameObject.FindWithTag("GameManager");
