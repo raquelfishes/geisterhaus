@@ -79,7 +79,7 @@ public class ObjectController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		GameObject vida = GameObject.Find ("HealthBar");
-		//Debug.Log ("entra algo!!!!!"+other.gameObject.tag);
+		Debug.Log ("entra algo!!!!!"+other.gameObject.tag);
 		if (other.gameObject.tag == "Ghost") {
 			ghostIn (other.gameObject.GetComponent<GhostController> ().getId ());
 		}
@@ -87,7 +87,7 @@ public class ObjectController : MonoBehaviour {
 			if (idGhost != -1){
 				//_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
 				_gameManager.GetComponent<GameManager>().hurtHuman(other.gameObject);
-				//Debug.Log ("humano que se choca!!!!");
+				Debug.Log ("humano que se asusta!!!!");
 			}
 		}
 	}
