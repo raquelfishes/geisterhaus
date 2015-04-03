@@ -205,8 +205,7 @@ Prefab:
     - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 11472634, guid: d6864ddf64ae8074a85ca3904c32680c,
-        type: 2}
+      objectReference: {fileID: 172624, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
     - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: human
       value: 
@@ -356,7 +355,7 @@ MonoBehaviour:
   positionFirstHuman: {x: 0, y: 2, z: 0}
   ghost: {fileID: 100000, guid: edd2da14c30e72f4093ae4eefa16f370, type: 2}
   human: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
-  healthBar: {fileID: 11472634, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
+  healthBar: {fileID: 172624, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &1245447013
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -68,9 +68,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
-  ghost: {fileID: 186740, guid: ce3f7cc32aa1e4b498a39bd662c4468a, type: 2}
-  human: {fileID: 134472, guid: 375f83b45a4dd4c4e963fdd8e2802798, type: 2}
-  healthBar: {fileID: 11436624, guid: 34d4665b9d25dbe41965e261e11950ef, type: 2}
+  ghost: {fileID: 100000, guid: edd2da14c30e72f4093ae4eefa16f370, type: 2}
+  human: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
+  healthBar: {fileID: 172624, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &11487032
 MonoBehaviour:
   m_ObjectHideFlags: 1

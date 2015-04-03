@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour {
 		object_aux.GetComponent<HumanController> ().destroyHealthBar ();
 		object_aux.GetComponentInChildren<CharacterController> ().MuereInsensato ();
 		--humansAlive;
-		Destroy (object_aux);
+		//Destroy (object_aux);
 		if (index<human_selected) --human_selected;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
 	}
