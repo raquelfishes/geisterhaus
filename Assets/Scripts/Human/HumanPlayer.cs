@@ -5,11 +5,13 @@ public class HumanPlayer : HumanController {
 	
 	public Vector3 direction;
 	private bool isSelected=false;
+	private Quaternion quater;
 
 	// Use this for initialization
 	void Start () {
-		direction = direction = Vector3.back;
-		gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
+		direction = Vector3.forward;
+		quater = Quaternion.Euler (new Vector3 (0,180,0));
+		gameObject.transform.rotation = quater;
 		_gameManager = GameObject.FindWithTag("GameManager");
 		_life = 10;
 		_isMoving = false;
@@ -18,7 +20,7 @@ public class HumanPlayer : HumanController {
 	
 	// Update is called once per frame
 	void Update () {
-
+		direction = Vector3.forward;
 		if (isSelected) {
 			gameObject.particleSystem.enableEmission = true;
 			float horAxis = Input.GetAxisRaw ("Horizontal");
@@ -31,24 +33,29 @@ public class HumanPlayer : HumanController {
 		else {
 			gameObject.particleSystem.enableEmission = false;
 		}
-		if (_isMoving)
-			transform.Translate (direction * _speed *Time.deltaTime);
+		if (_isMoving) {
+			transform.Translate (Vector3.forward*Time.deltaTime*_speed);
+			transform.rotation = quater;
+		}
 	}
 
 	void OnCollisionEnter(Collision collision){
 		//direction = (-1.0f) * direction;
-		gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,gameObject.transform.eulerAngles.y+180,0));
+		quater = Quaternion.Euler (new Vector3 (0,gameObject.transform.eulerAngles.y+180,0));
+		//gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,gameObject.transform.eulerAngles.y+180,0));
 	}
 
 	private void turnHorizontal(float axis){
 		if (axis > 0.0f) {
 			//Turn right
 			//direction = Vector3.right;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
+			//gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,90,0));
+			quater = Quaternion.Euler (new Vector3 (0.0f,90.0f,0.0f));
 		} else {
 			//Turn left
 			//direction = Vector3.left;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
+			//gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,-90,0));
+			quater = Quaternion.Euler (new Vector3 (0.0f,-90.0f,0.0f));
 		}
 	}
 
@@ -56,11 +63,13 @@ public class HumanPlayer : HumanController {
 		if (axis > 0.0f) {
 			//Turn forward
 			//direction = Vector3.forward;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,0,0));
+			//gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,0,0));
+			quater = Quaternion.Euler (new Vector3 (0.0f,0.0f,0.0f));
 		} else {
 			//Turn back
 			//direction = Vector3.back;
-			gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
+			//gameObject.transform.rotation = Quaternion.Euler (new Vector3 (0,180,0));
+			quater = Quaternion.Euler (new Vector3 (0.0f,180.0f,0.0f));
 		}
 	}
 

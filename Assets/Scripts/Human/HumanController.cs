@@ -7,7 +7,7 @@ public class HumanController : MonoBehaviour {
 	protected GameObject _gameManager = null;
 	protected int _id;
 	protected int _life;
-	protected int _hurtSize = 5;
+	protected int _hurtSize = 25;
 	protected float _speed = 1.0f;
 	public bool _isMoving=false;
 	public bool isInScene=false;
@@ -47,11 +47,15 @@ public class HumanController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		soul.GetComponent<CharacterController>().setGrounded(true);
-		if (_humanCamera != null) {
+		updateHealthBar ();
+	}
+
+	public void updateHealthBar(){
+		if (_humanCamera != null && _healthBarHuman != null) {
 			_healthBarHuman.transform.position = _humanCamera.WorldToScreenPoint (gameObject.transform.position + new Vector3(0.0f,1.5f,0.0f));
 			//_healthBarHuman.transform.position += new Vector3(0.0f,5.0f,0.0f);
 		}
-		if (_ghostCamera != null) {
+		if (_ghostCamera != null && _healthBarGhost != null) {
 			_healthBarGhost.transform.position = _ghostCamera.WorldToScreenPoint (gameObject.transform.position + new Vector3(0.0f,1.5f,0.0f));
 			//_healthBarGhost.transform.position += new Vector3(0.0f,5.0f,0.0f);
 		}
@@ -66,6 +70,7 @@ public class HumanController : MonoBehaviour {
 			Destroy (_healthBarGhost);
 			//_healthBarGhost.enabled=false;
 		}
+		gameObject.SendMessage ("setMoving",false);
 	}
 
 	public void setHealthBarHuman(GameObject bar){
@@ -78,9 +83,9 @@ public class HumanController : MonoBehaviour {
 	public void downLife(){
 		_life -= _hurtSize;
 		if (_humanCamera != null)
-			_healthBarHuman.GetComponent<Slider>().value -= _life;
+			_healthBarHuman.GetComponent<Slider>().value -= _hurtSize;
 		if (_ghostCamera != null)
-			_healthBarGhost.GetComponent<Slider>().value -= _life;
+			_healthBarGhost.GetComponent<Slider>().value -= _hurtSize;
 	}
 	
 	public void setLife(int li){
@@ -96,11 +101,11 @@ public class HumanController : MonoBehaviour {
 	}
 
 	public void hurt(){
-		_life -= 2;
+		_life -= _hurtSize;
 		if (_humanCamera != null)
-			_healthBarHuman.GetComponent<Slider>().value -= _life;
+			_healthBarHuman.GetComponent<Slider>().value -= _hurtSize;
 		if (_ghostCamera != null)
-			_healthBarGhost.GetComponent<Slider>().value -= _life;
+			_healthBarGhost.GetComponent<Slider>().value -= _hurtSize;
 	}
 
 	public void setId(int i){

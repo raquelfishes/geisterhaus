@@ -26,5 +26,6 @@ public class CharacterController : MonoBehaviour {
 	public void MuereInsensato()
 	{
 		anim.SetTrigger("Death");
+		Destroy (gameObject.transform.parent.gameObject, 5.0f);
 	}
 }
