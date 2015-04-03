@@ -77,9 +77,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void nextSelectedHuman(){
-		humans [human_selected].GetComponent<HumanPlayer>().deselect ();
-		human_selected = (human_selected+1)%humans.Count;
-		humans [human_selected].GetComponent<HumanPlayer>().select ();
+		if (human_selected< humans.Count)
+			humans [human_selected].GetComponent<HumanPlayer>().deselect ();
+		if (humans.Count > 0) {
+			human_selected = (human_selected + 1) % humans.Count;
+			humans [human_selected].GetComponent<HumanPlayer> ().select ();
+		}
 	}
 
 	public void changeGhostSelected(int i){
@@ -133,18 +136,14 @@ public class GameManager : MonoBehaviour {
 		if (index != -1) {
 			humans.RemoveAt (index);
 			humanDietoGhosts (index);
+			if (index==human_selected) nextSelectedHuman();
 		}
-		//Destroy (object_aux);
+
 		object_aux.GetComponentInChildren<CharacterController> ().MuereInsensato ();
 		--humansAlive;
+		Destroy (object_aux);
+		if (index<human_selected) --human_selected;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
-		//if (humansAlive < 1) {
-
-		//	Debug.Log ("Todos muertos!!!!");
-		//	finishMsg.gameObject.SetActive (true);
-		//	finishMsg.gameObject.guiText.text = "GHOSTS WINS!";
-		//	Application.Quit();
-		//}
 	}
 
 	public void hurtHuman(GameObject object_aux){
@@ -177,11 +176,6 @@ public class GameManager : MonoBehaviour {
 
 	public void addHumanOut(){
 		++humansPassDoor;
-		//if (humansPassDoor >= humans.Count) {
-		//	finishMsg.gameObject.SetActive (true);
-		//	finishMsg.gameObject.guiText.text = "HUMANS WINS!";
-		//	exitGame();
-		//}
 	}
 
 	public void finishLevel(){
