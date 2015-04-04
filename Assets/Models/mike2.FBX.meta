@@ -1,13 +1,56 @@
 fileFormatVersion: 2
-guid: 7a3a0b3682b8c58458937fb020524bde
+guid: 540a4cfffd33edb44b83106bbe30af34
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cuadro003
+    100000: eye
+    100002: eyeball
+    100004: eyelidB
+    100006: eyelidT
+    100008: horn
+    100010: innerMouth
+    100012: //RootNode
+    100014: skin
+    100016: tongue
+    100018: tooth
+    400000: eye
+    400002: eyeball
+    400004: eyelidB
+    400006: eyelidT
+    400008: horn
+    400010: innerMouth
+    400012: //RootNode
+    400014: skin
+    400016: tongue
+    400018: tooth
+    2300000: eye
+    2300002: eyeball
+    2300004: eyelidB
+    2300006: eyelidT
+    2300008: horn
+    2300010: innerMouth
+    2300012: skin
+    2300014: tongue
+    2300016: tooth
+    3300000: eye
+    3300002: eyeball
+    3300004: eyelidB
+    3300006: eyelidT
+    3300008: horn
+    3300010: innerMouth
+    3300012: skin
+    3300014: tongue
+    3300016: tooth
+    4300000: tooth
+    4300002: tongue
+    4300004: skin
+    4300006: innerMouth
+    4300008: horn
+    4300010: eyelidT
+    4300012: eyelidB
+    4300014: eyeball
+    4300016: eye
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
