@@ -281,9 +281,9 @@ public class GenerateScene : MonoBehaviour {
 		switch (t._myTypeObstacle) {
 			case Tile.typeObstacle.TABLE:
 				if(t.horizontal)
-					go=Instantiate(tilesGroundObstacles[0],position,Quaternion.identity) as GameObject;
+					go=Instantiate(tilesGroundObstacles[0],position+(new Vector3(0.0f,1.0f,0.0f)),Quaternion.identity) as GameObject;
 				else
-					go=Instantiate(tilesGroundObstacles[0],position,Quaternion.Euler (new Vector3(0,90,0))) as GameObject;
+					go=Instantiate(tilesGroundObstacles[0],position+(new Vector3(0.0f,1.0f,0.0f)),Quaternion.Euler (new Vector3(0,90,0))) as GameObject;
 				break;
 		}
 	}
