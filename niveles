@@ -1,8 +1,23 @@
 DISEÑO NIVELES:
 
-
-NIVEL 1 :: SALON
+NIVEL 0 :: JARDIN
+NIVEL 1 :: SALON => Reloj, jarrón, sofa, mesa
 NIVEL 2 :: COCINA
 NIVEL 3 :: DORMITORIO
 NIVEL 4 :: BAÑO
 NIVEL 5 :: DORMITORIO
+
+OBJETOS:
+
+OBSTACULOS:
+-Mesa
+-Sofá
+-Regadera
+-Chimenea 
+
+POSEIDOS:
+-Jarrón
+-Cuadro
+-Reloj
+-Piano
+-pecera

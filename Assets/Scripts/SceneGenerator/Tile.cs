@@ -4,7 +4,7 @@ using System.Collections;
 public class Tile {
 
 	public enum typeTile{NOT,EMPTY,OBSTACLE,POSSESSED,DOOR};
-	public enum typeObstacle{NOT,TABLE}
+	public enum typeObstacle{NOT,TABLE,SOFA}
 	public enum typeEmpty{NOT,GROUND,WALL,CORNER}
 	public enum typePossessed{NOT,VASE,CANVAS1,CANVAS2}
 	//RF = right front -- LF = right left -- RB = right back -- LB = back left

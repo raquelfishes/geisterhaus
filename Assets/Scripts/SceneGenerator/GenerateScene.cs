@@ -139,6 +139,22 @@ public class GenerateScene : MonoBehaviour {
 			//We don't have to instantiate a tyle here, but we need info of typeObstacle
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.OBSTACLE;
 			break;
+		case 131:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.OBSTACLE;
+			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.GROUND;
+			_myRoom [row] [col]._myTypeObstacle = Tile.typeObstacle.SOFA;
+			_myRoom [row] [col].horizontal = true;
+			break;
+		case 132:
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.OBSTACLE;
+			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.GROUND;
+			_myRoom [row] [col]._myTypeObstacle = Tile.typeObstacle.SOFA;
+			_myRoom [row] [col].horizontal = false;
+			break;
+		case 133:
+			//We don't have to instantiate a tyle here, but we need info of typeObstacle
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.OBSTACLE;
+			break;
 		case 2011:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
@@ -284,6 +300,12 @@ public class GenerateScene : MonoBehaviour {
 					go=Instantiate(tilesGroundObstacles[0],position+(new Vector3(0.0f,1.0f,0.0f)),Quaternion.identity) as GameObject;
 				else
 					go=Instantiate(tilesGroundObstacles[0],position+(new Vector3(0.0f,1.0f,0.0f)),Quaternion.Euler (new Vector3(0,90,0))) as GameObject;
+				break;
+			case Tile.typeObstacle.SOFA:
+				if(t.horizontal)
+					go=Instantiate(tilesGroundObstacles[1],position+(new Vector3(0.0f,1.0f,0.0f)),Quaternion.identity) as GameObject;
+				else
+					go=Instantiate(tilesGroundObstacles[1],position+(new Vector3(0.0f,1.0f,0.0f)),Quaternion.Euler (new Vector3(0,90,0))) as GameObject;
 				break;
 		}
 	}

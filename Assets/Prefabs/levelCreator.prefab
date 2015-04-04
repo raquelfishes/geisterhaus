@@ -93,7 +93,8 @@ MonoBehaviour:
   singleHuman: 1
   tileGroundEmpty: {fileID: 191834, guid: 19d75ea873e5ef946b5c6892e5853680, type: 2}
   tilesGroundObstacles:
-  - {fileID: 190254, guid: d1f052ec45817914cabb95520f77f98d, type: 2}
+  - {fileID: 111572, guid: 8d888846a6bdd6e438c51d64bdd4f05f, type: 2}
+  - {fileID: 179768, guid: d92a29f5dd6b3514c97f61f36a63a712, type: 2}
   tilesGroundPossesseds:
   - {fileID: 196246, guid: 88e3801511614004eabc9de327f8f993, type: 2}
   tileWallEmpty: {fileID: 149506, guid: 5584ae7751bb7534f9715efa14c74720, type: 2}

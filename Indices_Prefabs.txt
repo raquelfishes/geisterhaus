@@ -1,10 +1,21 @@
 //IndicePrefab
 0 => nada/vacio (para el caso de querer hacer habitaciones no cuadradas)
-10 => baldosa vacia
+101 => baldosa vacia tipo 1
+101 => baldosa vacia tipo 2
+101 => baldosa vacia tipo 3
+101 => baldosa vacia tipo 4
+101 => baldosa vacia tipo 5
+
 11 => baldosa jarron
+
 121 => baldosa con mesa horizontal inicio
 122 => baldosa con mesa vertical inicio
 123 => baldosa con mesa final o intermedia (no tengo que instanciar nada)
+
+131 => baldosa con sofa horizontal inicio
+132 => baldosa con sofa vertical inicio
+133 => baldosa con sofa final o intermedia (no tengo que instanciar nada)
+
 2011 => pared vacia medio frente
 2012 => pared vacia medio iquierda
 2013 => pared vacia medio derecha
@@ -13,6 +24,7 @@
 2022 => pared vacia esquina frente/derecha    -|
 2023 => pared vacia esquina trasera/izquierda |_
 2024 => pared vacia esquina trasera/derecha    _|
+
 2111 => pared con cuadro1 frente
 2112 => pared con cuadro1 iquierda
 2113 => pared con cuadro1 derecha
@@ -21,6 +33,7 @@
 2122 => pared con cuadro2 iquierda
 2123 => pared con cuadro2 derecha
 2124 => pared con cuadro2 trasera
+
 501 => puerta inicio
 502 => puerta inicio
 503 => puerta inicio
@@ -39,10 +52,16 @@ g_02 => baldosa vacia tipo 2
 g_03 => baldosa vacia tipo 3
 g_04 => baldosa vacia tipo 4
 g_05 => baldosa vacia tipo 5
+
 g_1 => obstaculo jarron
+
 g_21 => mesa horizontal inicio
 g_22 => mesa vertical inicio
 g_23 => mesa fin (no instancia nada)
+
+g_31 => sofa horizontal inicio
+g_32 => sofa vertical inicio
+g_33 => sofa fin (no instancia nada)
 
 //Indicadores para la pared
 //pared frontal
