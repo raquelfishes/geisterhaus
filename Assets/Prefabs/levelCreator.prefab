@@ -56,6 +56,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanCamera: {fileID: 157236, guid: c9510579a7865d743ae6d2ff4d8304d8, type: 2}
   ghostCamera: {fileID: 179244, guid: f4a091dc396e2c24a95bad96b77278bd, type: 2}
+  ghostCounts: {fileID: 192888, guid: dc2d9fd7a0c800e4c87600f150de58e4, type: 2}
+  humanCounts: {fileID: 188490, guid: de9fde7b1a058f741bdaecf17f1446ff, type: 2}
 --- !u!114 &11487030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,9 +70,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
-  ghost: {fileID: 186740, guid: ce3f7cc32aa1e4b498a39bd662c4468a, type: 2}
-  human: {fileID: 134472, guid: 375f83b45a4dd4c4e963fdd8e2802798, type: 2}
-  healthBar: {fileID: 11436624, guid: 34d4665b9d25dbe41965e261e11950ef, type: 2}
+  ghost: {fileID: 100000, guid: edd2da14c30e72f4093ae4eefa16f370, type: 2}
+  human: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
+  healthBar: {fileID: 172624, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &11487032
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -14,8 +14,9 @@ public class HumanController : MonoBehaviour {
 	public bool _isInteligent;
 	public GameObject tileGroundEmpty;
 	public GameObject soul;
-	public Slider _healthBarHuman;
-	public Slider _healthBarGhost;
+
+	public GameObject _healthBarHuman;
+	public GameObject _healthBarGhost;
 
 	public Camera _humanCamera;
 	public Camera _ghostCamera;

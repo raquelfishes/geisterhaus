@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MultiOrSingleMenu.unity
   - enabled: 1
     path: Assets/Scenes/loadFile.unity
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
