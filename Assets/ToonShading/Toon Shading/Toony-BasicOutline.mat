@@ -30,29 +30,29 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Outline
-        second: .00659701508
-      data:
-        first:
           name: _Shininess
         second: .57971698
+      data:
+        first:
+          name: _Outline
+        second: .00659701508
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .0451989695, g: .323529422, b: .0471185409, a: 1}
+        second: {r: .0451989695, g: .323529422, b: .0471185409, a: .105882354}
       data:
         first:
-          name: _OutlineColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _Emission
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
