@@ -73,10 +73,10 @@ public class HumanController : MonoBehaviour {
 		gameObject.SendMessage ("setMoving",false);
 	}
 
-	public void setHealthBarHuman(Slider bar){
+	public void setHealthBarHuman(GameObject bar){
 		_healthBarHuman = bar;
 	}
-	public void setHealthBarGhost(Slider bar){
+	public void setHealthBarGhost(GameObject bar){
 		_healthBarGhost = bar;
 	}
 
