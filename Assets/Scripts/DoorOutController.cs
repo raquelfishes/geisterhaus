@@ -17,17 +17,21 @@ public class DoorOutController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		//me cargo al humano de la escena
-		_gameManager.GetComponent<GameManager>().addHumanOut(other.gameObject);
-		other.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
-		other.gameObject.GetComponent<Rigidbody>().active = false;
-		_gameManager.GetComponent<GameManager>().killHuman(other.gameObject);
+		if (other.gameObject.tag == "Human") {
+			_gameManager.GetComponent<GameManager> ().addHumanOut (other.gameObject);
+			other.gameObject.GetComponentInChildren<SkinnedMeshRenderer> ().enabled = false;
+			other.gameObject.GetComponent<Rigidbody> ().active = false;
+			_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
+		}
 	}
 
 	void OnTriggerExit (Collider other) {
 		//me cargo al humano de la escena
-		_gameManager.GetComponent<GameManager>().addHumanOut(other.gameObject);
-		other.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
-		other.gameObject.GetComponent<Rigidbody>().active = false;
-		_gameManager.GetComponent<GameManager>().killHuman(other.gameObject);
+		if (other.gameObject.tag == "Human") {
+			_gameManager.GetComponent<GameManager> ().addHumanOut (other.gameObject);
+			other.gameObject.GetComponentInChildren<SkinnedMeshRenderer> ().enabled = false;
+			other.gameObject.GetComponent<Rigidbody> ().active = false;
+			_gameManager.GetComponent<GameManager> ().killHuman (other.gameObject);
+		}
 	}
 }

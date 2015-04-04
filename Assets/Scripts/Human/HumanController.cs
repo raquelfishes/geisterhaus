@@ -70,7 +70,7 @@ public class HumanController : MonoBehaviour {
 			Destroy (_healthBarGhost);
 			//_healthBarGhost.enabled=false;
 		}
-		gameObject.SendMessage ("setMoving",false);
+		setMoving (false);
 	}
 
 	public void setHealthBarHuman(GameObject bar){

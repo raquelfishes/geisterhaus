@@ -137,7 +137,7 @@ public class GenerateScene : MonoBehaviour {
 			break;
 		case 123:
 			//We don't have to instantiate a tyle here, but we need info of typeObstacle
-			_myRoom [row] [col]._myTypeObstacle = Tile.typeObstacle.TABLE;
+			_myRoom [row] [col]._myTypeTile = Tile.typeTile.OBSTACLE;
 			break;
 		case 2011:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
@@ -280,7 +280,10 @@ public class GenerateScene : MonoBehaviour {
 		GameObject go;
 		switch (t._myTypeObstacle) {
 			case Tile.typeObstacle.TABLE:
-				go=Instantiate(tilesGroundObstacles[0],position,Quaternion.identity) as GameObject;
+				if(t.horizontal)
+					go=Instantiate(tilesGroundObstacles[0],position,Quaternion.identity) as GameObject;
+				else
+					go=Instantiate(tilesGroundObstacles[0],position,Quaternion.Euler (new Vector3(0,90,0))) as GameObject;
 				break;
 		}
 	}
@@ -423,12 +426,8 @@ public class GenerateScene : MonoBehaviour {
 				
 				switch(_myRoom[i][j]._myTypeTile){
 					case Tile.typeTile.OBSTACLE:
-						switch(_myRoom[i][j]._myTypeObstacle){
-						case Tile.typeObstacle.TABLE:
-							go=Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
-							instantiateObstacle(_myRoom[i][j],positionG);
-							break;
-						}
+						go=Instantiate(tileGroundEmpty,positionG,Quaternion.identity) as GameObject;
+						instantiateObstacle(_myRoom[i][j],positionG);
 						break;
 					case Tile.typeTile.POSSESSED:
 						switch(_myRoom[i][j]._myTypePossessed){

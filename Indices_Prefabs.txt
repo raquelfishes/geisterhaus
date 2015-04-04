@@ -34,7 +34,11 @@
 //TextoArchivo
 null => nada/vacio (para el caso de querer hacer habitaciones no cuadradas)
 //Indicadores para el suelo
-g_0 => baldosa vacia
+g_01 => baldosa vacia tipo 1
+g_02 => baldosa vacia tipo 2
+g_03 => baldosa vacia tipo 3
+g_04 => baldosa vacia tipo 4
+g_05 => baldosa vacia tipo 5
 g_1 => obstaculo jarron
 g_21 => mesa horizontal inicio
 g_22 => mesa vertical inicio
@@ -50,6 +54,7 @@ w_021 => pared vacia esquina izquierda/frente |-
 w_022 => pared vacia esquina frente/derecha    -|
 w_023 => pared vacia esquina izquierda/trasera |_
 w_024 => pared vacia esquina trasera/derecha    _|
+
 w_111 => pared cuadro1 frente
 w_112 => pared cuadro1 iquierda
 w_113 => pared cuadro1 derecha
