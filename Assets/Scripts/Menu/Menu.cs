@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour {
 		}
 
 		if(GUI.Button(new Rect(Screen.width/2-85,210,170,50),"Creditos")){
-
+			Application.LoadLevel ("Credits");
 		}
 		
 		if(GUI.Button(new Rect(Screen.width/2-85,280,170,50),"Salir")){

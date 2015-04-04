@@ -56,6 +56,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanCamera: {fileID: 157236, guid: c9510579a7865d743ae6d2ff4d8304d8, type: 2}
   ghostCamera: {fileID: 179244, guid: f4a091dc396e2c24a95bad96b77278bd, type: 2}
+  ghostCounts: {fileID: 192888, guid: dc2d9fd7a0c800e4c87600f150de58e4, type: 2}
+  humanCounts: {fileID: 188490, guid: de9fde7b1a058f741bdaecf17f1446ff, type: 2}
 --- !u!114 &11487030
 MonoBehaviour:
   m_ObjectHideFlags: 1
