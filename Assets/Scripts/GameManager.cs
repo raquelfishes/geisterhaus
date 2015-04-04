@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour {
 	private int ghost_selected = 0;
 	private int humansPassDoor = 0;
 	private int humansAlive;
+	private int initHumans;
+	private int killedHumans=0;
 
 	public int _nPaths;
 	public List<string[]> _Paths;
@@ -33,6 +36,9 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject gameState;
 
+	public GameObject interfaceHumans;
+	public GameObject interfaceGhosts;
+
 	// Use this for initialization
 	void Start () {
 		gameState = GameObject.FindWithTag ("GameState");
@@ -40,7 +46,6 @@ public class GameManager : MonoBehaviour {
 		GameObject[] humans_aux = GameObject.FindGameObjectsWithTag("Human");
 		foreach (GameObject human_aux in humans_aux) {
 			humans.Add (human_aux);
-			//globalEnergy += human_aux.GetComponent<HumanPlayer>().getLife();
 		}
 		humansAlive = humans.Count;
 		ghosts = GameObject.FindGameObjectsWithTag("Ghost");
@@ -51,11 +56,17 @@ public class GameManager : MonoBehaviour {
 		initializeGhostsPositions ();
        
 		humansPassDoor = 0;
-		//SendMessage ("createBar", globalEnergy);
 		foreach (GameObject object_aux in ghost_objects) {
 			object_aux.GetComponent<ObjectController>().initialize ();
 		}
 		GameObject.FindWithTag ("DoorIn").GetComponent<DoorInController> ().initialize ();
+		initHumans = humans.Count;
+		interfaceHumans = GameObject.FindWithTag ("CountHumans");
+		if (interfaceHumans != null)
+			interfaceHumans.GetComponentInChildren<Text> ().text = 0 + "/" + initHumans;
+		interfaceGhosts = GameObject.FindWithTag ("CountGhosts");
+		if (interfaceGhosts != null)
+			interfaceGhosts.GetComponentInChildren<Text> ().text = 0 + "/" + initHumans;
 	}
 
 	// Update is called once per frame
@@ -118,7 +129,6 @@ public class GameManager : MonoBehaviour {
 		return ghost_selected;
 	}
 
-	//public void moveGhostHere(Vector3 obj_position){
 	public void moveGhostHere(GameObject obj){
 		if (!singleHuman)
 			ghosts[ghost_selected].GetComponent<GhostPlayer>().setObj(obj);
@@ -145,17 +155,19 @@ public class GameManager : MonoBehaviour {
 		object_aux.GetComponent<HumanController> ().destroyHealthBar ();
 		object_aux.GetComponentInChildren<CharacterController> ().MuereInsensato ();
 		--humansAlive;
-		//Destroy (object_aux);
 		if (index<human_selected) --human_selected;
 		Debug.Log ("humanos vivos despues: " + humans.Count);
 	}
 
 	public void hurtHuman(GameObject object_aux){
-		//SendMessage ("reducirVida");
 		int index = humans.IndexOf (object_aux);
 		humans [index].GetComponent<HumanController> ().hurt ();
-		if (humans [index].GetComponent<HumanController> ().getLife () <= 0)
+		if (humans [index].GetComponent<HumanController> ().getLife () <= 0) {
+			++killedHumans;
+			if (interfaceGhosts != null)
+				interfaceGhosts.GetComponentInChildren<Text> ().text = killedHumans + "/" + initHumans;
 			killHuman (object_aux);
+		}
 	}
 
     private void initializeGhostModus(bool b){
@@ -182,18 +194,17 @@ public class GameManager : MonoBehaviour {
 		gameState.GetComponent<GameState>().setLifeHuman(humansPassDoor,human.GetComponent<HumanController>().getLife());
 		++humansPassDoor;
 		gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
+		//update marcador
+		if (interfaceHumans != null)
+			interfaceHumans.GetComponentInChildren<Text> ().text = humansPassDoor + "/" + initHumans;
 	}
 
 	public void finishLevel(){
 		if (humansPassDoor > 0) {
 			//Ganan los humanos
 			Debug.Log ("HUMANS WINS!");
-			//Guardar los parametros y cargar el siguiente nivel
+			//cargar el siguiente nivel
 			gameState.GetComponent<GameState>().setNivel(gameState.GetComponent<GameState>().getNivel()+1);
-			//gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
-			//for (int i = 0; i < humans.Count; i++) {
-			//	gameState.GetComponent<GameState>().setLifeHuman(i,humans[i].GetComponent<HumanController>().getLife());
-			//}
 			Application.LoadLevel("loadFile");
 		} else {
 			//Ganan los fantasmas
