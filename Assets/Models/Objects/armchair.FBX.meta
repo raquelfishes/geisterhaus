@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: a35984cc939437a4d905a7a60aed6fd0
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Block:k
+    100004: Block:k01
+    100006: Box01
+    100008: Box03
+    100010: Box04
+    100012: Box103
+    100014: Box167
+    100016: Box169
+    100018: Box170
+    100020: Box171
+    100022: Box172
+    100024: Box173
+    100026: Box174
+    100028: Box72
+    100030: Box94
+    100032: Box99
+    100034: Group03
+    100036: Group05
+    100038: Object01
+    100040: Object02
+    100042: Object02 1
+    100044: Object04
+    100046: Object05
+    100048: Object151
+    100050: Object152
+    100052: Object153
+    100054: Object154
+    100056: Object155
+    100058: Object156
+    100060: Object157
+    100062: Object158
+    100064: Object159
+    100066: Object160
+    100068: Object161
+    100070: Object22
+    100072: Object44
+    100074: Object45
+    100076: Particle View 01
+    100078: Particle View 01 1
+    100080: Particle View 01 2
+    100082: Particle View 01 3
+    100084: Particle View 01 4
+    100086: Particle View 01 5
+    100088: Particle View 01 6
+    100090: Particle View 01 7
+    400000: //RootNode
+    400002: Block:k
+    400004: Block:k01
+    400006: Box01
+    400008: Box03
+    400010: Box04
+    400012: Box103
+    400014: Box167
+    400016: Box169
+    400018: Box170
+    400020: Box171
+    400022: Box172
+    400024: Box173
+    400026: Box174
+    400028: Box72
+    400030: Box94
+    400032: Box99
+    400034: Group03
+    400036: Group05
+    400038: Object01
+    400040: Object02
+    400042: Object02 1
+    400044: Object04
+    400046: Object05
+    400048: Object151
+    400050: Object152
+    400052: Object153
+    400054: Object154
+    400056: Object155
+    400058: Object156
+    400060: Object157
+    400062: Object158
+    400064: Object159
+    400066: Object160
+    400068: Object161
+    400070: Object22
+    400072: Object44
+    400074: Object45
+    400076: Particle View 01
+    400078: Particle View 01 1
+    400080: Particle View 01 2
+    400082: Particle View 01 3
+    400084: Particle View 01 4
+    400086: Particle View 01 5
+    400088: Particle View 01 6
+    400090: Particle View 01 7
+    2300000: Box01
+    2300002: Box03
+    2300004: Box04
+    2300006: Box103
+    2300008: Box167
+    2300010: Box169
+    2300012: Box170
+    2300014: Box171
+    2300016: Box172
+    2300018: Box173
+    2300020: Box174
+    2300022: Box72
+    2300024: Box94
+    2300026: Box99
+    2300028: Object01
+    2300030: Object02
+    2300032: Object02 1
+    2300034: Object04
+    2300036: Object05
+    2300038: Object151
+    2300040: Object152
+    2300042: Object153
+    2300044: Object154
+    2300046: Object155
+    2300048: Object156
+    2300050: Object157
+    2300052: Object158
+    2300054: Object159
+    2300056: Object160
+    2300058: Object161
+    2300060: Object22
+    2300062: Object44
+    2300064: Object45
+    3300000: Box01
+    3300002: Box03
+    3300004: Box04
+    3300006: Box103
+    3300008: Box167
+    3300010: Box169
+    3300012: Box170
+    3300014: Box171
+    3300016: Box172
+    3300018: Box173
+    3300020: Box174
+    3300022: Box72
+    3300024: Box94
+    3300026: Box99
+    3300028: Object01
+    3300030: Object02
+    3300032: Object02 1
+    3300034: Object04
+    3300036: Object05
+    3300038: Object151
+    3300040: Object152
+    3300042: Object153
+    3300044: Object154
+    3300046: Object155
+    3300048: Object156
+    3300050: Object157
+    3300052: Object158
+    3300054: Object159
+    3300056: Object160
+    3300058: Object161
+    3300060: Object22
+    3300062: Object44
+    3300064: Object45
+    4300000: Box03
+    4300002: Box72
+    4300004: Object44
+    4300006: Box99
+    4300008: Object151
+    4300010: Object02
+    4300012: Box103
+    4300014: Object01
+    4300016: Object02
+    4300018: Object04
+    4300020: Box01
+    4300022: Box04
+    4300024: Object05
+    4300026: Object45
+    4300028: Box94
+    4300030: Box167
+    4300032: Object154
+    4300034: Object153
+    4300036: Object22
+    4300038: Object152
+    4300040: Object155
+    4300042: Box169
+    4300044: Box170
+    4300046: Object156
+    4300048: Object157
+    4300050: Box171
+    4300052: Object158
+    4300054: Object159
+    4300056: Object160
+    4300058: Box172
+    4300060: Box173
+    4300062: Object161
+    4300064: Box174
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
