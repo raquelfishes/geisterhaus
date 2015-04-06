@@ -8,7 +8,6 @@ public class GhostPlayer : GhostController {
 	// Use this for initialization
 	void Start () {
 		_gameManager = GameObject.FindWithTag("GameManager");
-		_objPosition = _objPosition;
 	}
 	
 	// Update is called once per frame
