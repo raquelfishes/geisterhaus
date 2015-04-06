@@ -20,12 +20,11 @@
 
 1024 => acuario horizontal
 1025 => acuario vertical
-1025 => acuario fin (tile vacio no instancia)
+1026 => acuario fin (tile vacio no instancia)
 
-1026 => reloj frente
-1027 => reloj izquierda
-1028 => reloj derecha
-1029 => reloj trasero
+1027 => reloj frente
+1028 => reloj izquierda
+1029 => reloj derecha
 
 1030 => sofa frente inicio
 1031 => sofa izquierda inicio
