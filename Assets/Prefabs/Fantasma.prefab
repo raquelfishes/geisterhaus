@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.19033194, y: -.159153998, z: -.224001467}
+  m_LocalPosition: {x: .0737690926, y: -.763494492, z: -6.23984814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: -.707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .707045615, y: .833048642, z: .740656376}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 0
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mesh: {fileID: 4300000, guid: 9c11cf1e70830ce45b10e8754ddd1eee, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b38f39cdf009caa43ade0aa0b7c4fd91, type: 3}
 --- !u!111 &11100000
 Animation:
   m_ObjectHideFlags: 1
@@ -97,9 +97,9 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: d02878db50120df47b30a55fa939f9a3, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 209798cebcb5ee14b8721d3fa86a2e7c, type: 2}
-  - {fileID: 7400000, guid: 42d0baca05b4d544bb16905f8fe21c69, type: 2}
-  - {fileID: 7400000, guid: d0cdedda25779514e92db34860ed1296, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 7400000, guid: d02878db50120df47b30a55fa939f9a3, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -117,9 +117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetoCentroDeRotacion: {fileID: 0}
-  rotacionPorSegundo: 75
-  radioActual: 2
-  incrementoRadioPorSegundo: .5
+  rotacionPorSegundo: 45
+  radioActual: 4
+  incrementoRadioPorSegundo: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
