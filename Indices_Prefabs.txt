@@ -6,7 +6,11 @@
 1003 => baldosa vacia tipo 3
 1004 => baldosa vacia tipo 4
 1005 => baldosa vacia tipo 5
-1006 => baldosa vacia tipo alfombra
+1006 => baldosa vacia tipo 6
+1007 => baldosa vacia tipo 7
+1008 => baldosa vacia tipo 8
+
+1010 => baldosa vacia tipo alfombra
 
 1020 => obstaculo jarron
 
@@ -86,7 +90,11 @@ g_002 => baldosa vacia tipo 2
 g_003 => baldosa vacia tipo 3
 g_004 => baldosa vacia tipo 4
 g_005 => baldosa vacia tipo 5
-g_006 => baldosa vacia tipo alfombra
+g_006 => baldosa vacia tipo 6
+g_007 => baldosa vacia tipo 7
+g_008 => baldosa vacia tipo 8
+
+g_010 => baldosa vacia tipo alfombra
 
 g_020 => obstaculo jarron
 
