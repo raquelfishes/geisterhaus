@@ -103,6 +103,10 @@ g_010 => baldosa vacia tipo alfombra
 
 g_020 => obstaculo jarron
 
+g_021 => mesa horizontal inicio
+g_022 => mesa vertical inicio
+g_023 => mesa fin (no instancia nada)
+
 g_024 => acuario horizontal
 g_025 => acuario vertical
 g_025 => acuario fin (tile vacio no instancia)
