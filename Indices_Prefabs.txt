@@ -44,12 +44,12 @@
 1042 => silla derecha
 1043 => silla trasera
 
-1041 => baldosa estatua 1
-1042 => baldosa estatua 2
+1044 => baldosa estatua 1
+1045 => baldosa estatua 2
 
-1043 => baldosa chimenea horizontal
-1044 => baldosa chimenea vertical
-1045 => baldosa chimenea vacia
+1046 => baldosa chimenea horizontal
+1047 => baldosa chimenea vertical
+1048 => baldosa chimenea vacia
 
 2011 => pared vacia medio frente
 2012 => pared vacia medio iquierda
@@ -129,12 +129,12 @@ g_041 => silla iquierda
 g_042 => silla derecha
 g_043 => silla trasera
 
-g_041 => baldosa estatua 1
-g_042 => baldosa estatua 2
+g_044 => baldosa estatua 1
+g_045 => baldosa estatua 2
 
-g_043 => baldosa chimenea horizontal
-g_044 => baldosa chimenea vertical
-g_045 => baldosa chimenea vacia
+g_046 => baldosa chimenea horizontal
+g_047 => baldosa chimenea vertical
+g_048 => baldosa chimenea vacia
 
 //Indicadores para la pared
 //pared frontal
