@@ -22,7 +22,8 @@ public class HumanPlayer : HumanController {
 	void Update () {
 		direction = Vector3.forward;
 		if (isSelected) {
-			gameObject.particleSystem.enableEmission = true;
+			gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
+			//gameObject.particleSystem.enableEmission = true;
 			float horAxis = Input.GetAxisRaw ("Horizontal");
 			if (horAxis != 0.0f)
 				turnHorizontal (horAxis);
@@ -31,7 +32,8 @@ public class HumanPlayer : HumanController {
 				turnVertical (vertAxis);
 		} 
 		else {
-			gameObject.particleSystem.enableEmission = false;
+			gameObject.GetComponentInChildren<SpriteRenderer>().enabled= false;
+			//gameObject.particleSystem.enableEmission = false;
 		}
 		if (_isMoving) {
 			transform.Translate (Vector3.forward*Time.deltaTime*_speed);
