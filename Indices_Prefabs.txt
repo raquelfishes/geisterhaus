@@ -47,9 +47,10 @@
 1044 => baldosa estatua 1
 1045 => baldosa estatua 2
 
-1046 => baldosa chimenea horizontal
-1047 => baldosa chimenea vertical
-1048 => baldosa chimenea vacia
+1046 => baldosa chimenea frente
+1047 => baldosa chimenea izquierda
+1048 => baldosa chimenea derecha
+1049 => baldosa chimenea vacia
 
 2011 => pared vacia medio frente
 2012 => pared vacia medio iquierda
@@ -102,6 +103,10 @@ g_010 => baldosa vacia tipo alfombra
 
 g_020 => obstaculo jarron
 
+g_021 => mesa horizontal inicio
+g_022 => mesa vertical inicio
+g_023 => mesa fin (no instancia nada)
+
 g_024 => acuario horizontal
 g_025 => acuario vertical
 g_025 => acuario fin (tile vacio no instancia)
@@ -132,9 +137,10 @@ g_043 => silla trasera
 g_044 => baldosa estatua 1
 g_045 => baldosa estatua 2
 
-g_046 => baldosa chimenea horizontal
-g_047 => baldosa chimenea vertical
-g_048 => baldosa chimenea vacia
+g_046 => baldosa chimenea frente
+g_047 => baldosa chimenea izquierda
+g_048 => baldosa chimenea derecha
+g_049 => baldosa chimenea vacia
 
 //Indicadores para la pared
 //pared frontal
