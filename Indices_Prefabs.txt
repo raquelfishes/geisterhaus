@@ -35,6 +35,9 @@
 
 1037 => baldosa sillon
 
+1038 => baldosa estatua 1
+1039 => baldosa estatua 2
+
 1040 => silla frente
 1041 => silla iquierda
 1042 => silla derecha
@@ -111,6 +114,9 @@ g_035 => baldosa chimenea vertical
 g_036 => baldosa chimenea vacia
 
 g_037 => baldosa sillon
+
+g_038 => baldosa estatua 1;
+g_039 => baldosa estatua 2;
 
 g_040 => silla frente
 g_041 => silla iquierda
