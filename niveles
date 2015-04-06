@@ -1,7 +1,7 @@
 DISEÑO NIVELES:
 
 NIVEL 0 :: JARDIN
-NIVEL 1 :: SALON => Reloj, jarrón, sofa, mesa
+NIVEL 1 :: SALON => Reloj, jarrón, sofa, mesa, tele, chimenea, piano, alfombra, sillon, sillas, ventana+cortinas, cuadros
 NIVEL 2 :: COCINA
 NIVEL 3 :: DORMITORIO
 NIVEL 4 :: BAÑO
