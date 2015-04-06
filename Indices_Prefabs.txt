@@ -154,9 +154,9 @@ w_124 => pared cuadro2 trasera
 w_211 => pared ventana frente inicio
 w_212 => pared ventana frente medio/fin (no instancia)
 w_221 => pared ventana izquierda inicio
-w_222 => pared ventana frente medio/fin (no instancia)
+w_222 => pared ventana izquierda medio/fin (no instancia)
 w_231 => pared ventana derecha inicio
-w_232 => pared ventana frente medio/fin (no instancia)
+w_232 => pared ventana derecha medio/fin (no instancia)
 
 //Indicadores para la puerta
 d_01 => puerta de entrada frente
