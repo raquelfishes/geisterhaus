@@ -1,20 +1,44 @@
 //IndicePrefab
 0 => nada/vacio (para el caso de querer hacer habitaciones no cuadradas)
-101 => baldosa vacia tipo 1
-101 => baldosa vacia tipo 2
-101 => baldosa vacia tipo 3
-101 => baldosa vacia tipo 4
-101 => baldosa vacia tipo 5
 
-11 => baldosa jarron
+1001 => baldosa vacia tipo 1
+1002 => baldosa vacia tipo 2
+1003 => baldosa vacia tipo 3
+1004 => baldosa vacia tipo 4
+1005 => baldosa vacia tipo 5
+1006 => baldosa vacia tipo alfombra
 
-121 => baldosa con mesa horizontal inicio
-122 => baldosa con mesa vertical inicio
-123 => baldosa con mesa final o intermedia (no tengo que instanciar nada)
+1020 => obstaculo jarron
 
-131 => baldosa con sofa horizontal inicio
-132 => baldosa con sofa vertical inicio
-133 => baldosa con sofa final o intermedia (no tengo que instanciar nada)
+1021 => mesa horizontal inicio
+1022 => mesa vertical inicio
+1023 => mesa fin (no instancia nada)
+
+1024 => sofa horizontal inicio
+1025 => sofa vertical inicio
+1026 => sofa fin (no instancia nada)
+
+1027 => acuario horizontal
+1028 => acuario vertical
+1029 => acuario fin (tile vacio no instancia)
+
+1030 => reloj frente
+1031 => reloj izquierda
+1032 => reloj derecha
+1032 => reloj trasero
+
+1033 => lampara de pie
+
+1034 => baldosa chimenea horizontal
+1035 => baldosa chimenea vertical
+1036 => baldosa chimenea vacia
+
+1037 => baldosa sillon
+
+1040 => silla frente
+1041 => silla iquierda
+1042 => silla derecha
+1043 => silla trasera
 
 2011 => pared vacia medio frente
 2012 => pared vacia medio iquierda
@@ -34,6 +58,13 @@
 2123 => pared con cuadro2 derecha
 2124 => pared con cuadro2 trasera
 
+2211 => pared ventana frente inicio
+2212 => pared ventana frente medio/fin (no instancia)
+2221 => pared ventana frente inicio
+2222 => pared ventana frente medio/fin (no instancia)
+2231 => pared ventana frente inicio
+2232 => pared ventana frente medio/fin (no instancia)
+
 501 => puerta inicio
 502 => puerta inicio
 503 => puerta inicio
@@ -47,21 +78,44 @@
 //TextoArchivo
 null => nada/vacio (para el caso de querer hacer habitaciones no cuadradas)
 //Indicadores para el suelo
-g_01 => baldosa vacia tipo 1
-g_02 => baldosa vacia tipo 2
-g_03 => baldosa vacia tipo 3
-g_04 => baldosa vacia tipo 4
-g_05 => baldosa vacia tipo 5
+g_001 => baldosa vacia tipo 1
+g_002 => baldosa vacia tipo 2
+g_003 => baldosa vacia tipo 3
+g_004 => baldosa vacia tipo 4
+g_005 => baldosa vacia tipo 5
+g_006 => baldosa vacia tipo alfombra
 
-g_1 => obstaculo jarron
+g_020 => obstaculo jarron
 
-g_21 => mesa horizontal inicio
-g_22 => mesa vertical inicio
-g_23 => mesa fin (no instancia nada)
+g_021 => mesa horizontal inicio
+g_022 => mesa vertical inicio
+g_023 => mesa fin (no instancia nada)
 
-g_31 => sofa horizontal inicio
-g_32 => sofa vertical inicio
-g_33 => sofa fin (no instancia nada)
+g_024 => sofa horizontal inicio
+g_025 => sofa vertical inicio
+g_026 => sofa fin (no instancia nada)
+
+g_027 => acuario horizontal
+g_028 => acuario vertical
+g_029 => acuario fin (tile vacio no instancia)
+
+g_030 => reloj frente
+g_031 => reloj izquierda
+g_032 => reloj derecha
+g_032 => reloj trasero
+
+g_033 => lampara de pie
+
+g_034 => baldosa chimenea horizontal
+g_035 => baldosa chimenea vertical
+g_036 => baldosa chimenea vacia
+
+g_037 => baldosa sillon
+
+g_040 => silla frente
+g_041 => silla iquierda
+g_042 => silla derecha
+g_043 => silla trasera
 
 //Indicadores para la pared
 //pared frontal
@@ -82,6 +136,13 @@ w_121 => pared cuadro2 frente
 w_122 => pared cuadro2 iquierda
 w_123 => pared cuadro2 derecha
 w_124 => pared cuadro2 trasera
+
+w_211 => pared ventana frente inicio
+w_212 => pared ventana frente medio/fin (no instancia)
+w_221 => pared ventana izquierda inicio
+w_222 => pared ventana frente medio/fin (no instancia)
+w_231 => pared ventana derecha inicio
+w_232 => pared ventana frente medio/fin (no instancia)
 
 //Indicadores para la puerta
 d_01 => puerta de entrada frente
