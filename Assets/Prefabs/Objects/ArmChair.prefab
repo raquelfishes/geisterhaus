@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &114144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 414144}
+  - 65: {fileID: 6514144}
+  m_Layer: 0
+  m_Name: ArmChair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &144790
 GameObject:
   m_ObjectHideFlags: 1
@@ -713,7 +729,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &144876
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -735,7 +751,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444878}
-  - 65: {fileID: 6544790}
   m_Layer: 0
   m_Name: ArmChair
   m_TagString: Untagged
@@ -743,6 +758,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &414144
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 444870}
+  m_Father: {fileID: 444878}
+  m_RootOrder: 0
 --- !u!4 &444790
 Transform:
   m_ObjectHideFlags: 1
@@ -1236,7 +1264,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144876}
   m_LocalRotation: {x: 0, y: .984807789, z: 0, w: -.173648208}
-  m_LocalPosition: {x: 1.29999995, y: 0, z: -1.34000003}
+  m_LocalPosition: {x: 1.29999995, y: -.5, z: -1.34000003}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children:
   - {fileID: 444846}
@@ -1276,7 +1304,7 @@ Transform:
   - {fileID: 444856}
   - {fileID: 444844}
   - {fileID: 444874}
-  m_Father: {fileID: 444878}
+  m_Father: {fileID: 414144}
   m_RootOrder: 0
 --- !u!4 &444872
 Transform:
@@ -1324,7 +1352,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 444870}
+  - {fileID: 414144}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2344790
@@ -2221,18 +2249,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144818}
   m_Mesh: {fileID: 4300062, guid: a35984cc939437a4d905a7a60aed6fd0, type: 3}
---- !u!65 &6544790
+--- !u!65 &6514144
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144878}
+  m_GameObject: {fileID: 114144}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .800000012, y: 1, z: .800000012}
-  m_Center: {x: .0500000007, y: .5, z: 0}
+  m_Center: {x: .0500000007, y: 0, z: 0}
 --- !u!95 &9544790
 Animator:
   serializedVersion: 3
