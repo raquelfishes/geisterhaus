@@ -19,8 +19,10 @@ public class HumanIntelligence : HumanController {
 		Renderer m_renderer = tileGroundEmpty.renderer;
 		aumentoX = m_renderer.bounds.size.x;
 		aumentoZ = m_renderer.bounds.size.z;
-		inix = aumentoX / 2;
-		iniz = aumentoZ / 2;
+		//inix = aumentoX / 2;
+		//iniz = aumentoZ / 2;
+		iniz = aumentoZ;
+		inix = aumentoX;
 	}
 
 	void Update () {

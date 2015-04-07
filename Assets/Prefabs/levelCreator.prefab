@@ -87,7 +87,7 @@ MonoBehaviour:
   _nRows: 0
   _nColumns: 0
   _nTyles: 0
-  numHumans: 3
+  numHumans: 2
   numGhosts: 2
   singleGhost: 1
   singleHuman: 1
