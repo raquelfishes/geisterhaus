@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 3ccae46eaff7af6468389f4f579e8f0b
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: _1
+    100002: Cone01
+    100004: Cylinder02
+    100006: Cylinder22
+    100008: Cylinder23
+    100010: //RootNode
+    100012: Rectangle0
+    100014: Sphere13
+    100016: Star01
+    100018: sub01
+    100020: sub01_MeshPart0
+    100022: sub01_MeshPart1
+    100024: sub01_MeshPart2
+    100026: sub02
+    100028: sub02_MeshPart0
+    100030: sub02_MeshPart1
+    100032: sub02_MeshPart2
+    100034: sub03
+    400000: _1
+    400002: Cone01
+    400004: Cylinder02
+    400006: Cylinder22
+    400008: Cylinder23
+    400010: //RootNode
+    400012: Rectangle0
+    400014: Sphere13
+    400016: Star01
+    400018: sub01
+    400020: sub01_MeshPart0
+    400022: sub01_MeshPart1
+    400024: sub01_MeshPart2
+    400026: sub02
+    400028: sub02_MeshPart0
+    400030: sub02_MeshPart1
+    400032: sub02_MeshPart2
+    400034: sub03
+    2300000: _1
+    2300002: Cone01
+    2300004: Cylinder02
+    2300006: Cylinder22
+    2300008: Cylinder23
+    2300010: Rectangle0
+    2300012: Star01
+    2300014: sub01_MeshPart0
+    2300016: sub01_MeshPart1
+    2300018: sub01_MeshPart2
+    2300020: sub02_MeshPart0
+    2300022: sub02_MeshPart1
+    2300024: sub02_MeshPart2
+    2300026: sub03
+    3300000: _1
+    3300002: Cone01
+    3300004: Cylinder02
+    3300006: Cylinder22
+    3300008: Cylinder23
+    3300010: Rectangle0
+    3300012: Star01
+    3300014: sub01_MeshPart0
+    3300016: sub01_MeshPart1
+    3300018: sub01_MeshPart2
+    3300020: sub02_MeshPart0
+    3300022: sub02_MeshPart1
+    3300024: sub02_MeshPart2
+    3300026: sub03
+    4300000: Cone01
+    4300002: _1
+    4300004: Star01
+    4300006: Cylinder22
+    4300008: Rectangle0
+    4300010: Cylinder02
+    4300012: sub01_MeshPart0
+    4300014: sub01_MeshPart1
+    4300016: sub01_MeshPart2
+    4300018: sub02_MeshPart0
+    4300020: sub02_MeshPart1
+    4300022: sub02_MeshPart2
+    4300024: sub03
+    4300026: Cylinder23
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
