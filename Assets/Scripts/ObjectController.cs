@@ -24,7 +24,7 @@ public class ObjectController : MonoBehaviour {
 	public bool getAsignado() {return asignado;}
 
 	void OnMouseDown(){
-		//Debug.Log ("mouse!!!");
+		Debug.Log ("mouse!!!");
 		if (GameObject.FindWithTag ("GameState").GetComponent<GameState> ().getModeGame () != 2) {
 			//Si estamos en un modo de juego donde utilicemos la camara ghost
 			Ray ray = _ghostCamera.ScreenPointToRay (Input.mousePosition);
@@ -34,7 +34,7 @@ public class ObjectController : MonoBehaviour {
 				_gameManager.GetComponent<GameManager> ().moveGhostHere (gameObject);
 				//asignado= true;
 				//ghostIn (_gameManager.GetComponent<GameManager>().getGhostSelected());
-			} else if (idGhost != -1) {
+			} else if (idGhost != -1 && Physics.Raycast (ray)) {
 				//there is a ghost inside me!!! I want to select it!!!!
 				_gameManager.GetComponent<GameManager> ().changeGhostSelected (idGhost);
 			}
