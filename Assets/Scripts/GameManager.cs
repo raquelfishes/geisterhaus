@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void nextSelectedHuman(){
-		if (humans.Count > 1) {
+		if (humans.Count > 1 && !singleGhost) {
 			humans [human_selected].GetComponent<HumanPlayer> ().deselect ();
 			human_selected = (human_selected + 1) % humans.Count;
 			humans [human_selected].GetComponent<HumanPlayer> ().select ();
@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour {
 		if (index != -1) {
 			humans.RemoveAt (index);
 			humanDietoGhosts (index);
-			if (index==human_selected) nextSelectedHuman();
+			if (index==human_selected && !singleGhost) nextSelectedHuman();
 		}
 
 		object_aux.GetComponent<HumanController> ().destroyHealthBar ();
