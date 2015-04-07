@@ -166,6 +166,8 @@ public class GenerateScene : MonoBehaviour {
 		case 1020:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.VASE;
+			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.GROUND;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		// Mesa
 		case 1021:
@@ -379,21 +381,25 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2012:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2013:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.R;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2014:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.B;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		// Paredes esquinas
 		case 2021:
@@ -401,24 +407,28 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.CORNER;
 			_myRoom [row] [col]._myTypeCorner = Tile.typeCorner.LF;
 			_myRoom [row] [col].esquina = true;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2022:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.CORNER;
 			_myRoom [row] [col]._myTypeCorner = Tile.typeCorner.RF;
 			_myRoom [row] [col].esquina = true;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2023:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.CORNER;
 			_myRoom [row] [col]._myTypeCorner = Tile.typeCorner.LB;
 			_myRoom [row] [col].esquina = true;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2024:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.EMPTY;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.CORNER;
 			_myRoom [row] [col]._myTypeCorner = Tile.typeCorner.RB;
 			_myRoom [row] [col].esquina = true;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		// cuadro 1
 		case 2111:
@@ -426,24 +436,28 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS1;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2112:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS1;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2113:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS1;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.R;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2114:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS1;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.B;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		// cuadro 2
 		case 2121:
@@ -451,24 +465,28 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS2;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2122:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS2;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2123:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS2;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.R;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2124:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.CANVAS2;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.B;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		// Ventana
 		case 2211:
@@ -476,33 +494,39 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.WINDOW;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2212:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2221:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.WINDOW;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2222:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2231:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.WINDOW;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.R;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 2132:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.WALL;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.R;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		//
 		// Puertas
@@ -511,42 +535,50 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 502:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 503:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.R;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 504:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.IN;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.B;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		// Puerta salida
 		case 511:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 512:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 513:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.R;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		case 514:
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.DOOR;
 			_myRoom [row] [col]._myTypeDoor = Tile.typeDoor.OUT;
 			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.B;
+			_myRoom [row] [col]._myTypeGround = gameNivel;
 			break;
 		default:
 			break;
@@ -689,24 +721,20 @@ public class GenerateScene : MonoBehaviour {
 		GameObject go;
 		switch (t) {
 			case Tile.typeOriented.F:
-				positionW = new Vector3(positionG.x,positionG.y-(float)0.2,positionG.z+aumentoZ/2);
 				quater = Quaternion.identity;
-				go = Instantiate(tileWallEmpty,positionW, quater) as GameObject;
+				go = Instantiate(tileWallEmpty,positionG, quater) as GameObject;
 				break;
 			case Tile.typeOriented.L:
-				positionW = new Vector3(positionG.x-aumentoX/2,positionG.y-(float)0.2,positionG.z);
 				quater = Quaternion.Euler(new Vector3(0,-90,0));
-				go = Instantiate(tileWallEmpty,positionW,quater) as GameObject;
+				go = Instantiate(tileWallEmpty,positionG,quater) as GameObject;
 				break;
 			case Tile.typeOriented.R:
-				positionW = new Vector3(positionG.x+aumentoX/2,positionG.y-(float)0.2,positionG.z);
 				quater = Quaternion.Euler(new Vector3(0,90,0));
-				go = Instantiate(tileWallEmpty,positionW,quater) as GameObject;
+				go = Instantiate(tileWallEmpty,positionG,quater) as GameObject;
 				break;
 			case Tile.typeOriented.B:
-				positionW = new Vector3(positionG.x,positionG.y-(float)0.2,positionG.z-aumentoZ/2);
 				quater = Quaternion.Euler(new Vector3(0,180,0));
-				go = Instantiate(tileWallEmpty,positionW,quater) as GameObject;
+				go = Instantiate(tileWallEmpty,positionG,quater) as GameObject;
 				break;
 		}
 	}
@@ -717,48 +745,44 @@ public class GenerateScene : MonoBehaviour {
 		Quaternion quater;
 		switch (t) {
 		case Tile.typeOriented.F:
-			positionW = new Vector3(positionG.x,positionG.y,positionG.z+aumentoZ/2);
 			quater = Quaternion.identity;
 			if (d == Tile.typeDoor.IN){
-				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorIn,positionG, quater) as GameObject;
 				go.GetComponent<DoorInController>().directionIn = Vector3.back;
 				go.GetComponent<DoorInController>().orientationIn = quater;
 			}
 			else if (d == Tile.typeDoor.OUT)
-				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorOut,positionG, quater) as GameObject;
 			break;
 		case Tile.typeOriented.L:
-			positionW = new Vector3(positionG.x-aumentoX/2,positionG.y,positionG.z);
 			quater = Quaternion.Euler(new Vector3(0,-90,0));
 			if (d == Tile.typeDoor.IN){
-				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorIn,positionG, quater) as GameObject;
 				go.GetComponent<DoorInController>().directionIn = Vector3.right;
 				go.GetComponent<DoorInController>().orientationIn = quater;
 			}
 			else if (d == Tile.typeDoor.OUT)
-				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorOut,positionG, quater) as GameObject;
 			break;
 		case Tile.typeOriented.R:
-			positionW = new Vector3(positionG.x+aumentoX/2,positionG.y,positionG.z);
 			quater = Quaternion.Euler(new Vector3(0,90,0));
 			if (d == Tile.typeDoor.IN){
-				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorIn,positionG, quater) as GameObject;
 				go.GetComponent<DoorInController>().directionIn = Vector3.left;
 				go.GetComponent<DoorInController>().orientationIn = quater;
 			}
 			else if (d == Tile.typeDoor.OUT)
-				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorOut,positionG, quater) as GameObject;
 			break;
 		case Tile.typeOriented.B:
-			positionW = new Vector3(positionG.x,positionG.y,positionG.z-aumentoZ/2);
 			quater = Quaternion.Euler(new Vector3(0,180,0));
 			if (d == Tile.typeDoor.IN){
-				go = Instantiate(tileDoorIn,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorIn,positionG, quater) as GameObject;
 				go.GetComponent<DoorInController>().directionIn = Vector3.forward;
 				go.GetComponent<DoorInController>().orientationIn = quater;
 			}
 			else if (d == Tile.typeDoor.OUT)
-				go = Instantiate(tileDoorOut,positionW, quater) as GameObject;
+				go = Instantiate(tileDoorOut,positionG, quater) as GameObject;
 			break;
 		}
 	}
