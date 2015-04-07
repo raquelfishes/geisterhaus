@@ -91,16 +91,34 @@ MonoBehaviour:
   numGhosts: 2
   singleGhost: 1
   singleHuman: 1
-  tileGroundEmpty: {fileID: 191834, guid: 19d75ea873e5ef946b5c6892e5853680, type: 2}
-  tilesGroundObstacles:
-  - {fileID: 111572, guid: 8d888846a6bdd6e438c51d64bdd4f05f, type: 2}
-  - {fileID: 179768, guid: d92a29f5dd6b3514c97f61f36a63a712, type: 2}
+  tileGroundEmpty:
+  - {fileID: 138176, guid: 9abf39baa71e0db438acde224368654f, type: 2}
+  - {fileID: 120458, guid: bc2bbf528e8334f4c852d8fb695c0962, type: 2}
+  - {fileID: 101066, guid: bd197c6849f68f246ba1b7a6bd03b3f4, type: 2}
+  - {fileID: 101066, guid: bd197c6849f68f246ba1b7a6bd03b3f4, type: 2}
+  - {fileID: 198988, guid: 11c63d94145ba7a45bdddeb5d26100ac, type: 2}
+  - {fileID: 108164, guid: 73210018bcd126c4a9fa77a0d6f9cee1, type: 2}
+  - {fileID: 106050, guid: 18aa93dbb69c7eb4bb447482ee9af588, type: 2}
+  - {fileID: 156148, guid: 34614f6ebdf6989439cdcaf8e7e34536, type: 2}
+  - {fileID: 128132, guid: 93828425f9ff77c44b89f0895f4566d1, type: 2}
+  tilesObstacles:
+  - {fileID: 167090, guid: 2214a99717026374db732fd57ba26b20, type: 2}
+  - {fileID: 144878, guid: 76ccb9d08bb937345ae227770da7752b, type: 2}
+  - {fileID: 162068, guid: 23c3710cb60356547afff700879b73cc, type: 2}
   tilesGroundPossesseds:
   - {fileID: 196246, guid: 88e3801511614004eabc9de327f8f993, type: 2}
-  tileWallEmpty: {fileID: 149506, guid: 5584ae7751bb7534f9715efa14c74720, type: 2}
+  - {fileID: 102286, guid: a53ccad3f0c60974db386c39f9033049, type: 2}
+  - {fileID: 147978, guid: 216c60cd4b4d58942a764eec8dcc40f0, type: 2}
+  - {fileID: 179768, guid: d92a29f5dd6b3514c97f61f36a63a712, type: 2}
+  - {fileID: 130866, guid: b78911e668f0efd42ac7ce2e6d1b9792, type: 2}
+  - {fileID: 125416, guid: 5ac35aa093d334743b908cf1a6409266, type: 2}
+  - {fileID: 155050, guid: fce8388afe9cba24aa61efc8cb4aec2b, type: 2}
+  - {fileID: 181274, guid: 25e45d7efebb32e489b08b1ab64b8374, type: 2}
   tilesWallPossesseds:
   - {fileID: 126938, guid: 5ebd9839078f8cc449f4de70a27d45a4, type: 2}
   - {fileID: 183276, guid: 979359bbb2264724cb600948e0e11f1b, type: 2}
+  - {fileID: 170974, guid: a542d3d7279d79744a64e74695372373, type: 2}
+  tileWallEmpty: {fileID: 121084, guid: 65ea2434cc0c2b446a8cdf8bbff9d5a8, type: 2}
   tileDoorIn: {fileID: 120720, guid: a80eb433c74196849b475c2bd3bf4edb, type: 2}
   tileDoorOut: {fileID: 146318, guid: c1cf3660930be3d43b125c0a95a5b541, type: 2}
   gameManager: {fileID: 135032, guid: 1bcda9586afac364eb72e6210f0bf323, type: 2}

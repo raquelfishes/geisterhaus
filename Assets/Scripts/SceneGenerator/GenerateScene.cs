@@ -681,7 +681,7 @@ public class GenerateScene : MonoBehaviour {
 	}
 
 	private void instantiateGround(int indexGround, Vector3 positionG){
-		GameObject go = Instantiate(tileGroundEmpty[indexGround],positionG,Quaternion.identity) as GameObject;
+		GameObject go = Instantiate(tileGroundEmpty[indexGround-1],positionG,Quaternion.identity) as GameObject;
 	}
 
 
