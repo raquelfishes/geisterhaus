@@ -8,9 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446318}
+  - 65: {fileID: 6545810}
+  - 114: {fileID: 11444620}
   m_Layer: 0
   m_Name: tile_doorOut
-  m_TagString: Untagged
+  m_TagString: DoorOut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,8 +28,6 @@ GameObject:
   - 33: {fileID: 3396074}
   - 23: {fileID: 2396074}
   - 95: {fileID: 9596074}
-  - 65: {fileID: 6596074}
-  - 114: {fileID: 11496074}
   m_Layer: 0
   m_Name: tile_doorOut
   m_TagString: DoorOut
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.200000003, z: 0}
+  m_LocalPosition: {x: 0, y: -.200000003, z: -.444999993}
   m_LocalScale: {x: .50999999, y: .600000024, z: 1}
   m_Children: []
   m_Father: {fileID: 446318}
@@ -87,12 +87,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196074}
   m_Mesh: {fileID: 4300000, guid: f56df927d52b010448b22a7d7fbd9169, type: 3}
---- !u!65 &6596074
+--- !u!65 &6545810
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196074}
+  m_GameObject: {fileID: 146318}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -114,12 +114,12 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11496074
+--- !u!114 &11444620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196074}
+  m_GameObject: {fileID: 146318}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e21a18ba2cdaa04a9de5cd9b6a65d26, type: 3}
