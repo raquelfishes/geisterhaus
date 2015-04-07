@@ -1082,7 +1082,7 @@ MonoBehaviour:
   _isMoving: 0
   isInScene: 0
   _isInteligent: 0
-  tileGroundEmpty: {fileID: 191834, guid: 19d75ea873e5ef946b5c6892e5853680, type: 2}
+  tileGroundEmpty: {fileID: 138176, guid: 9abf39baa71e0db438acde224368654f, type: 2}
   soul: {fileID: 130368}
   _healthBarHuman: {fileID: 0}
   _healthBarGhost: {fileID: 0}
