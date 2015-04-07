@@ -80,8 +80,10 @@ public class MenuMultiOrSingle : MonoBehaviour {
 			}	
 		}
 
-		if(Application.isLoadingLevel)
+		if (Application.isLoadingLevel) {
 			GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), loading);
+			_gameState.GetComponent<GameState>().audio.Stop();
+		}
 	}
 
 	IEnumerator loadingScreen(string mode){

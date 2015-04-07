@@ -22,6 +22,13 @@ public class GameState : MonoBehaviour {
 		Application.LoadLevel("MainMenu");
 	}
 
+	public void update(){
+		if (Input.GetKeyDown (KeyCode.Escape)) { 
+				Application.LoadLevel ("MainMenu");
+				gameObject.audio.Play();
+		}
+	}
+
 	public int getModeGame() { return modeGame; }
 	public int getPlayer1() { return player1; }
 	public int getPlayer2() { return 1 - player1; }
