@@ -172,6 +172,7 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.TABLE;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.GROUND;
+			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.F;
 			_myRoom [row] [col]._myTypeGround = gameNivel;
 			_myRoom [row] [col].horizontal = true;
 			break;
@@ -179,6 +180,7 @@ public class GenerateScene : MonoBehaviour {
 			_myRoom [row] [col]._myTypeTile = Tile.typeTile.POSSESSED;
 			_myRoom [row] [col]._myTypePossessed = Tile.typePossessed.TABLE;
 			_myRoom [row] [col]._myTypeEmpty = Tile.typeEmpty.GROUND;
+			_myRoom [row] [col]._myTypeOriented = Tile.typeOriented.L;
 			_myRoom [row] [col]._myTypeGround = gameNivel;
 			_myRoom [row] [col].horizontal = false;
 			break;
