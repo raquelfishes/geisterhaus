@@ -517,7 +517,6 @@ GameObject:
   - 4: {fileID: 1288142704}
   - 108: {fileID: 1288142703}
   - 82: {fileID: 1288142706}
-  - 81: {fileID: 1288142705}
   m_Layer: 0
   m_Name: Directional light
   m_TagString: Untagged
@@ -572,13 +571,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!81 &1288142705
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1288142702}
-  m_Enabled: 1
 --- !u!82 &1288142706
 AudioSource:
   m_ObjectHideFlags: 0

@@ -84,6 +84,7 @@ GameObject:
   - 4: {fileID: 941063179}
   - 114: {fileID: 941063178}
   - 82: {fileID: 941063180}
+  - 81: {fileID: 941063181}
   m_Layer: 0
   m_Name: GameState
   m_TagString: GameState
@@ -172,3 +173,10 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!81 &941063181
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 941063177}
+  m_Enabled: 1
