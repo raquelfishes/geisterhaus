@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
     public bool singleHuman = false;
 
 	public GUIText finishMsg;
+	public Texture2D loading_level;
 
 	private int globalEnergy;
 
@@ -204,6 +205,9 @@ public class GameManager : MonoBehaviour {
 			//cargar el siguiente nivel
 			gameState.GetComponent<GameState>().setNivel(gameState.GetComponent<GameState>().getNivel()+1);
 			Application.LoadLevel("loadFile");
+			if (Application.isLoadingLevel) {
+				GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), loading_level);
+			}
 		} else {
 			//Ganan los fantasmas
 			Debug.Log ("GHOSTS WINS!");
