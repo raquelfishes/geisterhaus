@@ -73,9 +73,9 @@ public class MenuMultiOrSingle : MonoBehaviour {
 			}
 			if(GUI.Button(new Rect(Screen.width/2+10,265,100,30),"Visitantes")){
 				_gameState.GetComponent<GameState>().setModeGame(2);
-				_gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 fantasma
+				_gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 humanos
 				_gameState.GetComponent<GameState>().setNivel(1);
-				_gameState.GetComponent<GameState>().setNumHumans(10);
+				_gameState.GetComponent<GameState>().setNumHumans(2);
 				Application.LoadLevel("loadFile");
 			}	
 		}

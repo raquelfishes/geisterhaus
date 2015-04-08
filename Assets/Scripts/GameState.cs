@@ -22,7 +22,7 @@ public class GameState : MonoBehaviour {
 		Application.LoadLevel("MainMenu");
 	}
 
-	public void update(){
+	void Update(){
 		if (Input.GetKeyDown (KeyCode.Escape)) { 
 				Application.LoadLevel ("MainMenu");
 				gameObject.audio.Play();
