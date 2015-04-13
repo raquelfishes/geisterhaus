@@ -2,7 +2,14 @@ fileFormatVersion: 2
 guid: b3049e64d57d8a24286520a81aff780f
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tileWallEmpty: {instanceID: 0}
+  - tileDoorIn: {instanceID: 0}
+  - tileDoorOut: {instanceID: 0}
+  - gameManager: {instanceID: 0}
+  - loading_level: {fileID: 2800000, guid: 500c52ed13a867d4888be20af9974fd8, type: 3}
+  - gameState: {instanceID: 0}
+  - gameOverCamara: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

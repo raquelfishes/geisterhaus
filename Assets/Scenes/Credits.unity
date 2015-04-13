@@ -486,7 +486,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lara   Ballesteros
+  m_Text: Lara   TOLEDO
 --- !u!222 &893196445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -575,7 +575,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11477624, guid: 2197bfe1c1edca9479868b7ba85c95f7, type: 2}
       propertyPath: m_Text
-      value: Lara   Ballesteros
+      value: Lara   TOLEDO
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2197bfe1c1edca9479868b7ba85c95f7, type: 2}
