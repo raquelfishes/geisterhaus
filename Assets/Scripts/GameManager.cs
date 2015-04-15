@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown ("ChangeH"))
 			nextSelectedHuman ();
-
+        Debug.Log(humans.Count);
 		if (humans.Count == 0) { //Se acaba el juego!!!!!!!!!!!!
 			finishLevel();
 		}
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void nextSelectedHuman(){
-		if (humans.Count > 1 && !singleGhost) {
+		if (humans.Count > 0 && !singleGhost) {
 			humans [human_selected].GetComponent<HumanPlayer> ().deselect ();
 			human_selected = (human_selected + 1) % humans.Count;
 			humans [human_selected].GetComponent<HumanPlayer> ().select ();
