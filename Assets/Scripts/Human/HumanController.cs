@@ -13,7 +13,7 @@ public class HumanController : MonoBehaviour {
 	public bool isInScene=false;
 	public bool _isInteligent;
 	public GameObject tileGroundEmpty;
-	public GameObject soul;
+	//public GameObject soul;
 
 	public GameObject _healthBarHuman;
 	public GameObject _healthBarGhost;
@@ -40,13 +40,13 @@ public class HumanController : MonoBehaviour {
 		}
 
 		_isMoving = false;
-		soul.GetComponent<CharacterController>().setGrounded(true);
+		gameObject.GetComponentInChildren<CharacterController>().setGrounded(true);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		soul.GetComponent<CharacterController>().setGrounded(true);
+		gameObject.GetComponentInChildren<CharacterController>().setGrounded(true);
 		updateHealthBar ();
 	}
 

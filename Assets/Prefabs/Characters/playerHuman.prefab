@@ -1021,13 +1021,13 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134472}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &6534540
 BoxCollider:
@@ -1039,8 +1039,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .230000004, y: 1, z: .230000004}
-  m_Center: {x: 0, y: .159999996, z: 0}
+  m_Size: {x: .230000004, y: 1.09000003, z: .230000004}
+  m_Center: {x: 0, y: .430000007, z: 0}
 --- !u!95 &9530434
 Animator:
   serializedVersion: 3
@@ -1083,7 +1083,6 @@ MonoBehaviour:
   isInScene: 0
   _isInteligent: 0
   tileGroundEmpty: {fileID: 138176, guid: 9abf39baa71e0db438acde224368654f, type: 2}
-  soul: {fileID: 130368}
   _healthBarHuman: {fileID: 0}
   _healthBarGhost: {fileID: 0}
   _humanCamera: {fileID: 0}
