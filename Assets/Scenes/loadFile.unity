@@ -123,7 +123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11487032, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: numHumans
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: ghost
@@ -391,7 +391,7 @@ MonoBehaviour:
   _nRows: 0
   _nColumns: 0
   _nTyles: 0
-  numHumans: 2
+  numHumans: 1
   numGhosts: 3
   singleGhost: 1
   singleHuman: 1
@@ -426,7 +426,6 @@ MonoBehaviour:
   tileDoorIn: {fileID: 120720, guid: a80eb433c74196849b475c2bd3bf4edb, type: 2}
   tileDoorOut: {fileID: 146318, guid: c1cf3660930be3d43b125c0a95a5b541, type: 2}
   gameManager: {fileID: 135032, guid: 1bcda9586afac364eb72e6210f0bf323, type: 2}
-  loading_level: {fileID: 2800000, guid: 500c52ed13a867d4888be20af9974fd8, type: 3}
   gameState: {fileID: 0}
   scoreBoardStyle:
     m_Name: ScoreBoard

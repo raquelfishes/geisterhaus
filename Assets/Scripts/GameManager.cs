@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject interfaceHumans;
 	public GameObject interfaceGhosts;
 
+    private bool fin = false;
+
 	// Use this for initialization
 	void Start () {
 		gameState = GameObject.FindWithTag ("GameState");
@@ -74,8 +76,9 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown ("ChangeH"))
 			nextSelectedHuman ();
-        Debug.Log(humans.Count);
-		if (humans.Count == 0) { //Se acaba el juego!!!!!!!!!!!!
+        //Debug.Log(humans.Count);
+		if (humans.Count == 0 && !fin) { //Se acaba el juego!!!!!!!!!!!!
+            fin = true;
 			finishLevel();
 		}
 
@@ -116,6 +119,7 @@ public class GameManager : MonoBehaviour {
 
 	void initializeGhostsPositions(){
 		for (int i=0; i<ghosts.Length; i++) {
+            ghosts[i].transform.position = ghost_objects[i].transform.position;
 			ghosts[i].GetComponent<GhostController>().setObj(ghost_objects[i]);
             if (singleHuman)
 				ghosts[i].GetComponent<GhostInteligence>().setObj(ghost_objects[i]);
@@ -203,15 +207,17 @@ public class GameManager : MonoBehaviour {
 			//Ganan los humanos
 			Debug.Log ("HUMANS WINS!");
 			//cargar el siguiente nivel
-			gameState.GetComponent<GameState>().setNivel(gameState.GetComponent<GameState>().getNivel()+1);
-			Application.LoadLevel("loadFile");
-			if (Application.isLoadingLevel) {
-				GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), loading_level);
-			}
+            gameState.GetComponent<GameState>().loadNextLevel();
+            //gameState.GetComponent<GameState>().setNivel(gameState.GetComponent<GameState>().getNivel()+1);
+            //Application.LoadLevel("loadFile");
+            //if (Application.isLoadingLevel) {
+            //    GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), loading_level);
+            //}
 		} else {
 			//Ganan los fantasmas
 			Debug.Log ("GHOSTS WINS!");
 			//Mostrar camara de gameOver
+            gameState.GetComponent<GameState>().gameOver(true,false);
 			camara.SetActive (true);
 		}
 	}

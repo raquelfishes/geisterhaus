@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameState : MonoBehaviour {
@@ -8,6 +9,12 @@ public class GameState : MonoBehaviour {
 	private int nivel; 			// Indice del nivel en el que nos encontramos
 	private int numHumans; 		// Numero de humanos que quedan vivos
 	private int[] lifeHumans = new int[50];	// Vida de cada uno de los humanos - Definimos un maximo de 50 y no nos tenemos que preocupar de inicializaciones
+
+    private int maxNivel = 3;   // Maximo de niveles en el juego
+
+    public Texture2D[] loading;
+    public Texture2D gameOverText;
+    public
 
 	// Load game state in all scenes
 	void Awake () {
@@ -24,8 +31,8 @@ public class GameState : MonoBehaviour {
 
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Escape)) { 
-				Application.LoadLevel ("MainMenu");
-				gameObject.audio.Play();
+			Application.LoadLevel ("MainMenu");
+			gameObject.audio.Play();
 		}
 	}
 
@@ -43,4 +50,40 @@ public class GameState : MonoBehaviour {
 	public void setNumHumans(int num) { numHumans = num;}
 	public void setLifeHumans(int[] life) { lifeHumans = life; }
 	public void setLifeHuman(int i, int life) { lifeHumans[i] = life; }
+
+    public void loadNextLevel()
+    {
+        ++nivel;
+        if (nivel > maxNivel) {
+            // Mostrar fin del juego
+            gameOver(false, true);
+        }
+        else {
+            GameObject go = GameObject.Find("CanvasAux");
+            go.GetComponentInChildren<RawImage>().texture = loading[nivel-1];
+            go.GetComponentInChildren<RawImage>().enabled = true;
+            Application.LoadLevel("loadFile");
+            StartCoroutine(waitLoadScene());
+        }
+    }
+
+    IEnumerator waitLoadScene() {
+        yield return new WaitForSeconds(1);
+        if (Application.isLoadingLevel) {
+            waitLoadScene();
+        }
+        GameObject.Find("CanvasAux").GetComponentInChildren<RawImage>().enabled = false;
+    }
+
+    public void gameOver(bool ghostWin, bool humanWin){
+        GameObject go = GameObject.Find("CanvasAux");
+        go.GetComponentInChildren<RawImage>().texture = gameOverText;
+        if (ghostWin)
+            go.GetComponentInChildren<Text>().text = "Ghosts win!!!";
+        else
+            go.GetComponentInChildren<Text>().text = "Humans win!!!";
+        go.GetComponentInChildren<Text>().text += "\n\n Press esc to go back to main menu";
+        go.GetComponentInChildren<RawImage>().enabled = true;
+        go.GetComponentInChildren<Text>().enabled = true;
+    }
 }

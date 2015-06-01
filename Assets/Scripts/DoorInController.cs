@@ -34,16 +34,15 @@ public class DoorInController : MonoBehaviour {
 		GameObject go = humans[indexHuman];
 		go.transform.position = gameObject.transform.position+new Vector3(0.0f,0.45f,0.0f);
 		go.transform.rotation = orientationIn;
+        go.SendMessage("setMoving", true);
 		if (go.GetComponent<HumanController> ()._isInteligent) {
 			//go.GetComponent<HumanIntelligence> ().setDirection (directionIn);
-			go.GetComponent<HumanIntelligence> ().setMoving (true);
 			go.GetComponent<HumanIntelligence> ().isInScene = true;
 			go.GetComponent<HumanIntelligence> ().position = gameObject.transform.position+new Vector3(0.0f,0.45f,0.0f);;
 		} 
 		else {
 			go.GetComponent<HumanPlayer> ().setDirection (-directionIn);
 			go.transform.rotation = Quaternion.Euler (new Vector3 (0,orientationIn.y+180,0));
-			go.GetComponent<HumanPlayer> ().setMoving (true);
 			go.GetComponent<HumanPlayer> ().isInScene = true;
 		}
 		//recursive method

@@ -16,6 +16,9 @@ public class MenuMultiOrSingle : MonoBehaviour {
 
 	private GameObject _gameState;
 
+    private int numHumans = 1;
+    private int numGhosts = 10;
+
 	
 	void Awake () {
 		DontDestroyOnLoad(transform.gameObject);
@@ -44,7 +47,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 				_gameState.GetComponent<GameState>().setModeGame(0);
 				_gameState.GetComponent<GameState>().setPlayer1(0); //jugador 1 fantasma
 				_gameState.GetComponent<GameState>().setNivel(1);
-				_gameState.GetComponent<GameState>().setNumHumans(10);
+                _gameState.GetComponent<GameState>().setNumHumans(numHumans);
 				Application.LoadLevel("loadFile");
 
 			}
@@ -52,7 +55,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 				_gameState.GetComponent<GameState>().setModeGame(0);
 				_gameState.GetComponent<GameState>().setPlayer1(1); //jugador 1 humanos
 				_gameState.GetComponent<GameState>().setNivel(1);
-				_gameState.GetComponent<GameState>().setNumHumans(10);
+                _gameState.GetComponent<GameState>().setNumHumans(numHumans);
 				Application.LoadLevel("loadFile");
 			}	
 		}
@@ -68,14 +71,14 @@ public class MenuMultiOrSingle : MonoBehaviour {
 				_gameState.GetComponent<GameState>().setModeGame(1);
 				_gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 fantasma
 				_gameState.GetComponent<GameState>().setNivel(1);
-				_gameState.GetComponent<GameState>().setNumHumans(10);
+                _gameState.GetComponent<GameState>().setNumHumans(numHumans);
 				Application.LoadLevel("loadFile");
 			}
 			if(GUI.Button(new Rect(Screen.width/2+10,265,100,30),"Visitantes")){
 				_gameState.GetComponent<GameState>().setModeGame(2);
 				_gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 humanos
 				_gameState.GetComponent<GameState>().setNivel(1);
-				_gameState.GetComponent<GameState>().setNumHumans(2);
+                _gameState.GetComponent<GameState>().setNumHumans(numHumans);
 				Application.LoadLevel("loadFile");
 			}	
 		}

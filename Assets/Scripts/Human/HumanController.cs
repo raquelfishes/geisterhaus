@@ -53,11 +53,17 @@ public class HumanController : MonoBehaviour {
 	public void updateHealthBar(){
 		if (_humanCamera != null && _healthBarHuman != null) {
 			_healthBarHuman.transform.position = _humanCamera.WorldToScreenPoint (gameObject.transform.position + new Vector3(0.0f,1.5f,0.0f));
-			//_healthBarHuman.transform.position += new Vector3(0.0f,5.0f,0.0f);
+            //_healthBarHuman.transform.position += new Vector3(0.0f,5.0f,0.0f);
+            _healthBarHuman.SetActive(true);
+            if (!_isMoving)
+                _healthBarHuman.SetActive(false); 
 		}
 		if (_ghostCamera != null && _healthBarGhost != null) {
 			_healthBarGhost.transform.position = _ghostCamera.WorldToScreenPoint (gameObject.transform.position + new Vector3(0.0f,1.5f,0.0f));
 			//_healthBarGhost.transform.position += new Vector3(0.0f,5.0f,0.0f);
+            _healthBarGhost.SetActive(true);
+            if (!_isMoving)
+                _healthBarGhost.SetActive(false);
 		}
 	}
 
