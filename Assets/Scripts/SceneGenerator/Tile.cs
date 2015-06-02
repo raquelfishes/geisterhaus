@@ -4,9 +4,10 @@ using System.Collections;
 public class Tile {
 
 	public enum typeTile{NOT,EMPTY,OBSTACLE,POSSESSED,DOOR};
-	public enum typeObstacle{NOT,CHAIR,ARMCHAIR,AQUARIUM}
+	public enum typeObstacle{NOT,CHAIR,ARMCHAIR,AQUARIUM,WARDROBE1,WARDROBE2,PEN,CHILDBED,ALARM,IPOD,LAMP1,TV}
 	public enum typeEmpty{NOT,GROUND,WALL,CORNER}
-	public enum typePossessed{NOT,VASE,CANVAS1,CANVAS2,CLOCK,TABLE,SOFA,LIGHT,STATUE1,STATUE2,WINDOW,FIREPLACE}
+	public enum typePossessed{NOT,VASE,CANVAS1,CANVAS2,CLOCK,TABLE,SOFA,LIGHT,STATUE1,STATUE2,WINDOW,FIREPLACE,
+        COVER,DRAWER1,PARENTSBED,CUSHION,COT,LAMP2,SHELVES,BOOK,STUDYTABLE,NIGHTTABLE,ORGAN,PC,CHAIR2,SOCKET,SWITCH,RADIATOR,LAMP3}
 	//RF = right front -- LF = right left -- RB = right back -- LB = back left
 	public enum typeCorner{RF,LF,RB,LB,NOT}
 	public enum typeOriented{R,L,F,B,NOT}
@@ -22,6 +23,7 @@ public class Tile {
 	public bool horizontal;
 	public bool esquina;
 	public int _myTypeGround;
+    public int _myTypeWall;
 
 	public Tile(){
 		_myTypeTile = typeTile.NOT;
@@ -34,6 +36,7 @@ public class Tile {
 		horizontal = true;
 		esquina = false;
 		_myTypeGround = -1;
+        _myTypeWall = -1;
 	}
 
 	void instantiate(float x, float y, float z){

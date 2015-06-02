@@ -61,8 +61,8 @@ public class GameState : MonoBehaviour {
         }
         else {
             GameObject go = GameObject.Find("CanvasAux");
-            go.SetActive(true);
-            go.GetComponentInChildren<RawImage>().texture = loading[nivel-1];
+            //go.SetActive(true);
+            go.GetComponentInChildren<RawImage>().texture = loading[nivel-2];
             go.GetComponentInChildren<RawImage>().enabled = true;
             Application.LoadLevel("loadFile");
             StartCoroutine(waitLoadScene());
@@ -76,12 +76,12 @@ public class GameState : MonoBehaviour {
         }
         GameObject go = GameObject.Find("CanvasAux");
         go.GetComponentInChildren<RawImage>().enabled = false;
-        go.SetActive(false);
+        //go.SetActive(false);
     }
 
     public void gameOver(bool ghostWin, bool humanWin){
         GameObject go = GameObject.Find("CanvasAux");
-        go.SetActive(true);
+        //go.SetActive(true);
         go.GetComponentInChildren<RawImage>().texture = gameOverText;
         if (ghostWin)
             go.GetComponentInChildren<Text>().text = "Ghosts win!!!";
