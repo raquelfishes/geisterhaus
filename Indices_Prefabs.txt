@@ -60,31 +60,134 @@
 1054 => armario1 izquierda
 1055 => armario1 derecha
 1056 => armario1 trasera
-1057 => armario1 vacia
 
-1058 => armario2 frente
-1059 => armario2 izquierda
-1060 => armario2 derecha
-1061 => armario2 trasera
-1062 => armario2 vacia
+1057 => armario2 frente
+1058 => armario2 izquierda
+1059 => armario2 derecha
+1060 => armario2 trasera
 
-1063 => boli
+1061 => boli
 
-1064 =>  
+1062 => cajones frente
+1063 => cajones izquierda
+1064 => cajones derecha
+1065 => cajones trasera
 
-2011 => pared vacia medio frente
-2012 => pared vacia medio iquierda
-2013 => pared vacia medio derecha
-2014 => pared vacia medio trasera
-2021 => pared vacia esquina frente/izquierda  |-
-2022 => pared vacia esquina frente/derecha    -|
-2023 => pared vacia esquina trasera/izquierda |_
-2024 => pared vacia esquina trasera/derecha    _|
+1066 => cama niños frente
+1067 => cama niños izquierda
+1068 => cama niños derecha
+1069 => cama niños trasera
+1070 => cama niños vacia
+
+1071 => cama padres frente
+1072 => cama padres izquierda
+1073 => cama padres derecha
+1074 => cama padres trasera
+1071 => cama padres vacia
+
+1072 => cojin horizontal
+1073 => cojin vertical
+
+1074 => cuna frente
+1075 => cuna iquierda
+1076 => cuna derecha
+1077 => cuna trasera
+
+1078 => despertador frente
+1079 => despertador izquierda
+1080 => despertador derecha
+1081 => despertador trasera
+
+1082 => ipod frente
+1083 => ipod izquierda
+1084 => ipod derecha
+1085 => ipod trasera
+
+1086 => lampara2 
+
+1087 => lamparaSuelo
+
+1088 => Estanteria horizontal
+1089 => estanteria vertical
+
+1090 => libro horizontal
+1091 => libro vertical
+
+1092 => mesaEstudio frente
+1093 => mesaEstudio izquierda
+1094 => mesaEstudio derecha
+1095 => mesaEstudio trasera
+1096 => mesaEstudio vacia
+
+1097 => mesita frente
+1098 => mesita izquierda
+1099 => mesita derecha
+1099 => mesita trasera
+
+1100 => organo frente
+1101 => organo izquierda
+1102 => organo derecha
+1103 => organo trasera
+1104 => organo vacia
+
+1105 => tele frente
+1106 => tele izquierda
+1107 => tele derecha
+1108 => tele trasera
+
+1109 => portatil frente
+1110 => portatil izquierda
+1111 => portatil derecha
+1112 => portatil trasera
+
+1113 => silla frente
+1114 => silla izquierda
+1115 => silla derecha
+1116 => silla trasera
+
+
+
+2011 => pared vacia medio frente  = tipo 1
+2012 => pared vacia medio iquierda  = tipo 1
+2013 => pared vacia medio derecha  = tipo 1
+2014 => pared vacia medio trasera  = tipo 1
+2021 => pared vacia esquina frente/izquierda  |-  = tipo 1
+2022 => pared vacia esquina frente/derecha    -|  = tipo 1
+2023 => pared vacia esquina trasera/izquierda |_  = tipo 1
+2024 => pared vacia esquina trasera/derecha    _|  = tipo 1
+
+2031 => pared vacia medio frente  = tipo 2
+2032 => pared vacia medio iquierda  = tipo 2
+2033 => pared vacia medio derecha  = tipo 2
+2034 => pared vacia medio trasera  = tipo 2
+2041 => pared vacia esquina izquierda/frente |-  = tipo 2
+2042 => pared vacia esquina frente/derecha    -|  = tipo 2
+2043 => pared vacia esquina izquierda/trasera |_  = tipo 2
+2044 => pared vacia esquina trasera/derecha    _|  = tipo 2
+
+2051 => pared vacia medio frente  = tipo 3
+2052 => pared vacia medio iquierda  = tipo 3
+2053 => pared vacia medio derecha  = tipo 3
+2054 => pared vacia medio trasera  = tipo 3
+2061 => pared vacia esquina izquierda/frente |-  = tipo 3
+2062 => pared vacia esquina frente/derecha    -|  = tipo 3
+2063 => pared vacia esquina izquierda/trasera |_  = tipo 3
+2064 => pared vacia esquina trasera/derecha    _|  = tipo 3
+
+2071 => pared vacia medio frente  = tipo 4
+2072 => pared vacia medio iquierda  = tipo 4
+2073 => pared vacia medio derecha  = tipo 4
+2074 => pared vacia medio trasera  = tipo 4
+2081 => pared vacia esquina izquierda/frente |-  = tipo 4
+2082 => pared vacia esquina frente/derecha    -|  = tipo 4
+2083 => pared vacia esquina izquierda/trasera |_  = tipo 4
+2084 => pared vacia esquina trasera/derecha    _|  = tipo 4
 
 2111 => pared con cuadro1 frente
 2112 => pared con cuadro1 iquierda
 2113 => pared con cuadro1 derecha
 2114 => pared con cuadro1 trasera
+
 2121 => pared con cuadro2 frente
 2122 => pared con cuadro2 iquierda
 2123 => pared con cuadro2 derecha
@@ -92,10 +195,28 @@
 
 2211 => pared ventana frente inicio
 2212 => pared ventana frente medio/fin (no instancia)
-2221 => pared ventana frente inicio
-2222 => pared ventana frente medio/fin (no instancia)
-2231 => pared ventana frente inicio
-2232 => pared ventana frente medio/fin (no instancia)
+2221 => pared ventana izquierda inicio
+2222 => pared ventana izquierda medio/fin (no instancia)
+2231 => pared ventana derecha inicio
+2232 => pared ventana derecha medio/fin (no instancia)
+
+2301 => enchufe frente
+2302 => enchufe izquierda
+2303 => enchufe derecha
+
+2304 => interruptor frente
+2305 => interruptor izquierda
+2306 => interruptor derecha
+
+2307 => radiador frente
+2308 => radiador izquierda
+2309 => radiador derecha
+
+2310 => lamparaPared frente
+2311 => lamparaPared izquierda
+2312 => lamparaPared derecha
+
+
 
 501 => puerta inicio
 502 => puerta inicio
@@ -162,16 +283,137 @@ g_047 => baldosa chimenea izquierda
 g_048 => baldosa chimenea derecha
 g_049 => baldosa chimenea vacia
 
+g_050 => alfombra horizontal
+g_051 => alfombra vertical
+g_052 => alfombra vacia
+
+g_053 => armario1 frente
+g_054 => armario1 izquierda
+g_055 => armario1 derecha
+g_056 => armario1 trasera
+
+g_057 => armario2 frente
+g_058 => armario2 izquierda
+g_059 => armario2 derecha
+g_060 => armario2 trasera
+
+g_061 => boli
+
+g_062 => cajones frente
+g_063 => cajones izquierda
+g_064 => cajones derecha
+g_065 => cajones trasera
+
+g_066 => cama niños frente
+g_067 => cama niños izquierda
+g_068 => cama niños derecha
+g_069 => cama niños trasera
+g_070 => cama niños vacia
+
+g_071 => cama padres frente
+g_072 => cama padres izquierda
+g_073 => cama padres derecha
+g_074 => cama padres trasera
+g_071 => cama padres vacia
+
+g_072 => cojin horizontal
+g_073 => cojin vertical
+
+g_074 => cuna frente
+g_075 => cuna iquierda
+g_076 => cuna derecha
+g_077 => cuna trasera
+
+g_078 => despertador frente
+g_079 => despertador izquierda
+g_080 => despertador derecha
+g_081 => despertador trasera
+
+g_082 => ipod frente
+g_083 => ipod izquierda
+g_084 => ipod derecha
+g_085 => ipod trasera
+
+g_086 => lampara2 
+
+g_087 => lamparaSuelo
+
+g_088 => Estanteria horizontal
+g_089 => estanteria vertical
+
+g_090 => libro horizontal
+g_091 => libro vertical
+
+g_092 => mesaEstudio frente
+g_093 => mesaEstudio izquierda
+g_094 => mesaEstudio derecha
+g_095 => mesaEstudio trasera
+g_096 => mesaEstudio vacia
+
+g_097 => mesita frente
+g_098 => mesita izquierda
+g_099 => mesita derecha
+g_099 => mesita trasera
+
+g_100 => organo frente
+g_101 => organo izquierda
+g_102 => organo derecha
+g_103 => organo trasera
+g_104 => organo vacia
+
+g_105 => tele frente
+g_106 => tele izquierda
+g_107 => tele derecha
+g_108 => tele trasera
+
+g_109 => portatil frente
+g_110 => portatil izquierda
+g_111 => portatil derecha
+g_112 => portatil trasera
+
+g_113 => silla frente
+g_114 => silla izquierda
+g_115 => silla derecha
+g_116 => silla trasera
+
 //Indicadores para la pared
 //pared frontal
-w_011 => pared vacia medio frente
-w_012 => pared vacia medio iquierda
-w_013 => pared vacia medio derecha
-w_014 => pared vacia medio trasera
-w_021 => pared vacia esquina izquierda/frente |-
-w_022 => pared vacia esquina frente/derecha    -|
-w_023 => pared vacia esquina izquierda/trasera |_
-w_024 => pared vacia esquina trasera/derecha    _|
+w_011 => pared vacia medio frente  = tipo 1
+w_012 => pared vacia medio iquierda  = tipo 1
+w_013 => pared vacia medio derecha   = tipo 1
+w_014 => pared vacia medio trasera   = tipo 1
+w_021 => pared vacia esquina izquierda/frente |-   = tipo 1
+w_022 => pared vacia esquina frente/derecha    -|   = tipo 1
+w_023 => pared vacia esquina izquierda/trasera |_   = tipo 1
+w_024 => pared vacia esquina trasera/derecha    _|   = tipo 1
+
+w_031 => pared vacia medio frente  = tipo 2
+w_032 => pared vacia medio iquierda  = tipo 2
+w_033 => pared vacia medio derecha  = tipo 2
+w_034 => pared vacia medio trasera  = tipo 2
+w_041 => pared vacia esquina izquierda/frente |-  = tipo 2
+w_042 => pared vacia esquina frente/derecha    -|  = tipo 2
+w_043 => pared vacia esquina izquierda/trasera |_  = tipo 2
+w_044 => pared vacia esquina trasera/derecha    _|  = tipo 2
+
+w_051 => pared vacia medio frente  = tipo 3
+w_052 => pared vacia medio iquierda  = tipo 3
+w_053 => pared vacia medio derecha  = tipo 3
+w_054 => pared vacia medio trasera  = tipo 3
+w_061 => pared vacia esquina izquierda/frente |-  = tipo 3
+w_062 => pared vacia esquina frente/derecha    -|  = tipo 3
+w_063 => pared vacia esquina izquierda/trasera |_  = tipo 3
+w_064 => pared vacia esquina trasera/derecha    _|  = tipo 3
+
+w_071 => pared vacia medio frente  = tipo 4
+w_072 => pared vacia medio iquierda  = tipo 4
+w_073 => pared vacia medio derecha  = tipo 4
+w_074 => pared vacia medio trasera  = tipo 4
+w_081 => pared vacia esquina izquierda/frente |-  = tipo 4
+w_082 => pared vacia esquina frente/derecha    -|  = tipo 4
+w_083 => pared vacia esquina izquierda/trasera |_  = tipo 4
+w_084 => pared vacia esquina trasera/derecha    _|  = tipo 4
+
 
 w_111 => pared cuadro1 frente
 w_112 => pared cuadro1 iquierda
@@ -188,6 +430,22 @@ w_221 => pared ventana izquierda inicio
 w_222 => pared ventana izquierda medio/fin (no instancia)
 w_231 => pared ventana derecha inicio
 w_232 => pared ventana derecha medio/fin (no instancia)
+
+w_2301 => enchufe frente
+w_2302 => enchufe izquierda
+w_2303 => enchufe derecha
+
+w_2304 => interruptor frente
+w_2305 => interruptor izquierda
+w_2306 => interruptor derecha
+
+w_2307 => radiador frente
+w_2308 => radiador izquierda
+w_2309 => radiador derecha
+
+w_2310 => lamparaPared frente
+w_2311 => lamparaPared izquierda
+w_2312 => lamparaPared derecha
 
 //Indicadores para la puerta
 d_01 => puerta de entrada frente
