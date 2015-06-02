@@ -147,14 +147,41 @@
 
 
 
-2011 => pared vacia medio frente
-2012 => pared vacia medio iquierda
-2013 => pared vacia medio derecha
-2014 => pared vacia medio trasera
-2021 => pared vacia esquina frente/izquierda  |-
-2022 => pared vacia esquina frente/derecha    -|
-2023 => pared vacia esquina trasera/izquierda |_
-2024 => pared vacia esquina trasera/derecha    _|
+2011 => pared vacia medio frente  = tipo 1
+2012 => pared vacia medio iquierda  = tipo 1
+2013 => pared vacia medio derecha  = tipo 1
+2014 => pared vacia medio trasera  = tipo 1
+2021 => pared vacia esquina frente/izquierda  |-  = tipo 1
+2022 => pared vacia esquina frente/derecha    -|  = tipo 1
+2023 => pared vacia esquina trasera/izquierda |_  = tipo 1
+2024 => pared vacia esquina trasera/derecha    _|  = tipo 1
+
+2031 => pared vacia medio frente  = tipo 2
+2032 => pared vacia medio iquierda  = tipo 2
+2033 => pared vacia medio derecha  = tipo 2
+2034 => pared vacia medio trasera  = tipo 2
+2041 => pared vacia esquina izquierda/frente |-  = tipo 2
+2042 => pared vacia esquina frente/derecha    -|  = tipo 2
+2043 => pared vacia esquina izquierda/trasera |_  = tipo 2
+2044 => pared vacia esquina trasera/derecha    _|  = tipo 2
+
+2051 => pared vacia medio frente  = tipo 3
+2052 => pared vacia medio iquierda  = tipo 3
+2053 => pared vacia medio derecha  = tipo 3
+2054 => pared vacia medio trasera  = tipo 3
+2061 => pared vacia esquina izquierda/frente |-  = tipo 3
+2062 => pared vacia esquina frente/derecha    -|  = tipo 3
+2063 => pared vacia esquina izquierda/trasera |_  = tipo 3
+2064 => pared vacia esquina trasera/derecha    _|  = tipo 3
+
+2071 => pared vacia medio frente  = tipo 4
+2072 => pared vacia medio iquierda  = tipo 4
+2073 => pared vacia medio derecha  = tipo 4
+2074 => pared vacia medio trasera  = tipo 4
+2081 => pared vacia esquina izquierda/frente |-  = tipo 4
+2082 => pared vacia esquina frente/derecha    -|  = tipo 4
+2083 => pared vacia esquina izquierda/trasera |_  = tipo 4
+2084 => pared vacia esquina trasera/derecha    _|  = tipo 4
 
 2111 => pared con cuadro1 frente
 2112 => pared con cuadro1 iquierda
@@ -351,14 +378,42 @@ g_116 => silla trasera
 
 //Indicadores para la pared
 //pared frontal
-w_011 => pared vacia medio frente
-w_012 => pared vacia medio iquierda
-w_013 => pared vacia medio derecha
-w_014 => pared vacia medio trasera
-w_021 => pared vacia esquina izquierda/frente |-
-w_022 => pared vacia esquina frente/derecha    -|
-w_023 => pared vacia esquina izquierda/trasera |_
-w_024 => pared vacia esquina trasera/derecha    _|
+w_011 => pared vacia medio frente  = tipo 1
+w_012 => pared vacia medio iquierda  = tipo 1
+w_013 => pared vacia medio derecha   = tipo 1
+w_014 => pared vacia medio trasera   = tipo 1
+w_021 => pared vacia esquina izquierda/frente |-   = tipo 1
+w_022 => pared vacia esquina frente/derecha    -|   = tipo 1
+w_023 => pared vacia esquina izquierda/trasera |_   = tipo 1
+w_024 => pared vacia esquina trasera/derecha    _|   = tipo 1
+
+w_031 => pared vacia medio frente  = tipo 2
+w_032 => pared vacia medio iquierda  = tipo 2
+w_033 => pared vacia medio derecha  = tipo 2
+w_034 => pared vacia medio trasera  = tipo 2
+w_041 => pared vacia esquina izquierda/frente |-  = tipo 2
+w_042 => pared vacia esquina frente/derecha    -|  = tipo 2
+w_043 => pared vacia esquina izquierda/trasera |_  = tipo 2
+w_044 => pared vacia esquina trasera/derecha    _|  = tipo 2
+
+w_051 => pared vacia medio frente  = tipo 3
+w_052 => pared vacia medio iquierda  = tipo 3
+w_053 => pared vacia medio derecha  = tipo 3
+w_054 => pared vacia medio trasera  = tipo 3
+w_061 => pared vacia esquina izquierda/frente |-  = tipo 3
+w_062 => pared vacia esquina frente/derecha    -|  = tipo 3
+w_063 => pared vacia esquina izquierda/trasera |_  = tipo 3
+w_064 => pared vacia esquina trasera/derecha    _|  = tipo 3
+
+w_071 => pared vacia medio frente  = tipo 4
+w_072 => pared vacia medio iquierda  = tipo 4
+w_073 => pared vacia medio derecha  = tipo 4
+w_074 => pared vacia medio trasera  = tipo 4
+w_081 => pared vacia esquina izquierda/frente |-  = tipo 4
+w_082 => pared vacia esquina frente/derecha    -|  = tipo 4
+w_083 => pared vacia esquina izquierda/trasera |_  = tipo 4
+w_084 => pared vacia esquina trasera/derecha    _|  = tipo 4
+
 
 w_111 => pared cuadro1 frente
 w_112 => pared cuadro1 iquierda
