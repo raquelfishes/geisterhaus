@@ -314,67 +314,67 @@ g_071 => cama padres frente
 g_072 => cama padres izquierda
 g_073 => cama padres derecha
 g_074 => cama padres trasera
-g_071 => cama padres vacia
+g_075 => cama padres vacia
 
-g_072 => cojin horizontal
-g_073 => cojin vertical
+g_076 => cojin horizontal
+g_077 => cojin vertical
 
-g_074 => cuna frente
-g_075 => cuna iquierda
-g_076 => cuna derecha
-g_077 => cuna trasera
+g_078 => cuna frente
+g_079 => cuna iquierda
+g_080 => cuna derecha
+g_081 => cuna trasera
 
-g_078 => despertador frente
-g_079 => despertador izquierda
-g_080 => despertador derecha
-g_081 => despertador trasera
+g_082 => despertador frente
+g_083 => despertador izquierda
+g_084 => despertador derecha
+g_085 => despertador trasera
 
-g_082 => ipod frente
-g_083 => ipod izquierda
-g_084 => ipod derecha
-g_085 => ipod trasera
+g_086 => ipod frente
+g_087 => ipod izquierda
+g_088 => ipod derecha
+g_089 => ipod trasera
 
-g_086 => lampara2 
+g_090 => lampara2 
 
-g_087 => lamparaSuelo
+g_091 => lamparaSuelo
 
-g_088 => Estanteria horizontal
-g_089 => estanteria vertical
+g_092 => Estanteria horizontal
+g_093 => estanteria vertical
 
-g_090 => libro horizontal
-g_091 => libro vertical
+g_094 => libro horizontal
+g_095 => libro vertical
 
-g_092 => mesaEstudio frente
-g_093 => mesaEstudio izquierda
-g_094 => mesaEstudio derecha
-g_095 => mesaEstudio trasera
-g_096 => mesaEstudio vacia
+g_096 => mesaEstudio frente
+g_097 => mesaEstudio izquierda
+g_098 => mesaEstudio derecha
+g_099 => mesaEstudio trasera
+g_100 => mesaEstudio vacia
 
-g_097 => mesita frente
-g_098 => mesita izquierda
-g_099 => mesita derecha
-g_099 => mesita trasera
+g_101 => mesita frente
+g_102 => mesita izquierda
+g_103 => mesita derecha
+g_104 => mesita trasera
 
-g_100 => organo frente
-g_101 => organo izquierda
-g_102 => organo derecha
-g_103 => organo trasera
-g_104 => organo vacia
+g_105 => organo frente
+g_106 => organo izquierda
+g_107 => organo derecha
+g_108 => organo trasera
+g_109 => organo vacia
 
-g_105 => tele frente
-g_106 => tele izquierda
-g_107 => tele derecha
-g_108 => tele trasera
+g_110 => tele frente
+g_111 => tele izquierda
+g_112 => tele derecha
+g_113 => tele trasera
 
-g_109 => portatil frente
-g_110 => portatil izquierda
-g_111 => portatil derecha
-g_112 => portatil trasera
+g_114 => portatil frente
+g_115 => portatil izquierda
+g_116 => portatil derecha
+g_117 => portatil trasera
 
-g_113 => silla frente
-g_114 => silla izquierda
-g_115 => silla derecha
-g_116 => silla trasera
+g_118 => silla frente
+g_119 => silla izquierda
+g_120 => silla derecha
+g_121 => silla trasera
 
 //Indicadores para la pared
 //pared frontal
