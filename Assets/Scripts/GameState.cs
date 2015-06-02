@@ -32,6 +32,7 @@ public class GameState : MonoBehaviour {
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Escape)) { 
 			Application.LoadLevel ("MainMenu");
+            GameObject.Find("CanvasAux").SetActive(false);
 			gameObject.audio.Play();
 		}
 	}
@@ -60,6 +61,7 @@ public class GameState : MonoBehaviour {
         }
         else {
             GameObject go = GameObject.Find("CanvasAux");
+            go.SetActive(true);
             go.GetComponentInChildren<RawImage>().texture = loading[nivel-1];
             go.GetComponentInChildren<RawImage>().enabled = true;
             Application.LoadLevel("loadFile");
@@ -72,11 +74,14 @@ public class GameState : MonoBehaviour {
         if (Application.isLoadingLevel) {
             waitLoadScene();
         }
-        GameObject.Find("CanvasAux").GetComponentInChildren<RawImage>().enabled = false;
+        GameObject go = GameObject.Find("CanvasAux");
+        go.GetComponentInChildren<RawImage>().enabled = false;
+        go.SetActive(false);
     }
 
     public void gameOver(bool ghostWin, bool humanWin){
         GameObject go = GameObject.Find("CanvasAux");
+        go.SetActive(true);
         go.GetComponentInChildren<RawImage>().texture = gameOverText;
         if (ghostWin)
             go.GetComponentInChildren<Text>().text = "Ghosts win!!!";

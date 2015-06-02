@@ -108,6 +108,7 @@ public class HumanController : MonoBehaviour {
 
 	public void hurt(){
 		_life -= _hurtSize;
+        gameObject.GetComponent<SoundHumanController>().soundHurt();
 		if (_humanCamera != null)
 			_healthBarHuman.GetComponent<Slider>().value -= _hurtSize;
 		if (_ghostCamera != null)

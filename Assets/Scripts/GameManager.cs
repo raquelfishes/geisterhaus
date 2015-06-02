@@ -145,9 +145,9 @@ public class GameManager : MonoBehaviour {
 				ghosts[i].SendMessage ("humanDie",indexHuman);
 	}
 
-	public void killHuman(GameObject object_aux){
+	public void killHuman(GameObject human){
 
-		int index = humans.IndexOf (object_aux);
+        int index = humans.IndexOf(human);
 
 		if (index != -1) {
 			humans.RemoveAt (index);
@@ -155,11 +155,11 @@ public class GameManager : MonoBehaviour {
 			if (index==human_selected && !singleGhost) nextSelectedHuman();
 		}
 
-		object_aux.GetComponent<HumanController> ().destroyHealthBar ();
-		object_aux.GetComponentInChildren<CharacterController> ().MuereInsensato ();
+        human.GetComponent<SoundHumanController>().soundKill();
+        human.GetComponent<HumanController>().destroyHealthBar();
+        human.GetComponentInChildren<CharacterController>().MuereInsensato();
 		--humansAlive;
 		if (index<human_selected) --human_selected;
-		Debug.Log ("humanos vivos despues: " + humans.Count);
 	}
 
 	public void hurtHuman(GameObject object_aux){
@@ -194,6 +194,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void addHumanOut(GameObject human){
+        human.GetComponent<SoundHumanController>().soundOut();
 		gameState.GetComponent<GameState>().setLifeHuman(humansPassDoor,human.GetComponent<HumanController>().getLife());
 		++humansPassDoor;
 		gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
@@ -206,19 +207,17 @@ public class GameManager : MonoBehaviour {
 		if (humansPassDoor > 0) {
 			//Ganan los humanos
 			Debug.Log ("HUMANS WINS!");
-			//cargar el siguiente nivel
+			//Desactivar canvas (marcadores, etc...)
+            GameObject.Find("Canvas").SetActive(false);
+            //Cargar el siguiente nivel
             gameState.GetComponent<GameState>().loadNextLevel();
-            //gameState.GetComponent<GameState>().setNivel(gameState.GetComponent<GameState>().getNivel()+1);
-            //Application.LoadLevel("loadFile");
-            //if (Application.isLoadingLevel) {
-            //    GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), loading_level);
-            //}
 		} else {
 			//Ganan los fantasmas
 			Debug.Log ("GHOSTS WINS!");
-			//Mostrar camara de gameOver
+            //Desactivar canvas (marcadores, etc...)
+            GameObject.Find("Canvas").SetActive(false);
+            //Cargar gameOver
             gameState.GetComponent<GameState>().gameOver(true,false);
-			camara.SetActive (true);
 		}
 	}
 
