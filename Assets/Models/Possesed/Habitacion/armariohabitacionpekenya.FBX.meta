@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: c39fb9d3357cba6458f5df6717dc09fa
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube_1_1
+    100004: Cube_1_1_4
+    100006: Cube_2_1_3
+    100008: Cube_2_2
+    100010: Cube_3_1_6
+    100012: Cube_3_5
+    100014: Cube_4_1_8
+    100016: Cube_4_7
+    100018: Cube_6_10
+    100020: Cube_6_1_1
+    100022: Cube_6_2_1
+    100024: Cube_6_3_1
+    100026: Cube_7_17
+    100028: Poignee_1_
+    100030: Poignee_2_
+    100032: Poignee_3_
+    100034: Poignee_9
+    400000: //RootNode
+    400002: Cube_1_1
+    400004: Cube_1_1_4
+    400006: Cube_2_1_3
+    400008: Cube_2_2
+    400010: Cube_3_1_6
+    400012: Cube_3_5
+    400014: Cube_4_1_8
+    400016: Cube_4_7
+    400018: Cube_6_10
+    400020: Cube_6_1_1
+    400022: Cube_6_2_1
+    400024: Cube_6_3_1
+    400026: Cube_7_17
+    400028: Poignee_1_
+    400030: Poignee_2_
+    400032: Poignee_3_
+    400034: Poignee_9
+    2300000: Cube_1_1
+    2300002: Cube_1_1_4
+    2300004: Cube_2_1_3
+    2300006: Cube_2_2
+    2300008: Cube_3_1_6
+    2300010: Cube_3_5
+    2300012: Cube_4_1_8
+    2300014: Cube_4_7
+    2300016: Cube_6_10
+    2300018: Cube_6_1_1
+    2300020: Cube_6_2_1
+    2300022: Cube_6_3_1
+    2300024: Cube_7_17
+    2300026: Poignee_1_
+    2300028: Poignee_2_
+    2300030: Poignee_3_
+    2300032: Poignee_9
+    3300000: Cube_1_1
+    3300002: Cube_1_1_4
+    3300004: Cube_2_1_3
+    3300006: Cube_2_2
+    3300008: Cube_3_1_6
+    3300010: Cube_3_5
+    3300012: Cube_4_1_8
+    3300014: Cube_4_7
+    3300016: Cube_6_10
+    3300018: Cube_6_1_1
+    3300020: Cube_6_2_1
+    3300022: Cube_6_3_1
+    3300024: Cube_7_17
+    3300026: Poignee_1_
+    3300028: Poignee_2_
+    3300030: Poignee_3_
+    3300032: Poignee_9
+    4300000: Cube_1_1
+    4300002: Cube_1_1_4
+    4300004: Cube_2_1_3
+    4300006: Cube_2_2
+    4300008: Cube_3_1_6
+    4300010: Cube_3_5
+    4300012: Cube_4_1_8
+    4300014: Cube_4_7
+    4300016: Cube_6_10
+    4300018: Cube_6_1_1
+    4300020: Cube_6_2_1
+    4300022: Cube_6_3_1
+    4300024: Cube_7_17
+    4300026: Poignee_1_
+    4300028: Poignee_2_
+    4300030: Poignee_3_
+    4300032: Poignee_9
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
