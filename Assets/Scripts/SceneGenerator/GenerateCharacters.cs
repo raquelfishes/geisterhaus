@@ -7,8 +7,8 @@ using System.Collections;
 public class GenerateCharacters : MonoBehaviour {
 
 	public Vector3 positionFirstHuman = new Vector3 (0.0f, 0.45f, 0.0f);
-	public GameObject ghost;
-	public GameObject human;
+	public GameObject[] ghosts;
+	public GameObject[] humans;
 	public GameObject healthBar;
 	
 	void Start (){}
@@ -26,7 +26,7 @@ public class GenerateCharacters : MonoBehaviour {
 		Vector3 aux = new Vector3(2.0f,0.0f,0.0f);
 		//pos = pos - aux * num;
 		for (int i=0; i<num; i++) {
-			var aux_human = Instantiate (human, pos, Quaternion.identity) as GameObject;
+			var aux_human = Instantiate (humans[i%humans.Length], pos, Quaternion.identity) as GameObject;
 			if (gameState.GetComponent<GameState> ().getModeGame () == 0) {
 				var aux_healthBarHuman = Instantiate (healthBar, pos, Quaternion.identity) as GameObject;
 				var aux_healthBarGhost = Instantiate (healthBar, pos, Quaternion.identity) as GameObject;
@@ -51,7 +51,7 @@ public class GenerateCharacters : MonoBehaviour {
 	private void createGhosts(int num){
 		Vector3 pos= new Vector3(0.0f,0.0f,0.0f);
 		for (int i=0; i<num; i++) {
-			GameObject aux_ghost = Instantiate (ghost, pos, Quaternion.identity) as GameObject;
+			GameObject aux_ghost = Instantiate (ghosts[i%ghosts.Length], pos, Quaternion.identity) as GameObject;
 		}
 	}
 }

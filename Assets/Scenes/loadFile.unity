@@ -81,6 +81,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: ghosts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: humans.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 487034, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.43371773
@@ -214,6 +222,18 @@ Prefab:
       propertyPath: loading_level
       value: 
       objectReference: {fileID: 2800000, guid: 500c52ed13a867d4888be20af9974fd8, type: 3}
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: ghosts.Array.data[0]
+      value: 
+      objectReference: {fileID: 131288, guid: 2f4bcee406f2a4149bcaa79acc8e2dad, type: 2}
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: ghosts.Array.data[1]
+      value: 
+      objectReference: {fileID: 157338, guid: ede5ad4660c69be48a611a3a8eef3055, type: 2}
+    - target: {fileID: 11487030, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
+      propertyPath: humans.Array.data[0]
+      value: 
+      objectReference: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1cd538938d5390439f604bbbd0bae72, type: 2}
   m_RootGameObject: {fileID: 1245447010}
@@ -357,8 +377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
-  ghost: {fileID: 100000, guid: edd2da14c30e72f4093ae4eefa16f370, type: 2}
-  human: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
+  ghosts:
+  - {fileID: 131288, guid: 2f4bcee406f2a4149bcaa79acc8e2dad, type: 2}
+  - {fileID: 157338, guid: ede5ad4660c69be48a611a3a8eef3055, type: 2}
+  humans:
+  - {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
   healthBar: {fileID: 172624, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &1245447013
 MonoBehaviour:

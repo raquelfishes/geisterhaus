@@ -9,15 +9,10 @@ public class DoorInController : MonoBehaviour {
 	public Quaternion orientationIn = Quaternion.identity;
 
 	// Use this for initialization
-	void Start () {
-		//humans = GameObject.FindGameObjectsWithTag("Human");
-		//takeHumanToDoor();
-	}
+	void Start () {	}
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	void Update () { }
 
 	public void initialize(){
 		humans = GameObject.FindGameObjectsWithTag("Human");

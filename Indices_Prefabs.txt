@@ -52,6 +52,26 @@
 1048 => baldosa chimenea derecha
 1049 => baldosa chimenea vacia
 
+1050 => alfombra horizontal
+1051 => alfombra vertical
+1052 => alfombra vacia
+
+1053 => armario1 frente
+1054 => armario1 izquierda
+1055 => armario1 derecha
+1056 => armario1 trasera
+1057 => armario1 vacia
+
+1058 => armario2 frente
+1059 => armario2 izquierda
+1060 => armario2 derecha
+1061 => armario2 trasera
+1062 => armario2 vacia
+
+1063 => boli
+
+1064 =>  
+
 2011 => pared vacia medio frente
 2012 => pared vacia medio iquierda
 2013 => pared vacia medio derecha
