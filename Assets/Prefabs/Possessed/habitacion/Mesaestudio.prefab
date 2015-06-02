@@ -758,6 +758,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 65: {fileID: 6500002}
   - 65: {fileID: 6500000}
+  - 65: {fileID: 6526816}
   m_Layer: 0
   m_Name: Mesaestudio
   m_TagString: GhostObject
@@ -2560,8 +2561,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.75, y: 1, z: 1.72000003}
-  m_Center: {x: -.540000021, y: 0, z: -.629999995}
+  m_Size: {x: 1.75, y: 1, z: .920000017}
+  m_Center: {x: -.540000021, y: 0, z: -.189999998}
+--- !u!65 &6526816
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .850000024, y: 1, z: 1.70000005}
+  m_Center: {x: -.109999999, y: 0, z: -.610000014}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
