@@ -12,13 +12,14 @@ public class GhostPlayer : GhostController {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.05f);
+        transform.position = Vector3.MoveTowards(transform.position, _objPosition, 0.5f);
 	}
 
 	void OnMouseDown(){
 		Debug.Log ("seleccion fantasma  "+ _isSelected+"  "+_id);
         if (!_isSelected)
         {
+            gameObject.GetComponent<SoundGhostController>().soundSelect();
 			select ();
 			Debug.Log(_gameManager);
 			_gameManager.GetComponent<GameManager>().changeGhostSelected(_id);

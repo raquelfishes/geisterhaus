@@ -12,4 +12,14 @@ public class SoundGhostController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void soundSelect()
+    {
+        AudioSource[] audios = gameObject.GetComponentsInChildren<AudioSource>();
+        foreach (AudioSource audio in audios)
+        {
+            if (audio.name == "soundSelect")
+                audio.Play();
+        }
+    }
 }

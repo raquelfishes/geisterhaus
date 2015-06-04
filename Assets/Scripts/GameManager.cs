@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour {
 		ghosts [ghost_selected].GetComponent<GhostPlayer>().deselect ();
 		ghost_selected = i;
 		ghosts [ghost_selected].GetComponent<GhostPlayer>().select ();
+        ghosts[ghost_selected].GetComponent<SoundGhostController>().soundSelect();
 	}
 
 	void initializeGhostsId(){

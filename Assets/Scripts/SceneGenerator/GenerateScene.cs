@@ -719,7 +719,7 @@ public class GenerateScene : MonoBehaviour {
         // mesaEstudio
         case 1096:
             _myRoom[row][col]._myTypeTile = Tile.typeTile.POSSESSED;
-            _myRoom[row][col]._myTypePossessed = Tile.typePossessed.PARENTSBED;
+            _myRoom[row][col]._myTypePossessed = Tile.typePossessed.STUDYTABLE;
             _myRoom[row][col]._myTypeOriented = Tile.typeOriented.F;
             _myRoom[row][col]._myTypeEmpty = Tile.typeEmpty.GROUND;
             _myRoom[row][col]._myTypeGround = gameNivel;

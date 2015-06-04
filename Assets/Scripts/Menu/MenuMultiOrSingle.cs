@@ -16,7 +16,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 
 	private GameObject _gameState;
 
-    private int numHumans = 1;
+    private int numHumans = 3;
     private int numGhosts = 10;
 
 	
