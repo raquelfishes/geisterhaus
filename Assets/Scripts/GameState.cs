@@ -32,8 +32,12 @@ public class GameState : MonoBehaviour {
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Escape)) { 
 			Application.LoadLevel ("MainMenu");
-            GameObject.Find("CanvasAux").SetActive(false);
+            GameObject go = GameObject.Find("CanvasAux");
+            go.GetComponentInChildren<RawImage>().enabled = false;
+            go.GetComponentInChildren<Text>().enabled = false;
+            //go.GetComponentInChildren<RawImage>().enabled = true;
 			gameObject.audio.Play();
+            for (int i= 0; i< 50; i++){ lifeHumans[i]=100; }
 		}
 	}
 
@@ -52,8 +56,7 @@ public class GameState : MonoBehaviour {
 	public void setLifeHumans(int[] life) { lifeHumans = life; }
 	public void setLifeHuman(int i, int life) { lifeHumans[i] = life; }
 
-    public void loadNextLevel()
-    {
+    public void loadNextLevel(){
         ++nivel;
         if (nivel > maxNivel) {
             // Mostrar fin del juego

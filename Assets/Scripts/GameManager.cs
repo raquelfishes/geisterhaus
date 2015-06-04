@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
 	public GUIText finishMsg;
 	public Texture2D loading_level;
 
-	private int globalEnergy;
+	//private int globalEnergy;
 
 	// Menu Variables
 	private string[] scoreBoard= {"PassDoor: ","Alive: ","SingleGhost: ","SingleHuman: "};

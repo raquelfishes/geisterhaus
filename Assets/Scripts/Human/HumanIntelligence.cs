@@ -13,7 +13,7 @@ public class HumanIntelligence : HumanController {
 	private float inix;
 	private float iniz;
 	private bool inicial=true;
-	private bool collis=false;
+	//private bool collis=false;
 
 	void Start () {
 		Renderer m_renderer = tileGroundEmpty.renderer;
