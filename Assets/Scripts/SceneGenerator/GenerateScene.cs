@@ -37,7 +37,6 @@ public class GenerateScene : MonoBehaviour {
 	private int _nPaths = 0;
 	private List<string[]> _Paths;
 
-	public GUIStyle scoreBoardStyle;
 	public GameObject gameOverCamara;
 
 	public void Start(){
@@ -91,7 +90,6 @@ public class GenerateScene : MonoBehaviour {
 		go.GetComponent<GameManager>().singleHuman = singleHuman;
 		go.GetComponent<GameManager> ()._nPaths = _nPaths;
 		go.GetComponent<GameManager> ()._Paths = _Paths;
-		go.GetComponent<GameManager> ().scoreBoardStyle = scoreBoardStyle;
 		go.GetComponent<GameManager> ().camara = gameOverCamara;
 	}
 	

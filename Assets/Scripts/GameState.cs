@@ -65,7 +65,7 @@ public class GameState : MonoBehaviour {
         else {
             GameObject go = GameObject.Find("CanvasAux");
             //go.SetActive(true);
-            go.GetComponentInChildren<RawImage>().texture = loading[nivel-2];
+            go.GetComponentInChildren<RawImage>().texture = loading[nivel-1];
             go.GetComponentInChildren<RawImage>().enabled = true;
             Application.LoadLevel("loadFile");
             StartCoroutine(waitLoadScene());

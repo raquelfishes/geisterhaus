@@ -26,14 +26,7 @@ public class GameManager : MonoBehaviour {
 
 	//private int globalEnergy;
 
-	// Menu Variables
-	private string[] scoreBoard= {"PassDoor: ","Alive: ","SingleGhost: ","SingleHuman: "};
-	private float posX = 0.01f * Screen.width;
-	private float posY = 0.05f  * Screen.height;
-	private float height= 0.15f  * Screen.height;
-	private float width = 0.12f * Screen.width;
 	public GameObject camara;
-	public GUIStyle scoreBoardStyle;
 
 	public GameObject gameState;
 
@@ -66,10 +59,10 @@ public class GameManager : MonoBehaviour {
 		initHumans = humans.Count;
 		interfaceHumans = GameObject.FindWithTag ("CountHumans");
 		if (interfaceHumans != null)
-			interfaceHumans.GetComponentInChildren<Text> ().text = 0 + "/" + initHumans;
+			interfaceHumans.GetComponentInChildren<Text> ().text = 0 + " / " + initHumans;
 		interfaceGhosts = GameObject.FindWithTag ("CountGhosts");
 		if (interfaceGhosts != null)
-			interfaceGhosts.GetComponentInChildren<Text> ().text = 0 + "/" + initHumans;
+			interfaceGhosts.GetComponentInChildren<Text> ().text = 0 + " / " + initHumans;
 	}
 
 	// Update is called once per frame
@@ -86,11 +79,6 @@ public class GameManager : MonoBehaviour {
 			--human_selected;
 		}
 
-		// Tamaño del menu
-		posX = 0.01f * Screen.width;
-		posY = 0.05f  * Screen.height;
-		width = 0.12f * Screen.width;
-		height= 0.05f  * Screen.height;
 	}
 
 	void nextSelectedHuman(){
@@ -169,7 +157,7 @@ public class GameManager : MonoBehaviour {
 		if (humans [index].GetComponent<HumanController> ().getLife () <= 0) {
 			++killedHumans;
 			if (interfaceGhosts != null)
-				interfaceGhosts.GetComponentInChildren<Text> ().text = killedHumans + "/" + initHumans;
+				interfaceGhosts.GetComponentInChildren<Text> ().text = killedHumans + " / " + initHumans;
 			killHuman (object_aux);
 		}
 	}
@@ -201,7 +189,7 @@ public class GameManager : MonoBehaviour {
 		gameState.GetComponent<GameState>().setNumHumans(humansPassDoor);
 		//update marcador
 		if (interfaceHumans != null)
-			interfaceHumans.GetComponentInChildren<Text> ().text = humansPassDoor + "/" + initHumans;
+			interfaceHumans.GetComponentInChildren<Text> ().text = humansPassDoor + " / " + initHumans;
 	}
 
 	public void finishLevel(){
@@ -225,24 +213,5 @@ public class GameManager : MonoBehaviour {
 	private void exitGame(){
 		for (int i=0; i<ghost_objects.Length; i++)
 			ghost_objects[i].GetComponent<GhostController> ().enabled = false;
-	}
-
-	//Se muestra el marcador en pantalla
-	void OnGUI () {
-		scoreBoardStyle.fontSize = 7+ Mathf.FloorToInt(5.0f*Screen.width/1300.0f+5.0f*Screen.height/597.0f);
-
-		string[] datos={humansPassDoor.ToString("0.00"),humans.Count.ToString("0.00"),singleGhost.ToString(),singleHuman.ToString()};
-
-		for (int i=0; i<scoreBoard.Length; i++){
-			// Ghost Camera
-			GUI.Box (new Rect (posX, posY+i*30.0f, width, height), scoreBoard[i] + datos[i], scoreBoardStyle);
-			// Human Camera
-			GUI.Box (new Rect (posX, Screen.height/2 + posY+i*30.0f ,width, height), scoreBoard[i] + datos[i],scoreBoardStyle);
-		}
-		// Human Camera
-		//GUI.Box (new Rect (10, Screen.height - 160 ,160,25), "PassDoor: " + humansPassDoor.ToString("0.00"),scoreBoardStyle);
-		//GUI.Box (new Rect (10, Screen.height - 120 ,160,25), "Alive: " + humansAlive.ToString("0.00"));
-		//GUI.Box (new Rect (10,Screen.height - 80,160,25), "SingleGhost: " + singleGhost);
-		//GUI.Box (new Rect (10,Screen.height - 40,160,25), "SingleHuman: " + singleHuman);
 	}
 }

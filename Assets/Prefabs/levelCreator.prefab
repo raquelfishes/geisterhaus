@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
-  ghost: {fileID: 100000, guid: edd2da14c30e72f4093ae4eefa16f370, type: 2}
-  human: {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
+  ghosts: []
+  humans: []
   healthBar: {fileID: 172624, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &11487032
 MonoBehaviour:
@@ -87,8 +87,8 @@ MonoBehaviour:
   _nRows: 0
   _nColumns: 0
   _nTyles: 0
-  numHumans: 2
-  numGhosts: 2
+  numHumans: 1
+  numGhosts: 3
   singleGhost: 1
   singleHuman: 1
   tileGroundEmpty:
@@ -105,6 +105,14 @@ MonoBehaviour:
   - {fileID: 167090, guid: 2214a99717026374db732fd57ba26b20, type: 2}
   - {fileID: 144878, guid: 76ccb9d08bb937345ae227770da7752b, type: 2}
   - {fileID: 162068, guid: 23c3710cb60356547afff700879b73cc, type: 2}
+  - {fileID: 100066, guid: ac504477aa0b70b4dae172ca7712890b, type: 2}
+  - {fileID: 100038, guid: c12b62d096dc7994db725bfa8918e242, type: 2}
+  - {fileID: 100014, guid: 969632073c2f8474cadd5eb710a5ad90, type: 2}
+  - {fileID: 100110, guid: 72a26c5c1d1e91b488fab64894ef76de, type: 2}
+  - {fileID: 100020, guid: 45b45e28775c07f499748e61e005b04b, type: 2}
+  - {fileID: 100012, guid: 6742c5d63afc62948835ee3584b70453, type: 2}
+  - {fileID: 100004, guid: 84777a40c04adc641b422334fc767fe7, type: 2}
+  - {fileID: 100012, guid: 621dbd97bd336b24d934f22bcb9fbd7e, type: 2}
   tilesGroundPossesseds:
   - {fileID: 196246, guid: 88e3801511614004eabc9de327f8f993, type: 2}
   - {fileID: 102286, guid: a53ccad3f0c60974db386c39f9033049, type: 2}
@@ -114,74 +122,36 @@ MonoBehaviour:
   - {fileID: 125416, guid: 5ac35aa093d334743b908cf1a6409266, type: 2}
   - {fileID: 155050, guid: fce8388afe9cba24aa61efc8cb4aec2b, type: 2}
   - {fileID: 181274, guid: 25e45d7efebb32e489b08b1ab64b8374, type: 2}
+  - {fileID: 100008, guid: 0d6c10003b5abd040a8019301c95c359, type: 2}
+  - {fileID: 100044, guid: d330c56d879a306449e599dbbd467408, type: 2}
+  - {fileID: 100012, guid: 9ba818038f15b2645a6651bbccc0c4be, type: 2}
+  - {fileID: 100004, guid: 1f5f0d5defe2748409919153d505315e, type: 2}
+  - {fileID: 100100, guid: eee8948966a9c504da8915775560f116, type: 2}
+  - {fileID: 100004, guid: 83544c1cfb7ed8545a9af9f5a81dd353, type: 2}
+  - {fileID: 100046, guid: 7b2854f1828a2f740acb38d519f4251e, type: 2}
+  - {fileID: 100014, guid: 9d17cd0cccb83b94cbf9d7bf974b6955, type: 2}
+  - {fileID: 100090, guid: a485226c7afa4674aa25ef2fb8c26ae9, type: 2}
+  - {fileID: 100008, guid: e194eb40075aa6848a1285b38e6fea97, type: 2}
+  - {fileID: 100096, guid: cbc8467349d9ff34cba61ac44dbe06e0, type: 2}
+  - {fileID: 100048, guid: 5b10fe8edfc54b34a8490f165101cb7f, type: 2}
+  - {fileID: 100078, guid: afd83f0101f012c4abf869e4562a277e, type: 2}
   tilesWallPossesseds:
   - {fileID: 126938, guid: 5ebd9839078f8cc449f4de70a27d45a4, type: 2}
   - {fileID: 183276, guid: 979359bbb2264724cb600948e0e11f1b, type: 2}
   - {fileID: 170974, guid: a542d3d7279d79744a64e74695372373, type: 2}
-  tileWallEmpty: {fileID: 121084, guid: 65ea2434cc0c2b446a8cdf8bbff9d5a8, type: 2}
+  - {fileID: 100016, guid: 361dcbe4294ec02469ff29d1df9f94fa, type: 2}
+  - {fileID: 100008, guid: 2ded751709a639e40bfc9b448bcb4535, type: 2}
+  - {fileID: 100042, guid: cbbb48196fc0ef342b9aac3ce1886366, type: 2}
+  - {fileID: 100010, guid: 3fc993cdddb842545aa68458b698fe17, type: 2}
+  tileWallEmpty:
+  - {fileID: 121084, guid: 65ea2434cc0c2b446a8cdf8bbff9d5a8, type: 2}
+  - {fileID: 120070, guid: cd0c0dc0d7c537447aaaefb27297900b, type: 2}
+  - {fileID: 153386, guid: 50be95c362793324a9798d69db4bf307, type: 2}
+  - {fileID: 180636, guid: e5bbc9172a0941c4eb7b6792be6ba868, type: 2}
   tileDoorIn: {fileID: 120720, guid: a80eb433c74196849b475c2bd3bf4edb, type: 2}
   tileDoorOut: {fileID: 146318, guid: c1cf3660930be3d43b125c0a95a5b541, type: 2}
   gameManager: {fileID: 135032, guid: 1bcda9586afac364eb72e6210f0bf323, type: 2}
   gameState: {fileID: 0}
-  scoreBoardStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 0}
-    m_FontSize: 0
-    m_FontStyle: 0
-    m_Alignment: 0
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
   gameOverCamara: {fileID: 160534, guid: bb8735ab74db4bc4289e3b88bef2d327, type: 2}
 --- !u!114 &11487034
 MonoBehaviour:

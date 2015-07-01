@@ -42,10 +42,10 @@ public class GenerateCameras : MonoBehaviour {
 				//Fijamos la posicion de los contadores
 				var aux = Instantiate (humanCounts, positionCamera, Quaternion.identity) as GameObject;
 				aux.transform.parent = GameObject.Find ("Canvas").transform;
-				aux.transform.position = cam1.GetComponent<Camera>().WorldToScreenPoint (new Vector3(0.0f,0.0f,0.0f));
+				aux.transform.position = cam1.GetComponent<Camera>().WorldToScreenPoint (new Vector3(-5.0f,0.0f,0.0f));
 				aux = Instantiate (ghostCounts, positionCamera, Quaternion.identity) as GameObject;
 				aux.transform.parent = GameObject.Find ("Canvas").transform;
-				aux.transform.position = cam2.GetComponent<Camera>().WorldToScreenPoint (new Vector3(0.0f,0.0f,0.0f));
+				aux.transform.position = cam2.GetComponent<Camera>().WorldToScreenPoint (new Vector3(-5.0f,0.0f,0.0f));
 			}
             if (gameState.GetComponent<GameState>().getPlayer1() == 1)
             {

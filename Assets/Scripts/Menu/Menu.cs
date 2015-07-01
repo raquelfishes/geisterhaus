@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Menu : MonoBehaviour {
-	
-	void OnGUI () {
 
-		if(GUI.Button(new Rect(Screen.width/2-85,120,170,50),"Jugar")){
-			Application.LoadLevel("MultiOrSingleMenu");
-		}
+    public void loadMenuMulti()
+    {
+        Color col = new Color(159, 50, 50, 255);
+        GameObject.Find("Jugar").GetComponentInChildren<Text>().color = col;
+        Application.LoadLevel("MultiOrSingleMenu");
+    }
 
-		if(GUI.Button(new Rect(Screen.width/2-85,210,170,50),"Creditos")){
-			Application.LoadLevel ("Credits");
-		}
-		
-		if(GUI.Button(new Rect(Screen.width/2-85,280,170,50),"Salir")){
-			Application.Quit();
-		}
-	
-	}
+    public void loadCredits()
+    {
+        Color col = new Color(159, 50, 50, 255);
+        GameObject.Find("Creditos").GetComponentInChildren<Text>().color = col;
+        Application.LoadLevel("Credits");
+    }
+
+    public void loadExit()
+    {
+        Color col = new Color(159, 50, 50, 255);
+        GameObject.Find("Salir").GetComponentInChildren<Text>().color = col;
+        Application.Quit();
+    }
 }
