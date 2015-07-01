@@ -74,72 +74,6 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
---- !u!1 &24497262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 24497265}
-  - 222: {fileID: 24497264}
-  - 114: {fileID: 24497263}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &24497263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 24497262}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 5acaff980fe478549a856e7918ca5efa, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 2
-  m_Text: "bla bla bla bla bla \n\nbla bla bla bla bla\n\n"
---- !u!222 &24497264
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 24497262}
---- !u!224 &24497265
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 24497262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 527202479}
-  m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
 --- !u!1 &527202475
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +157,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1740320104}
-  - {fileID: 24497265}
   m_Father: {fileID: 941063179}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -264,7 +197,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3916f31d4cf670646a6b72387ff41306, type: 3}
   - {fileID: 2800000, guid: 500c52ed13a867d4888be20af9974fd8, type: 3}
   - {fileID: 2800000, guid: 2decb7bebd1b98640a871f85f91853a8, type: 3}
-  gameOverText: {fileID: 0}
+  gameOverHumanText: {fileID: 2800000, guid: 007a4aaf0306abe4e8138bfe8b00f439, type: 3}
+  gameOverGhostText: {fileID: 2800000, guid: 57c72e7c70d1c5b4090b98304bfb87c2, type: 3}
 --- !u!4 &941063179
 Transform:
   m_ObjectHideFlags: 0

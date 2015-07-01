@@ -26,6 +26,7 @@ public class DoorInController : MonoBehaviour {
 
 	private void takeHumanToDoor(int indexHuman){
 		//StartCoroutine(waitBetweenHumans());
+        //transform.parent.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 90.0f, 0.0f));
 		GameObject go = humans[indexHuman];
 		go.transform.position = gameObject.transform.position+new Vector3(0.0f,0.45f,0.0f);
 		go.transform.rotation = orientationIn;

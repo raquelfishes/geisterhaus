@@ -70,8 +70,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionFirstHuman: {x: 0, y: 2, z: 0}
-  ghosts: []
-  humans: []
+  ghosts:
+  - {fileID: 131288, guid: 2f4bcee406f2a4149bcaa79acc8e2dad, type: 2}
+  - {fileID: 157338, guid: ede5ad4660c69be48a611a3a8eef3055, type: 2}
+  humans:
+  - {fileID: 134472, guid: 2cdeb49d3a7fa0a439075a84ecb827d2, type: 2}
   healthBar: {fileID: 172624, guid: d6864ddf64ae8074a85ca3904c32680c, type: 2}
 --- !u!114 &11487032
 MonoBehaviour:
@@ -113,6 +116,10 @@ MonoBehaviour:
   - {fileID: 100012, guid: 6742c5d63afc62948835ee3584b70453, type: 2}
   - {fileID: 100004, guid: 84777a40c04adc641b422334fc767fe7, type: 2}
   - {fileID: 100012, guid: 621dbd97bd336b24d934f22bcb9fbd7e, type: 2}
+  - {fileID: 150400, guid: a846d36c8d1ab954db4cc118196705c7, type: 2}
+  - {fileID: 198030, guid: 9d41ebe3d664ca44d973bbf0bb2a89fd, type: 2}
+  - {fileID: 176404, guid: 42cb0e00a61b2714f90e0d77673bde0c, type: 2}
+  - {fileID: 120590, guid: ee9f00d055c8fda428ee62462a39a485, type: 2}
   tilesGroundPossesseds:
   - {fileID: 196246, guid: 88e3801511614004eabc9de327f8f993, type: 2}
   - {fileID: 102286, guid: a53ccad3f0c60974db386c39f9033049, type: 2}
@@ -135,6 +142,13 @@ MonoBehaviour:
   - {fileID: 100096, guid: cbc8467349d9ff34cba61ac44dbe06e0, type: 2}
   - {fileID: 100048, guid: 5b10fe8edfc54b34a8490f165101cb7f, type: 2}
   - {fileID: 100078, guid: afd83f0101f012c4abf869e4562a277e, type: 2}
+  - {fileID: 136886, guid: e6f937c6e413aa84ab24616c19d9a5f9, type: 2}
+  - {fileID: 150338, guid: 2fe22c19a97a0a243ab8a7a51801e6ef, type: 2}
+  - {fileID: 166106, guid: 68e963032ba1cc4449376470dd89ead3, type: 2}
+  - {fileID: 110462, guid: 25e25f131fd0cf94a9e9059e9d0a8b36, type: 2}
+  - {fileID: 187236, guid: 8e33c5e04f01afa4dad6895d292a1160, type: 2}
+  - {fileID: 190168, guid: 334ba717f4d0c964c965dd0466c27d7d, type: 2}
+  - {fileID: 178066, guid: ac532e395343ac944a1917e38acac018, type: 2}
   tilesWallPossesseds:
   - {fileID: 126938, guid: 5ebd9839078f8cc449f4de70a27d45a4, type: 2}
   - {fileID: 183276, guid: 979359bbb2264724cb600948e0e11f1b, type: 2}
@@ -143,6 +157,7 @@ MonoBehaviour:
   - {fileID: 100008, guid: 2ded751709a639e40bfc9b448bcb4535, type: 2}
   - {fileID: 100042, guid: cbbb48196fc0ef342b9aac3ce1886366, type: 2}
   - {fileID: 100010, guid: 3fc993cdddb842545aa68458b698fe17, type: 2}
+  - {fileID: 132948, guid: 94cc254c9ef5abf4882812e9079ab6b2, type: 2}
   tileWallEmpty:
   - {fileID: 121084, guid: 65ea2434cc0c2b446a8cdf8bbff9d5a8, type: 2}
   - {fileID: 120070, guid: cd0c0dc0d7c537447aaaefb27297900b, type: 2}

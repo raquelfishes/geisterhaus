@@ -13,8 +13,8 @@ public class GameState : MonoBehaviour {
     private int maxNivel = 3;   // Maximo de niveles en el juego
 
     public Texture2D[] loading;
-    public Texture2D gameOverText;
-    public
+    public Texture2D gameOverHumanText;
+    public Texture2D gameOverGhostText;
 
 	// Load game state in all scenes
 	void Awake () {
@@ -84,13 +84,10 @@ public class GameState : MonoBehaviour {
 
     public void gameOver(bool ghostWin, bool humanWin){
         GameObject go = GameObject.Find("CanvasAux");
-        //go.SetActive(true);
-        go.GetComponentInChildren<RawImage>().texture = gameOverText;
         if (ghostWin)
-            go.GetComponentInChildren<Text>().text = "Ghosts win!!!";
+            go.GetComponentInChildren<RawImage>().texture = gameOverHumanText;
         else
-            go.GetComponentInChildren<Text>().text = "Humans win!!!";
-        go.GetComponentInChildren<Text>().text += "\n\n Press esc to go back to main menu";
+            go.GetComponentInChildren<RawImage>().texture = gameOverGhostText;
         go.GetComponentInChildren<RawImage>().enabled = true;
         go.GetComponentInChildren<Text>().enabled = true;
     }

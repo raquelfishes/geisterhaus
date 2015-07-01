@@ -83,67 +83,113 @@
 1072 => cama padres izquierda
 1073 => cama padres derecha
 1074 => cama padres trasera
-1071 => cama padres vacia
+1075 => cama padres vacia
 
-1072 => cojin horizontal
-1073 => cojin vertical
+1076 => cojin horizontal
+1077 => cojin vertical
 
-1074 => cuna frente
-1075 => cuna iquierda
-1076 => cuna derecha
-1077 => cuna trasera
+1078 => cuna frente
+1079 => cuna iquierda
+1080 => cuna derecha
+1081 => cuna trasera
 
-1078 => despertador frente
-1079 => despertador izquierda
-1080 => despertador derecha
-1081 => despertador trasera
+1082 => despertador frente
+1083 => despertador izquierda
+1084 => despertador derecha
+1085 => despertador trasera
 
-1082 => ipod frente
-1083 => ipod izquierda
-1084 => ipod derecha
-1085 => ipod trasera
+1086 => ipod frente
+1087 => ipod izquierda
+1088 => ipod derecha
+1089 => ipod trasera
 
-1086 => lampara2 
+1090 => lampara2 
 
-1087 => lamparaSuelo
+1091 => lamparaSuelo
 
-1088 => Estanteria horizontal
-1089 => estanteria vertical
+1092 => Estanteria horizontal
+1093 => estanteria vertical
 
-1090 => libro horizontal
-1091 => libro vertical
+1094 => libro horizontal
+1095 => libro vertical
 
-1092 => mesaEstudio frente
-1093 => mesaEstudio izquierda
-1094 => mesaEstudio derecha
-1095 => mesaEstudio trasera
-1096 => mesaEstudio vacia
+1096 => mesaEstudio frente
+1097 => mesaEstudio izquierda
+1098 => mesaEstudio derecha
+1099 => mesaEstudio trasera
+1100 => mesaEstudio vacia
 
-1097 => mesita frente
-1098 => mesita izquierda
-1099 => mesita derecha
-1099 => mesita trasera
+1101 => mesita frente
+1102 => mesita izquierda
+1103 => mesita derecha
+1104 => mesita trasera
 
-1100 => organo frente
-1101 => organo izquierda
-1102 => organo derecha
-1103 => organo trasera
-1104 => organo vacia
+1105 => organo frente
+1106 => organo izquierda
+1107 => organo derecha
+1108 => organo trasera
+1109 => organo vacia
 
-1105 => tele frente
-1106 => tele izquierda
-1107 => tele derecha
-1108 => tele trasera
+1110 => tele frente
+1111 => tele izquierda
+1112 => tele derecha
+1113 => tele trasera
 
-1109 => portatil frente
-1110 => portatil izquierda
-1111 => portatil derecha
-1112 => portatil trasera
+1114 => portatil frente
+1115 => portatil izquierda
+1116 => portatil derecha
+1117 => portatil trasera
 
-1113 => silla frente
-1114 => silla izquierda
-1115 => silla derecha
-1116 => silla trasera
+1118 => silla frente
+1119 => silla izquierda
+1120 => silla derecha
+1121 => silla trasera
+
+1122 => cacerola
+
+1123 => cafetera frente
+1124 => cafetera izquierda
+1125 => cafetera derecha
+1126 => cafetera trasera
+
+1127 => calderaLeña frente
+1128 => calderaLeña izquierda
+1129 => calderaLeña derecha
+1130 => calderaLeña trasera
+
+1131 => caldero
+
+1132 => cuchillo
+1133 => cuchillo vacio
+
+1134 => encimera frente
+1135 => encimera izquierda
+1136 => encimera derecha
+1137 => encimera trasera
+1138 => encimera vacia
+
+1139 => escalera frente
+1140 => escalera izquierda
+1141 => escalera derecha
+1142 => escalera trasera
+
+1143 => extintor
+
+1144 => frigorifico frente
+1145 => frigorifico izquierda
+1146 => frigorifico derecha
+1147 => frigorifico trasera
+
+1148 => lavadora frente
+1149 => lavadora izquierda
+1150 => lavadora derecha
+1151 => lavadora trasera
+
+1152 => nevera frente
+1153 => nevera izquierda
+1154 => nevera derecha
+1155 => nevera trasera
+
 
 
 
@@ -215,6 +261,13 @@
 2310 => lamparaPared frente
 2311 => lamparaPared izquierda
 2312 => lamparaPared derecha
+
+2313 => reloj pez frente inicio
+2314 => reloj pez frente medio/fin (no instancia)
+2315 => reloj pez izquierda inicio
+2316 => reloj pez izquierda medio/fin (no instancia)
+2317 => reloj pez derecha inicio
+2318 => reloj pez derecha medio/fin (no instancia)
 
 
 
@@ -376,6 +429,51 @@ g_119 => silla izquierda
 g_120 => silla derecha
 g_121 => silla trasera
 
+g_122 => cacerola
+
+g_123 => cafetera frente
+g_124 => cafetera izquierda
+g_125 => cafetera derecha
+g_126 => cafetera trasera
+
+g_127 => calderaLeña frente
+g_128 => calderaLeña izquierda
+g_129 => calderaLeña derecha
+g_130 => calderaLeña trasera
+
+g_131 => caldero
+
+g_132 => cuchillo
+g_133 => cuchillo vacio
+
+g_134 => encimera frente
+g_135 => encimera izquierda
+g_136 => encimera derecha
+g_137 => encimera trasera
+g_138 => encimera vacia
+
+g_139 => escalera frente
+g_140 => escalera izquierda
+g_141 => escalera derecha
+g_142 => escalera trasera
+
+g_143 => extintor
+
+g_144 => frigorifico frente
+g_145 => frigorifico izquierda
+g_146 => frigorifico derecha
+g_147 => frigorifico trasera
+
+g_148 => lavadora frente
+g_149 => lavadora izquierda
+g_150 => lavadora derecha
+g_151 => lavadora trasera
+
+g_152 => nevera frente
+g_153 => nevera izquierda
+g_154 => nevera derecha
+g_155 => nevera trasera
+
 //Indicadores para la pared
 //pared frontal
 w_011 => pared vacia medio frente  = tipo 1
@@ -431,21 +529,28 @@ w_222 => pared ventana izquierda medio/fin (no instancia)
 w_231 => pared ventana derecha inicio
 w_232 => pared ventana derecha medio/fin (no instancia)
 
-w_2301 => enchufe frente
-w_2302 => enchufe izquierda
-w_2303 => enchufe derecha
+w_301 => enchufe frente
+w_302 => enchufe izquierda
+w_303 => enchufe derecha
 
-w_2304 => interruptor frente
-w_2305 => interruptor izquierda
-w_2306 => interruptor derecha
+w_304 => interruptor frente
+w_305 => interruptor izquierda
+w_306 => interruptor derecha
 
-w_2307 => radiador frente
-w_2308 => radiador izquierda
-w_2309 => radiador derecha
+w_307 => radiador frente
+w_308 => radiador izquierda
+w_309 => radiador derecha
 
-w_2310 => lamparaPared frente
-w_2311 => lamparaPared izquierda
-w_2312 => lamparaPared derecha
+w_310 => lamparaPared frente
+w_311 => lamparaPared izquierda
+w_312 => lamparaPared derecha
+
+w_313 => reloj pez frente inicio
+w_314 => reloj pez frente medio/fin (no instancia)
+w_315 => reloj pez izquierda inicio
+w_316 => reloj pez izquierda medio/fin (no instancia)
+w_317 => reloj pez derecha inicio
+w_318 => reloj pez derecha medio/fin (no instancia)
 
 //Indicadores para la puerta
 d_01 => puerta de entrada frente

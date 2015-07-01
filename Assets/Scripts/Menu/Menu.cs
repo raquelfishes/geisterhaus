@@ -14,7 +14,7 @@ public class Menu : MonoBehaviour {
     public void loadCredits()
     {
         Color col = new Color(159, 50, 50, 255);
-        GameObject.Find("Creditos").GetComponentInChildren<Text>().color = col;
+        GameObject.Find("Credits").GetComponentInChildren<Text>().color = col;
         Application.LoadLevel("Credits");
     }
 
@@ -23,5 +23,12 @@ public class Menu : MonoBehaviour {
         Color col = new Color(159, 50, 50, 255);
         GameObject.Find("Salir").GetComponentInChildren<Text>().color = col;
         Application.Quit();
+    }
+
+    public void loadMainMenu()
+    {
+        Color col = new Color(159, 50, 50, 255);
+        GameObject.Find("Quit").GetComponentInChildren<Text>().color = col;
+        Application.LoadLevel("MainMenu");
     }
 }

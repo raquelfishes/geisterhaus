@@ -75,7 +75,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
     public void loadBack()
     {
         Color col = new Color(159, 50, 50, 255);
-        GameObject.Find("Salir").GetComponentInChildren<Text>().color = col;
+        GameObject.Find("Volver").GetComponentInChildren<Text>().color = col;
         Application.LoadLevel("MainMenu");
     }
 }

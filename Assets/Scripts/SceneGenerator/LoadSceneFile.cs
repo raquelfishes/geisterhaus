@@ -403,6 +403,119 @@ public class LoadSceneFile : MonoBehaviour {
                     case "g_121":
                         auxRow.Add(1121);
                         break;
+                    // cacerola
+                    case "g_122":
+                        auxRow.Add(1122);
+                        break;
+                    // cafetera
+                    case "g_123":
+                        auxRow.Add(1123);
+                        break;
+                    case "g_124":
+                        auxRow.Add(1124);
+                        break;
+                    case "g_125":
+                        auxRow.Add(1125);
+                        break;
+                    case "g_126":
+                        auxRow.Add(1126);
+                        break;
+                    // caldera leña
+                    case "g_127":
+                        auxRow.Add(1127);
+                        break;
+                    case "g_128":
+                        auxRow.Add(1128);
+                        break;
+                    case "g_129":
+                        auxRow.Add(1129);
+                        break;
+                    case "g_130":
+                        auxRow.Add(1130);
+                        break;
+                    // caldero
+                    case "g_131":
+                        auxRow.Add(1131);
+                        break;
+                    // cuchillo
+                    case "g_132":
+                        auxRow.Add(1132);
+                        break;
+                    case "g_133":
+                        auxRow.Add(1133);
+                        break;
+                    // encimera
+                    case "g_134":
+                        auxRow.Add(1134);
+                        break;
+                    case "g_135":
+                        auxRow.Add(1135);
+                        break;
+                    case "g_136":
+                        auxRow.Add(1136);
+                        break;
+                    case "g_137":
+                        auxRow.Add(1137);
+                        break;
+                    case "g_138":
+                        auxRow.Add(1138);
+                        break;
+                    // escalera
+                    case "g_139":
+                        auxRow.Add(1139);
+                        break;
+                    case "g_140":
+                        auxRow.Add(1140);
+                        break;
+                    case "g_141":
+                        auxRow.Add(1141);
+                        break;
+                    case "g_142":
+                        auxRow.Add(1142);
+                        break;
+                    // extintor
+                    case "g_143":
+                        auxRow.Add(1143);
+                        break;
+                    // frigorifico
+                    case "g_144":
+                        auxRow.Add(1144);
+                        break;
+                    case "g_145":
+                        auxRow.Add(1145);
+                        break;
+                    case "g_146":
+                        auxRow.Add(1146);
+                        break;
+                    case "g_147":
+                        auxRow.Add(1147);
+                        break;
+                    // lavadora
+                    case "g_148":
+                        auxRow.Add(1148);
+                        break;
+                    case "g_149":
+                        auxRow.Add(1149);
+                        break;
+                    case "g_150":
+                        auxRow.Add(1150);
+                        break;
+                    case "g_151":
+                        auxRow.Add(1151);
+                        break;
+                    // nevera
+                    case "g_152":
+                        auxRow.Add(1152);
+                        break;
+                    case "g_153":
+                        auxRow.Add(1153);
+                        break;
+                    case "g_154":
+                        auxRow.Add(1154);
+                        break;
+                    case "g_155":
+                        auxRow.Add(1155);
+                        break;
                     /////////////////////////////////////////
 					//Paredes vacias
                     // Tipo 1
@@ -556,44 +669,63 @@ public class LoadSceneFile : MonoBehaviour {
 						auxRow.Add (2232);
 						break;
                     // Enchufe
-                    case "w_2301":
+                    case "w_301":
                         auxRow.Add(2301);
                         break;
-                    case "w_2302":
+                    case "w_302":
                         auxRow.Add(2302);
                         break;
-                    case "w_2303":
+                    case "w_303":
                         auxRow.Add(2303);
                         break;
                     // Interruptor
-                    case "w_2304":
+                    case "w_304":
                         auxRow.Add(2304);
                         break;
-                    case "w_2305":
+                    case "w_305":
                         auxRow.Add(2305);
                         break;
-                    case "w_2306":
+                    case "w_306":
                         auxRow.Add(2306);
                         break;
                     // Radiador
-                    case "w_2307":
+                    case "w_307":
                         auxRow.Add(2307);
                         break;
-                    case "w_2308":
+                    case "w_308":
                         auxRow.Add(2308);
                         break;
-                    case "w_2309":
+                    case "w_309":
                         auxRow.Add(2309);
                         break;
                     // LamparaPared
-                    case "w_2310":
+                    case "w_310":
                         auxRow.Add(2310);
                         break;
-                    case "w_2311":
+                    case "w_311":
                         auxRow.Add(2311);
                         break;
-                    case "w_2312":
+                    case "w_312":
                         auxRow.Add(2312);
+                        break;
+                    // Reloj Pez
+                    case "w_313":
+                        auxRow.Add(2313);
+                        break;
+                    case "w_314":
+                        auxRow.Add(2314);
+                        break;
+                    case "w_315":
+                        auxRow.Add(2315);
+                        break;
+                    case "w_316":
+                        auxRow.Add(2316);
+                        break;
+                    case "w_317":
+                        auxRow.Add(2317);
+                        break;
+                    case "w_318":
+                        auxRow.Add(2318);
                         break;
                     ///////////////////////////////////////
 					// Puerta entrada
