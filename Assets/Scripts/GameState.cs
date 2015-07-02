@@ -34,7 +34,7 @@ public class GameState : MonoBehaviour {
 			Application.LoadLevel ("MainMenu");
             GameObject go = GameObject.Find("CanvasAux");
             go.GetComponentInChildren<RawImage>().enabled = false;
-            go.GetComponentInChildren<Text>().enabled = false;
+            //go.GetComponentInChildren<Text>().enabled = false;
             //go.GetComponentInChildren<RawImage>().enabled = true;
 			gameObject.audio.Play();
             for (int i= 0; i< 50; i++){ lifeHumans[i]=100; }
