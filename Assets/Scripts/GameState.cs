@@ -89,6 +89,6 @@ public class GameState : MonoBehaviour {
         else
             go.GetComponentInChildren<RawImage>().texture = gameOverGhostText;
         go.GetComponentInChildren<RawImage>().enabled = true;
-        go.GetComponentInChildren<Text>().enabled = true;
+        //go.GetComponentInChildren<Text>().enabled = true;
     }
 }
