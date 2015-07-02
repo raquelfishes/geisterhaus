@@ -46,7 +46,7 @@ GameObject:
   - 95: {fileID: 9596074}
   m_Layer: 0
   m_Name: tile_doorOut
-  m_TagString: DoorOut
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

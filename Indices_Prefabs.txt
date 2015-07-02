@@ -190,6 +190,58 @@
 1154 => nevera derecha
 1155 => nevera trasera
 
+1156 => arbol 1
+1157 => arbol 2
+1158 => arbol 3
+1159 => arbol 4
+1160 => arbol 5
+
+1161 => banco frente
+1162 => banco izquierda
+1163 => banco derecha
+1164 => banco trasera
+1165 => banco vacio
+
+1166 => barbacoa frente
+1167 => barbacoa izquierda
+1168 => barbacoa derecha
+1169 => barbacoa trasera
+
+1170 => columpios frente
+1171 => columpios izquierda
+1172 => columpios derecha
+1173 => columpios trasera
+1174 => columpios vacio
+
+1175 => cuboBasura frente
+1176 => cuboBasura izquierda
+1177 => cuboBasura derecha
+1178 => cuboBasura trasera
+
+1179 => fuente
+1180 => fuente vacio
+
+1181 => piedras
+
+1182 => piscina frente
+1183 => piscina izquierda
+1184 => piscina derecha
+1185 => piscina trasera
+1186 => piscina vacia 
+
+1187 => subeBaja frente
+1188 => subeBaja izquierda
+1189 => subeBaja derecha
+1190 => subeBaja trasera 
+1191 => subeBaja vacio 
+
+1192 => tiendaCampaña
+
+1193 => tobogan frente
+1194 => tobogan izquierda
+1195 => tobogan derecha
+1196 => tobogan trasera
+1197 => tobogan vacio
 
 
 
@@ -279,6 +331,15 @@
 512 => puerta fin
 513 => puerta fin
 514 => puerta fin
+
+521 => puerta inicio jardin
+522 => puerta inicio jardin
+523 => puerta inicio jardin
+524 => puerta inicio jardin
+531 => puerta fin jardin
+532 => puerta fin jardin
+533 => puerta fin jardin
+534 => puerta fin jardin
 
 
 //TextoArchivo
@@ -474,6 +535,60 @@ g_153 => nevera izquierda
 g_154 => nevera derecha
 g_155 => nevera trasera
 
+g_156 => arbol 1
+g_157 => arbol 2
+g_158 => arbol 3
+g_159 => arbol 4
+g_160 => arbol 5
+
+g_161 => banco frente
+g_162 => banco izquierda
+g_163 => banco derecha
+g_164 => banco trasera
+g_165 => banco vacio
+
+g_166 => barbacoa frente
+g_167 => barbacoa izquierda
+g_168 => barbacoa derecha
+g_169 => barbacoa trasera
+
+g_170 => columpios frente
+g_171 => columpios izquierda
+g_172 => columpios derecha
+g_173 => columpios trasera
+g_174 => columpios vacio
+
+g_175 => cuboBasura frente
+g_176 => cuboBasura izquierda
+g_177 => cuboBasura derecha
+g_178 => cuboBasura trasera
+
+g_179 => fuente
+g_180 => fuente vacio
+
+g_181 => piedras
+
+g_182 => piscina frente
+g_183 => piscina izquierda
+g_184 => piscina derecha
+g_185 => piscina trasera
+g_186 => piscina vacia 
+
+g_187 => subeBaja frente
+g_188 => subeBaja izquierda
+g_189 => subeBaja derecha
+g_190 => subeBaja trasera 
+g_191 => subeBaja vacio 
+
+g_192 => tiendaCampaña
+
+g_193 => tobogan frente
+g_194 => tobogan izquierda
+g_195 => tobogan derecha
+g_196 => tobogan trasera
+g_197 => tobogan vacio 
+
+
 //Indicadores para la pared
 //pared frontal
 w_011 => pared vacia medio frente  = tipo 1
@@ -561,3 +676,12 @@ d_11 => puerta de salida frente
 d_12 => puerta de salida iquierda
 d_13 => puerta de salida derecha
 d_14 => puerta de salida trasera
+
+d_21 => puerta inicio jardin
+d_22 => puerta inicio jardin
+d_23 => puerta inicio jardin
+d_24 => puerta inicio jardin
+d_31 => puerta fin jardin
+d_32 => puerta fin jardin
+d_33 => puerta fin jardin
+d_34 => puerta fin jardin
