@@ -8,6 +8,7 @@ public class GameState : MonoBehaviour {
 	private int player1;		// Tipo de jugador 1 (para el caso del multiplayer) : 0 fantasma  // 1 humanos // -1 uno de los dos es inteligente
 	private int nivel; 			// Indice del nivel en el que nos encontramos
 	private int numHumans; 		// Numero de humanos que quedan vivos
+    private int numGhosts; 		// Numero de fantasmas
 	private int[] lifeHumans = new int[50];	// Vida de cada uno de los humanos - Definimos un maximo de 50 y no nos tenemos que preocupar de inicializaciones
 
     private int maxNivel = 3;   // Maximo de niveles en el juego
@@ -46,6 +47,7 @@ public class GameState : MonoBehaviour {
 	public int getPlayer2() { return 1 - player1; }
 	public int getNivel() { return nivel; }
 	public int getNumHumans() { return numHumans; }
+    public int getNumGhosts() { return numGhosts; }
 	public int[] getLifeHumans() { return lifeHumans; }
 	public int getLifeHuman(int i) { return lifeHumans [i]; }
 
@@ -53,6 +55,7 @@ public class GameState : MonoBehaviour {
 	public void setPlayer1(int mode) { player1 = mode; }
 	public void setNivel(int niv) { nivel = niv; }
 	public void setNumHumans(int num) { numHumans = num;}
+    public void setNumGhosts(int num) { numGhosts = num; }
 	public void setLifeHumans(int[] life) { lifeHumans = life; }
 	public void setLifeHuman(int i, int life) { lifeHumans[i] = life; }
 

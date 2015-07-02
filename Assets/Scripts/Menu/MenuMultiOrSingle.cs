@@ -9,7 +9,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
 	private GameObject _gameState;
 
     private int numHumans = 2;
-    //private int numGhosts = 10;
+    private int numGhosts = 1;
 
 	
 	void Awake () {
@@ -29,6 +29,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
         _gameState.GetComponent<GameState>().setPlayer1(0); //jugador 1 fantasma
         _gameState.GetComponent<GameState>().setNivel(0);
         _gameState.GetComponent<GameState>().setNumHumans(numHumans);
+        _gameState.GetComponent<GameState>().setNumGhosts(numGhosts);
         Application.LoadLevel("loadFile");
         _gameState.GetComponent<GameState>().audio.Stop();
         _gameState.GetComponent<GameState>().loadNextLevel();
@@ -53,6 +54,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
         _gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 humanos
         _gameState.GetComponent<GameState>().setNivel(0);
         _gameState.GetComponent<GameState>().setNumHumans(numHumans);
+        _gameState.GetComponent<GameState>().setNumGhosts(numGhosts);
         Application.LoadLevel("loadFile");
         _gameState.GetComponent<GameState>().audio.Stop();
         _gameState.GetComponent<GameState>().loadNextLevel();
@@ -67,6 +69,7 @@ public class MenuMultiOrSingle : MonoBehaviour {
         _gameState.GetComponent<GameState>().setPlayer1(-1); //jugador 1 fantasma
         _gameState.GetComponent<GameState>().setNivel(0);
         _gameState.GetComponent<GameState>().setNumHumans(numHumans);
+        _gameState.GetComponent<GameState>().setNumGhosts(numGhosts);
         Application.LoadLevel("loadFile");
         _gameState.GetComponent<GameState>().audio.Stop();
         _gameState.GetComponent<GameState>().loadNextLevel();

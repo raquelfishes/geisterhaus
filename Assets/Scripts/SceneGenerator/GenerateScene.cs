@@ -8,8 +8,8 @@ public class GenerateScene : MonoBehaviour {
 	public int _nColumns = 0;
 	public int _nTyles = 0;
 
-	public int numHumans=3;
-	public int numGhosts=2;
+	private int numHumans;
+	private int numGhosts;
 
 	public bool singleGhost= true;
 	public bool singleHuman= true;
@@ -79,6 +79,7 @@ public class GenerateScene : MonoBehaviour {
 	
 	private void instantiateCharacters(){
 		numHumans = gameState.GetComponent<GameState> ().getNumHumans ();
+        numGhosts = gameState.GetComponent<GameState>().getNumGhosts();
 		int[] lifeHumans = gameState.GetComponent<GameState> ().getLifeHumans ();
 		gameObject.GetComponent<GenerateCharacters>().instantiateCharacters(numHumans,lifeHumans,numGhosts);
 	}
